@@ -46,8 +46,12 @@ Svetlana Eden <svetlana.eden@vanderbilt.edu>
 }
 
 \examples{
-res34 = data.frame(X = c(0.5, 0.6, 0.7, 0.8), Y = c(0.44, 0.77, 0.88, 0.99), deltaX = c(1, 0, 1, 1), deltaY = c(1, 1, 1, 1))
-bivarSurf = SurvSurfaceOfDabrowska_Optimized(res34)$DabrowskaEst
+X = c(0.5, 0.6, 0.7, 0.8)
+Y = c(0.44, 0.77, 0.88, 0.99)
+deltaX = c(1, 0, 1, 1)
+deltaY = c(1, 1, 1, 1)
+
+bivarSurf = survDabrowska(X, Y, deltaX, deltaY)$DabrowskaEst
 bivarSurf
 #         0  0.44 0.77 0.88 0.99
 # 0   1.000 0.750 0.50 0.25    0
@@ -58,12 +62,9 @@ bivarSurf
 
 ### When both last observed events are not censored and
 ### the restricted region is included the support, both correlations are the same
-Spearman_HighestRank_Restricted(bivarSurf, tauX = Inf, tauY = Inf)
-#             Correlation
-# HighestRank   0.7745967
-# Restricted    0.7745967
+survSpearman(bivarSurf, tauX = Inf, tauY = Inf)
 
-Spearman_HighestRank_Restricted(bivarSurf, tauX = Inf, tauY = 0.8)
+survSpearman(bivarSurf, tauX = Inf, tauY = 0.8)
 #             Correlation
 # HighestRank   0.6531973
 # Restricted    0.9428090

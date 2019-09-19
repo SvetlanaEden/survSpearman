@@ -56,8 +56,12 @@ Svetlana Eden <svetlana.eden@vanderbilt.edu>
 }
 
 \examples{
-res34 = data.frame(X = c(0.5, 0.6, 0.8), Y = c(0.44, 0.77, 0.99), deltaX = c(1, 0, 1), deltaY = c(1, 1, 1))
-bivarSurf = SurvSurfaceOfDabrowska_Optimized(res34)$DabrowskaEst
+X = c(0.5, 0.6, 0.8)
+Y = c(0.44, 0.77, 0.99)
+deltaX = c(1, 0, 1)
+deltaY = c(1, 1, 1)
+
+bivarSurf = survDabrowska(X, Y, deltaX, deltaY)$DabrowskaEst
 bivarSurf
   ###             0      0.44      0.77 0.99
   ### 0   1.0000000 0.6666667 0.3333333    0
@@ -65,7 +69,7 @@ bivarSurf
   ### 0.6 0.6666667 0.6666667 0.3333333    0
   ### 0.8 0.0000000 0.0000000 0.0000000    0
 
-bivarPMF = getProbMassFunctionFromSurvivalSurface(bivarSurf)$Sdxdy
+bivarPMF = survPMF(bivarSurf)$Sdxdy
 bivarPMF
   ###             0      0.44      0.77      0.99
   ### 0   0.0000000 0.3333333 0.3333333 0.3333333

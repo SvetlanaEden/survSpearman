@@ -10,7 +10,7 @@ Computes conditional bivariate survival probability in a restricted region.
 The function computes the conditional bivariate survival probability in a restricted region. In bivariate survival analysis we sometimes need to know the survival probability conditionally on surviving in a restricted region. This region is defined as \code{"[0,XLimit)x[0,YLimit)"}. The function takes an already computed survival surface and arguments that define the restricted region \code{"XLimit"} and \code{"YLimit"} and computes a conditional survival surface.
 }
 \usage{
-survRestricted(bivarSurf, XLimit = Inf, YLimit = Inf)
+survRestricted(bivarSurf, tauX = Inf, tauY = Inf)
 }
 
 %- maybe also 'usage' for other objects documented here.
@@ -18,10 +18,10 @@ survRestricted(bivarSurf, XLimit = Inf, YLimit = Inf)
   \item{bivarSurf}{
   A matrix containing the bivariate survival probability and the marginal survival probabilities. The first column of \code{"bivarSurf"} is the survival probability on one axis (let's call it X). The first row of \code{"bivarSurf"} is the survival probability on the other axis (let's call it Y). The row names of \code{"bivarSurf"} are ordered \code{"X"}'s. The column names of \code{"bivarSurf"} are ordered \code{"Y"}'s. Element \code{"bivarSurf[1,1]"} equals to 1. Its first row and column names are \code{"0"} and \code{"0"} (see examples below). The function \code{survDabrowska} returns a matrix in this format.
 }
-  \item{XLimit}{
+  \item{tauX}{
   A value that defines the restricted region for the X coordinate.
 }
-  \item{YLimit}{
+  \item{tauY}{
   A value that defines the restricted region for the Y coordinate.
 }
 }
@@ -62,8 +62,11 @@ Svetlana Eden <svetlana.eden@vanderbilt.edu>
 }
 
 \examples{
-res34 = data.frame(X = c(0.5, 0.6, 0.8), Y = c(0.44, 0.77, 0.99), deltaX = c(1, 0, 1), deltaY = c(1, 1, 1))
-bivarSurf = survDabrowska(res34)$DabrowskaEst
+X = c(0.5, 0.6, 0.8)
+Y = c(0.44, 0.77, 0.99)
+deltaX = c(1, 0, 1)
+deltaY = c(1, 1, 1)
+bivarSurf = survDabrowska(X, Y, deltaX, deltaY)$DabrowskaEst
 bivarSurf
   ###             0      0.44      0.77 0.99
   ### 0   1.0000000 0.6666667 0.3333333    0
@@ -71,7 +74,7 @@ bivarSurf
   ### 0.6 0.6666667 0.6666667 0.3333333    0
   ### 0.8 0.0000000 0.0000000 0.0000000    0
 
-condSurf = survRestricted(bivarSurf, XLimit = Inf, YLimit = 0.88)$Sxy
+condSurf = survRestricted(bivarSurf, tauX = Inf, tauY = 0.88)$Sxy
 condSurf
   ### > condSurf
   ###       0 0.44 0.77

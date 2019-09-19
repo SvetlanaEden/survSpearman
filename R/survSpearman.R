@@ -1,4 +1,4 @@
-
+#' @export
 ################################################################### Highest Rank and Restrcited Spearman's Rho in the Restricted
 ################################################################### Region
 survSpearman = function(bivarSurf, tauX = Inf, tauY = Inf) {

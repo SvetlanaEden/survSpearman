@@ -1,11 +1,8 @@
+#' @export
 ###################################################################
 ######### Dabrowska estimator  ####################################
 ###################################################################
 survDabrowska = function(X, Y, deltaX, deltaY){
-  ### data is the bivariate survival data.frame. It has to contain the following:
-  ### data$X and data$deltaX - time to event and event indicator for subject 1
-  ### data$Y and data$deltaY- time to event and event indicator for subject 2
-  
   data = data.frame(X = X, Y = Y, deltaX = deltaX, deltaY = deltaY)
 
   if(any(!c("X", "Y", "deltaX", "deltaY") %in% names(data))) stop("data.frame data has to contain the following variables: X, Y, deltaX, deltaY")
