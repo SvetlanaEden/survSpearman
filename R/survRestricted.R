@@ -1,3 +1,32 @@
+#' @name survRestricted
+#' @aliases survRestricted
+#' @title Computes conditional marginal and joint survival probability in a restricted region.
+#' @description The function computes marginal and joint survival probabilities conditionally on surviving in a restricted region. This region is defined by the user as \code{[0,tauX)x[0,tauY)}.
+#' 
+#' @usage survRestricted(bivarSurf, tauX = Inf, tauY = Inf)
+#' 
+#' @param bivarSurf A matrix containing marginal and joint survival probabilities.  The first column is the marginal survival probability corresponding to variable \code{X}. The first row is the marginal survival probability corresponding to variable \code{Y}. The rest of the matrix contains the joint survival probabilities. The row names of \code{bivarSurf} are ordered \code{X} values. The column names of \code{bivarSurf} are ordered \code{Y} values. Element \code{bivarSurf[1,1]} equals 1. Its row and column name is \code{'0'} (see the documentation for the return value \code{DabrowskaEst} in function \code{survDabrowska}).
+#' @param tauX The \code{X} value that defines the restricted region for the \code{X} variable.
+#' @param tauY The \code{Y} value that defines the restricted region for the \code{Y} variable.
+  
+#' @return The function returns the following list of survival surfaces and their differentials: \code{Sxy} is the conditional marginal and joint survival probabilities in the same format as \code{bivarSurf}; \code{SxMyM} is \code{Sxy} at point \code{(x-, y-)}, where \code{x-} is the left limit of \code{x}; \code{Sx} is the conditional marginal survival probability function for variable X; \code{Sy} is the conditional marginal survival probability function for variable Y; \code{Sdx} is the conditional marginal probability mass function for variable X; \code{Sdy} is the conditional marginal probability mass function for variable Y; \code{SxM} is the conditional marginal survival probability function for X at point \code{x-}; \code{SyM} is the conditional marginal survival probability function for Y at point \code{y-}; \code{SxM_y} is the conditional joint survival probability function at point \code{(x-, y)}; \code{Sx_yM} is the conditional joint survival probability function at point \code{(x, y-)}; \code{Sdx_y} is \code{SxM_y - Sxy}; \code{Sx_dy} is \code{Sx_yM - Sxy}; \code{Sdx_yM} is \code{SxMyM - Sx_yM}; \code{SxM_dy} is \code{SxMyM - SxM_y}; \code{Sdxdy} is the conditional joint probability mass function.
+#' @details The method of Dabrowska can result in negative probability mass for some points, which may result in zero or negative probability of failure in the restricted region. This only happens when the sample size is small and censoring is heavy. If the probability of survival in the restricted region is zero or less, \code{NA} value is returned. Otherwise, the function returns a list of survival probabilities and their differentials conditionally on being in the restricted region defined by \code{tauX} and \code{tauY}. Element \code{Sxy} of this list is the conditional marginal and joint survival probabilities with row/column names in the same format as argument \code{bivarSurf}. The rest of the returned list elements are matrices in the same format as \code{bivarSurf} except that they do not contain marginal values and row/column names.
+#' 
+#' @examples
+#' X = c(0.5, 0.6, 0.8)
+#' Y = c(0.44, 0.77, 0.99)
+#' deltaX = c(1, 0, 1)
+#' deltaY = c(1, 1, 1)
+#' bivarSurf = survDabrowska(X, Y, deltaX, deltaY)$DabrowskaEst
+#' bivarSurf
+#' 
+#' condSurf = survRestricted(bivarSurf, tauX = Inf, tauY = 0.88)$Sxy
+#' condSurf
+#' 
+#' @keywords conditional bivariate survival probability
+#' @references Eden, S., Li, C., Shepherd B. (2019). Non-parametric Estimation of Spearman's Rank Correlation with Bivariate Survival Data.
+#' @author Svetlana K Eden, \email{svetlanaeden@gmail.com}
+#' 
 #' @export
 #################################################################
 ######### Conditional survival surface (final version)
