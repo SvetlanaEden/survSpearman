@@ -6,6 +6,7 @@
 ######### because it may sometime not invert and the models 
 ######### provide its inverse anyway ...
 ###################################################################
+
 corTS.survreg.modified = function(xresid, yresid,
                  xz.dl.dtheta, yz.dl.dtheta,
                  xz.d2l.dtheta.dtheta, yz.d2l.dtheta.dtheta,

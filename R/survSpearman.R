@@ -100,16 +100,28 @@ survSpearman = function(X = NULL, Y = NULL, deltaX = NULL, deltaY = NULL, data =
     ### compute restricted correlation
     res1 = HighestRankAndRestrictedSpearman(bivarSurf, tauX = tauX, 
         tauY = tauY)
+    
+    ### compute highest rank correlation in the restricted region
     bivarSurfForHR = bivarSurf
     bivarSurfForHR[as.numeric(rownames(bivarSurfForHR)) >= tauX, ] = 0
     bivarSurfForHR[, as.numeric(colnames(bivarSurfForHR)) >= tauY] = 0
-    
-    ### compute highest rank correlation in the restricted region
     res2 = HighestRankAndRestrictedSpearman(bivarSurfForHR, tauX = Inf, 
         tauY = Inf)
     
-    resCor = c(HighestRank = res2["HighestRank", ], Restricted = res1["Restricted", 
-        ])
+    ####### Throw a warning if values are out of range
+    if(!is.na(abs(res2["HighestRank", ])) & abs(res2["HighestRank", ]) > 1){
+      warning(paste0("The computed highest rank Spearman's rho (", res2["HighestRank", ], ") is out of range; it is reported as ", min(abs(res2["HighestRank", ]), 1) * sign(res2["HighestRank", ]), "."))
+      res2["HighestRank", ] = min(abs(res2["HighestRank", ]), 1) * sign(res2["HighestRank", ])
+    }
+    if(!is.na(abs(res1["Restricted", ])) & abs(res1["Restricted", ]) > 1){
+      warning(paste0("The computed restricted region Spearman's rho (", res1["Restricted", ], ") is out of range; it is reported as ", min(abs(res1["Restricted", ]), 1) * sign(res1["Restricted", ]), "."))
+      res1["Restricted", ] = min(abs(res1["Restricted", ]), 1) * sign(res1["Restricted", ])
+    }
+    
+    resCor = c(HighestRank = res2["HighestRank", ], Restricted = res1["Restricted", ])
+    ####### Make sure that all values are in the proper range
+    resCor = pmin(abs(resCor), rep(1, length(resCor)))*sign(resCor)
+    
     resRegUser = c(tauX = as.character(tauX), tauY = as.character(tauY))
     resReg = c(tauX = actualTauX, tauY = actualTauY)
     #list(RestrictedRegionSetByUser = resRegUser, RestrictedRegionEffective = resReg, 

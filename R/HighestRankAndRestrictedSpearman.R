@@ -34,6 +34,9 @@ HighestRankAndRestrictedSpearman = function(bivarSurf, tauX = Inf,
     ######## End of the part that ensures that the above two estimators are
     ######## the same
     
+    ######## Whether we corrected restr. cor or not.
+    correctedRestrCor = FALSE
+    
     Xs = as.numeric(rownames(bivarSurf))
     Ys = as.numeric(colnames(bivarSurf))
     rP1 = rP2 = c(NA, NA)
@@ -167,18 +170,21 @@ HighestRankAndRestrictedSpearman = function(bivarSurf, tauX = Inf,
     ####### If the probability of being in the region is negative -> the
     ####### restricted correlation is not defined
     if (ProbOmegaR <= 0) {
-        warning("Restricted Spearman's correlation is not defined because the probability of being in the restricted region is less or equal to zero.")
+        #cat("Restricted Spearman's correlation is not defined because the probability of being in the restricted region is less or equal to zero. See Section 3.1 of the method paper.\n")
+        #warning("Restricted Spearman's correlation is not defined because the probability of being in the restricted region is less or equal to zero. See Section 3.1 of the method paper.")
+        warning("Restricted region Spearman's correlation is not defined.")
         rhoX0Y0_restr_No_OmR = NA
     } else {
         if (var_g_X_No_OmR < 0 | var_g_Y_No_OmR < 0) {
-            cat("Restricted Spearman's correlation was corrected.\n")
-            warning("Restricted Spearman's correlation was corrected.")
+            correctedRestrCor = TRUE
+            #cat("Restricted Spearman's correlation was corrected.\n")
+            #warning("Restricted Spearman's correlation was corrected (see Section 3.1 of the method paper).")
         }
-        if (var_g_X_No_OmR < 0) {
+        if (var_g_X_No_OmR <= 0) {
             var_g_X_No_OmR = sum(((g_X_No_OmegaR[, 1] - sum(g_X_No_OmegaR[, 
                 1] * SX_dx_No_OmR_const)/ProbOmegaR)^2) * SX_dx_No_OmR_const)
         }
-        if (var_g_Y_No_OmR < 0) {
+        if (var_g_Y_No_OmR <= 0) {
             var_g_Y_No_OmR = sum(((g_Y_No_OmegaR[1, ] - sum(g_Y_No_OmegaR[1, 
                 ] * SY_dy_No_OmR_const)/ProbOmegaR)^2) * SY_dy_No_OmR_const)
         }
@@ -188,6 +194,16 @@ HighestRankAndRestrictedSpearman = function(bivarSurf, tauX = Inf,
         ####### Compute restricted correlation:
         rhoX0Y0_restr_No_OmR = sum(g_X_No_OmegaR * g_Y_No_OmegaR * 
             Sdxdy[rX2, rY2], na.rm = TRUE)/inv_rhoCons_cond_form_No_OmR
+        if(abs(rhoX0Y0_restr_No_OmR) == Inf){
+            warning("Restricted region Spearman's correlation is not defined.")
+            rhoX0Y0_restr_No_OmR = NA
+        }
+        #else{
+        #  if(correctedRestrCor){
+        #    #cat("Restricted Spearman's correlation was corrected.\n")
+        #    warning("Restricted region Spearman's correlation was corrected.")
+        #  }
+        #}
     }
     # res = matrix(c(localRhoRhoConst, prsLikeNoTails,
     # rhoX0Y0_restr_No_OmR), ncol = 1) rownames(res) =
@@ -196,9 +212,9 @@ HighestRankAndRestrictedSpearman = function(bivarSurf, tauX = Inf,
     rownames(res) = c("HighestRank", "Restricted")
     colnames(res) = "Spearman's Correlation"
     
-    ####### Make sure that all values are in the proper range
-    for (n_i in rownames(res)) {
-        res[n_i, ] = min(abs(res[n_i, ]), 1) * sign(res[n_i, ])
-    }
+    # ####### Make sure that all values are in the proper range
+    # for (n_i in rownames(res)) {
+    #     res[n_i, ] = min(abs(res[n_i, ]), 1) * sign(res[n_i, ])
+    # }
     res
 }

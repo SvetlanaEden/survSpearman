@@ -1,0 +1,14 @@
+#' CCASAnetData
+#' 
+#' Dataset with bivariate survival times to events and times to censoring. This de-identified dataset was made available with permission from the Caribbean, Central, and South America network for HIV Epidemiology (CCASAnet). The US National Institutes of Health partially funded the data collection (grants R01 AI093234 and U01 AI069923). The dataset includes 6691 HIV-positive adults (one record per patient) from Brazil, Chile, Honduras, Mexico, and Peru sites, anonymized for presentation. Each record contains time (in years) from antiretroviral therapy (ART) initiation to viral failure, viral failure event indicator, time (in years) from ART initiation to regimen change, and regimen change indicator.
+#' 
+#' @format A data frame with 6691 rows and 5 variables:
+#' \describe{
+#'   \item{site}{Anonymized study site.}
+#'   \item{timeToRegimenChange}{Time (in years) from antiretroviral therapy initiation to regimen change.}
+#'   \item{regimenChange}{Regimen change event indicator: 0 - no regimen change, 1 - regimen was changed.}
+#'   \item{timeToViralFailure}{Time (in years) from antiretroviral therapy initiation to viral failure.}
+#'   \item{viralFailure}{Viral failure event indicator: 0 - no viral failure, 1 - viral failure.}
+#' }
+#' @source Caribbean, Central, and South America network for HIV Epidemiology, CCASAnet (grants R01 AI093234 and U01 AI069923).
+"CCASAnetData"

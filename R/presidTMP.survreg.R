@@ -6,12 +6,18 @@
 ###   and log-normal distributions
 ##########################################################
 presidTMP.survreg <- function(object, ...){  
-    time <- object$y[,1]
-    delta <- object$y[,2]
-    
-    switch(object$dist,
+  delta <- object$y[,2]
+  time <- object$y[,1]
+  
+  ### In older R version for exp, weilbull, loglogistic, and lognormal
+  ###     object$y  was  a matrix and was equal to log(time) instead of time
+  if(class(object$y) == "matrix"){
+    time = exp(object$y[,1])
+  }
+  
+  switch(object$dist,
            weibull = {
-               prob <- pweibull(exp(time), shape=1/summary(object)$scale,
+               prob <- pweibull(time, shape=1/summary(object)$scale,
                                 scale=exp(object$linear.predictors),
                                 lower.tail=TRUE, log.p=FALSE)
                prob + delta*(prob - 1)
@@ -19,8 +25,7 @@ presidTMP.survreg <- function(object, ...){
            
            exponential = {
                ### should time be exp(time)?  I am pretty sure about this.
-               # prob <- pexp(exp(time), rate=1/exp(object$linear.predictors),
-               prob <- pexp(exp(time), rate=1/exp(object$linear.predictors),
+               prob <- pexp(time, rate=1/exp(object$linear.predictors),
                             lower.tail=TRUE, log.p=FALSE)
                prob + delta*(prob - 1)
            },
@@ -42,7 +47,7 @@ presidTMP.survreg <- function(object, ...){
            ######### Svetlana's update
            loglogistic = {
                  gamma = (1/object$scale)
-                 monsterTerm = ((exp(time))^gamma)*exp(-object$linear.predictors*gamma)
+                 monsterTerm = (time^gamma)*exp(-object$linear.predictors*gamma)
                  ### presid = 1 - (1+delta)*1/(1+monsterTerm)   ### PSR using survival probability
                  prob = 1 - 1/(1+monsterTerm)
                  prob + delta*(prob - 1)
@@ -50,11 +55,11 @@ presidTMP.survreg <- function(object, ...){
                     
            lognormal = {
                ### should time be exp(time)?
-               # prob <- plnorm(exp(time), meanlog=object$linear.predictors,
-               prob <- plnorm(exp(time), meanlog=object$linear.predictors,
+               prob <- plnorm(time, meanlog=object$linear.predictors,
                               sdlog=summary(object)$scale, lower.tail=TRUE,
                               log.p=FALSE)
                prob + delta*(prob - 1)
            },
-           stop("Unhandled dist", object$dist))
+           stop("Unhandled dist", object$dist)
+  )
 }

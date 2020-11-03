@@ -4,7 +4,22 @@ mestimation.survregPSRs = function(object, inverseA = TRUE, beta = NULL, ...){
   ################### for objectects of type survreg.scores
   ################### returns the M-estimation stuff
   ### object - is the fitted survival model
-    
+  ### Eventually this function has to be merged with an existing function in PResiduals
+  ###   I am not sure about its name
+  ### The current version of this function in Presiduals does not support log-logistic
+  ###   and log-normal distributions
+  
+  ### In older R version for exp, weilbull, loglogistic, and lognormal
+  ###     object$y  was  a matrix and was equal to log(time) instead of time
+  if(class(object$y) == "matrix"){
+    Y = exp(object$y[,1])
+    logY = object$y[,1]
+  }
+  if(class(object$y) == "Surv"){
+    Y = object$y[,1]    
+    logY = log(object$y[,1])
+  }
+  
   ### similar to mean(.) function from sandwich library
   dl.dtheta = t(sandwich::estfun(object))
   
@@ -37,7 +52,6 @@ mestimation.survregPSRs = function(object, inverseA = TRUE, beta = NULL, ...){
   switch(object$dist,
     ######################################## exponential
     exponential = {
-      Y = exp(object$y[,1])
       dpresid.dtheta[1,] = -(1+delta)*Y*exp(-exp(-Xbeta)*Y - Xbeta)
       if(nParam>=2){
         for (i in 2:nParam){
@@ -49,7 +63,6 @@ mestimation.survregPSRs = function(object, inverseA = TRUE, beta = NULL, ...){
     ######################################## weibull
     weibull = {
       scale = object$scale
-      Y = exp(object$y[,1])
       dpresid.dtheta[1,] = -(1+delta)*(Y^(1/scale))*exp(-(Y*exp(-Xbeta))^(1/scale) - Xbeta/scale)/scale
       if(nParam-1 >= 2){
         for (i in 2:(nParam-1)){
@@ -61,7 +74,6 @@ mestimation.survregPSRs = function(object, inverseA = TRUE, beta = NULL, ...){
  
     ######################################## log-logistic
     loglogistic = {
-      Y = exp(object$y[,1])
       gamma = (1/object$scale)
       monsterTerm = (Y^gamma)*exp(-Xbeta*gamma)
       dpresid.dtheta[1,] = -gamma*(1+delta)*monsterTerm/((1+monsterTerm)^2)
@@ -75,7 +87,6 @@ mestimation.survregPSRs = function(object, inverseA = TRUE, beta = NULL, ...){
 
     ######################################## log-normal
     lognormal = {
-      logY = object$y[,1]
       scale = summary(object)$scale
       dpresid.dtheta[1,] = -(1+delta)*dnorm(logY, mean = Xbeta, sd = scale)
       if(nParam-1 >= 2){
