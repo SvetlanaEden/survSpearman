@@ -31,9 +31,6 @@ bivarPMF = survPMF(bivarSurf)$Sdxdy
 bivarPMF
 
 }
-\references{
-Eden, S., Li, C., Shepherd B. (2020). Non-parametric Estimation of Spearman's Rank Correlation with Bivariate Survival Data.
-}
 \author{
 Svetlana K Eden, \email{svetlanaeden@gmail.com}
 }

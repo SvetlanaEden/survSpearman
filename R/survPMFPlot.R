@@ -23,8 +23,8 @@
 #' @param lineYAxisLabel Line where to place the \code{Y}-axis label (used by function \code{mtext}).
 #' @param timeLabelScale The proportion by which the axis labels is increased (if >1) or decreased (if >0 and <1).
 #' @param axisLabelScale The proportion by which the time grid labels are increased (if >1) or decreased (if >0 and <1).
-#' @param labelSkipX If the time grid looks too busy, not all \code{X}-label time grid labels have to be printed. For example, if labelSkipX = 1 then every other label is printed starting from the first (time 0). If \code{labelSkipX = 2} then the 1st, 4rd, 7th, 10th, ... and so on, labels are printed. The default is \code{0}, which means that all time grid labels are printed.
-#' @param labelSkipY If the time grid looks too busy, not all \code{Y}-label time grid labels have to be printed. For example, if labelSkipY = 1 then every other label is printed starting from the first (time 0). If \code{labelSkipX = 2} then the 1st, 4rd, 7th, 10th, ... and so on, labels are printed. The default is \code{0}, which means that all time grid labels are printed.
+#' @param labelSkipX If the time grid looks too busy, not all \code{X}-label time grid labels have to be printed. For example, if \code{labelSkipX = 1} then every other label is printed starting from the first (time 0). If \code{labelSkipX = 2} then the 1st, 4rd, 7th, 10th, ... and so on, labels are printed. The default is \code{0}, which means that all time grid labels are printed.
+#' @param labelSkipY If the time grid looks too busy, not all \code{Y}-label time grid labels have to be printed. For example, if \code{labelSkipY = 1} then every other label is printed starting from the first (time 0). If \code{labelSkipX = 2} then the 1st, 4rd, 7th, 10th, ... and so on, labels are printed. The default is \code{0}, which means that all time grid labels are printed.
 #' @param roundX Number of decimal places in time grid labels for \code{X}-label.
 #' @param roundY Number of decimal places in time grid labels for \code{Y}-label.
 #' @param plotLabel Plot label.
