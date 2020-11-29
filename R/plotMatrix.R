@@ -52,21 +52,21 @@ plotMatrix <- function(colorMatr, borderCol = "white", coordX, coordY, widthX, w
   ### widthX - the width of the plotted rectangles on X axis
   ### widthY - the width of the plotted rectangles on Y axis
   ### borderCol - the color of the rectanges border
-  if(FALSE){
-  if(class(colorMatr) != "matrix") stop("'colorMatr' is a matrix of character strings representing colors")
-  if(lwX != nrow(colorMatr)) {stop("The number of rows in 'colorMatr' should be exactly the length of 'widthX'")}
-  if(lwY != ncol(colorMatr)) {stop("The number of columns in 'colorMatr' should be exactly the length of 'widthY'")}
+  #if(FALSE){
+  #  if(class(colorMatr) != "matrix") stop("'colorMatr' is a matrix of character strings representing colors")
+  #  if(lwX != nrow(colorMatr)) {stop("The number of rows in 'colorMatr' should be exactly the length of 'widthX'")}
+  #  if(lwY != ncol(colorMatr)) {stop("The number of columns in 'colorMatr' should be exactly the length of 'widthY'")}
   
-  xValues = coordX + c(0, cumsum(widthX))
-  yValues = coordY + c(0, cumsum(widthY))
-  for(i in 1:nrow(colorMatr)){
-    for(j in 1:ncol(colorMatr)){
-      polygon(x = c(xValues[i], xValues[i], xValues[i+1], xValues[i+1]), y = c(yValues[c(j, j+1)], yValues[c(j+1, j)]), border = borderCol, col = colorMatr[i,j])
-    }
-  }
-  }
+  #  xValues = coordX + c(0, cumsum(widthX))
+  #  yValues = coordY + c(0, cumsum(widthY))
+  #  for(i in 1:nrow(colorMatr)){
+  #    for(j in 1:ncol(colorMatr)){
+  #     polygon(x = c(xValues[i], xValues[i], xValues[i+1], xValues[i+1]), y = c(yValues[c(j, j+1)], yValues[c(j+1, j)]), border = borderCol, col = colorMatr[i,j])
+  #    }
+  #  }
+  #}
   
-  if(class(colorMatr) != "matrix") stop("'colorMatr' is a matrix of character strings representing colors")
+  if(length(dim(colorMatr)) != 2) stop("'colorMatr' is a matrix of character strings representing colors")
   lwX = length(widthX)
   lwY = length(widthY)
   if(lwX == 1){
