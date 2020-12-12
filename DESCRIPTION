@@ -1,5 +1,5 @@
 Package: survSpearman
-Title: Non-parametric Estimation of Spearman's Rank Correlation with Bivariate Survival Data
+Title: Non-Parametric Estimation of Spearman's Rank Correlation with Bivariate Survival Data
 Version: 1.0.0
 Authors@R: c(person("Svetlana", "Eden", email = "svetlana.k.eden.1@vumc.org",
   role = c("aut", "cre")), person("Chun", "Li", email = "cli77199@usc.edu",
