@@ -7,10 +7,10 @@
 \format{
 A data frame with 300 rows and 4 variables:
 \describe{
-   \item{X}{Time to event X.}
-   \item{deltaX}{Event indicator for event X (1 - event; 0 - censoring event).}
-   \item{Y}{Time to event Y}
-   \item{deltaY}{Event indicator for event Y (1 - event; 0 - censoring event).}
+  \item{X}{Time to event X.}
+  \item{deltaX}{Event indicator for event X (1 - event; 0 - censoring event).}
+  \item{Y}{Time to event Y}
+  \item{deltaY}{Event indicator for event Y (1 - event; 0 - censoring event).}
 }
 }
 \source{

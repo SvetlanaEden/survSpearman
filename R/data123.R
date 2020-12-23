@@ -10,3 +10,4 @@
 #'   \item{deltaY}{Event indicator for event Y (1 - event; 0 - censoring event).}
 #' }
 #' @source Simulated data.
+"data123"
