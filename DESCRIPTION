@@ -7,7 +7,7 @@ Authors@R: c(person("Svetlana", "Eden", email = "svetlana.k.eden.1@vumc.org",
   role = c("aut", "anl")))
 Maintainer: Svetlana Eden <svetlana.k.eden.1@vumc.org>
 Description: Computes Spearman's correlation for bivariate survival data.
-Depends: R (>= 3.4)
+Depends: R (>= 3.5)
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true

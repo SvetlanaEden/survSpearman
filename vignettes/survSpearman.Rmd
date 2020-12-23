@@ -1,38 +1,77 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "Spearman's Correlation for Bivariate Survival Data"
+author: "Svetlana Eden"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Spearman's Correlation for Bivariate Survival Data}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup, include = FALSE}
+## Examples of using function survSpearman()
+```{r setup, include = TRUE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+library(survSpearman)
+data(data123)
 ```
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+### Example 1
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
 
-## Vignette Info
 
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
+## Compute Spearman's correlation from data
+```{r corFromData, include = TRUE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(survSpearman)
+X <- c(0.5, 0.6, 0.7, 0.8)
+Y <- c(0.44, 0.77, 0.88, 0.99)
+deltaX <- c(1, 0, 1, 1)
+deltaY <- c(1, 1, 1, 1)
+survSpearman(X, Y, deltaX, deltaY)
+survSpearman(X, Y, deltaX, deltaY, tauX = 100, tauY = 100)
+survSpearman(X, Y, deltaX, deltaY, tauX = 100, tauY = 0.99)
+survSpearman(X, Y, deltaX, deltaY, tauX = 0.8, tauY = 0.99)
+```
 
-## Styles
+## Compute Spearman's correlation from survival surface
+```{r corFromSurf, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+someSurf <- survDabrowska(X, Y, deltaX, deltaY)$DabrowskaEst
+survSpearman(tauY = 0.9, bivarSurf = someSurf)
+```
 
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
 
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
+```{r, fig.show='hold'}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+X = c(0.5, 0.61, 0.6, 0.8, 0.78, 0.7, 0.9)
+Y = c(0.44, 0.15, 0.77, 0.88, 0.22, 0.99, .33)
+deltaX = c(1, 0, 1, 1, 0, 1, 0)
+deltaY = c(1, 0, 1, 0, 1, 1, 1)
+
+dabrSurf = survDabrowska(X, Y, deltaX, deltaY)$DabrowskaEst
+
+grid = 0.1
+survPMFPlot(bivarSurf = dabrSurf, gridWidthX = grid, gridWidthY = grid,
+            scaleGapX = 1, scaleGapY = 1,
+            XAxisLabel = "X", YAxisLabel = "Y", timeLabelScale = 1,
+            axisLabelScale = 1,
+            labelSkipX = 0, labelSkipY = 0, roundX = 2, roundY = 2,
+            plotLabel = "Bivariate PMF")
+```
+
 
 ## Figures
 
