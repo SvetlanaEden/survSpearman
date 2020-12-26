@@ -6,8 +6,8 @@
 \usage{
 visualBivarTimeToEvent(X, Y, deltaX, deltaY, labelX, labelY,
    xlim = NULL, ylim = NULL, dotSize = 0.7,
-   segLength=abs(mean(diff(c(X, Y)))),
-   legendCex = 0.7, scaleLegendGap = 1)
+   segLength=abs(mean(diff(c(X, Y)))), scaleLegendGap = 1,
+   legendCex = 1, labCex = 1, axisCex = 1)
 }
 \arguments{
 \item{X}{Time to event or censoring for variable \code{X}. It indicates time to event if argument \code{deltaX}=1 and time to censoring if argument \code{deltaX}=0.}
@@ -30,9 +30,13 @@ visualBivarTimeToEvent(X, Y, deltaX, deltaY, labelX, labelY,
 
 \item{segLength}{The length of the segment representing censored observations.}
 
+\item{scaleLegendGap}{Increases (if > 1) or decreases (if < 1) the distance between the labels in the legend;}
+
 \item{legendCex}{The size of the legend font (the same as parameter \code{cex} in function \code{text()}).}
 
-\item{scaleLegendGap}{Increases (if > 1) or decreases (if < 1) the distance between the labels in the legend;}
+\item{labCex}{The size of \code{xlab} and \code{ylab} (the same as parameter \code{cex.lab} in function \code{plot()}).}
+
+\item{axisCex}{The size of axis labels (the same as parameter \code{cex.axis} in function \code{plot()}).}
 }
 \value{
 None

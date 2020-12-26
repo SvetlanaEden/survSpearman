@@ -19,7 +19,7 @@ fillUpStr(strVec, howManyToFill, where, fill)
 A character string with equal number of characters in each element.
 }
 \description{
-Add characters to the head or tail of each element of the character vector to make all elements the same length.
+Adds characters to the head or tail of each element of the character vector to make all elements the same length.
 }
 \details{
 The function adds characters to the head or tail of each element of the character vector, \code{strVec}, so that all elements have the same number of characters. \code{NA} values are returned unchanged. If \code{howManyToFill} is \code{NULL} or less than the number of characters in the longest element of \code{strVec}, then the number of characters in the longest element is used.

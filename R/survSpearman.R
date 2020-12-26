@@ -35,7 +35,7 @@
 #' 
 #' @keywords bivariate survival Spearman correlation
 #' @references Dabrowska, D. M. (1988) Kaplan–Meier estimate on the plane. The Annals of Statistics 16, 1475–1489.
-#' @references Eden, S., Li, C., Shepherd B. (2020). Non-parametric Estimation of Spearman's Rank Correlation with Bivariate Survival Data, Biometrics (under revision).
+#' @references Eden, S., Li, C., Shepherd B. (2021). Non-parametric Estimation of Spearman's Rank Correlation with Bivariate Survival Data. Biometrics (under revision).
 #' @author Svetlana K Eden, \email{svetlanaeden@gmail.com}
 #' 
 #' @export

@@ -1,7 +1,7 @@
 #' @name fillUpStr
 #' @aliases fillUpStr
 #' @title Adds characters to the head or tail of each element of the character vector.
-#' @description Add characters to the head or tail of each element of the character vector to make all elements the same length.
+#' @description Adds characters to the head or tail of each element of the character vector to make all elements the same length.
 #' 
 #' @usage fillUpStr(strVec, howManyToFill, where, fill)
 #' 
@@ -22,7 +22,7 @@
 #' @keywords character vector
 #' @export
 ###################################################################
-######### Add characters to the head or tail of each element of the character vector
+######### Adds characters to the head or tail of each element of the character vector
 ###################################################################
 fillUpStr <- function(strVec, howManyToFill=NULL, where="head", fill = " "){
   ### "strVec" to fill

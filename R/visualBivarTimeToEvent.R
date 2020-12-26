@@ -5,8 +5,8 @@
 #' 
 #' @usage visualBivarTimeToEvent(X, Y, deltaX, deltaY, labelX, labelY,
 #'    xlim = NULL, ylim = NULL, dotSize = 0.7,
-#'    segLength=abs(mean(diff(c(X, Y)))),
-#'    legendCex = 0.7, scaleLegendGap = 1)
+#'    segLength=abs(mean(diff(c(X, Y)))), scaleLegendGap = 1,
+#'    legendCex = 1, labCex = 1, axisCex = 1)
 #' 
 #' @param X Time to event or censoring for variable \code{X}. It indicates time to event if argument \code{deltaX}=1 and time to censoring if argument \code{deltaX}=0.
 #' @param Y Time to event or censoring for variable \code{Y}. It indicates time to event if argument \code{deltaY}=1 and time to censoring if argument \code{deltaY}=0.
@@ -18,8 +18,10 @@
 #' @param ylim The range on the X-axis (the same as parameter \code{ylim} in function \code{plot()}).
 #' @param dotSize The size of the points (the same as parameter \code{cex} in function \code{points()}).
 #' @param segLength The length of the segment representing censored observations.
-#' @param legendCex The size of the legend font (the same as parameter \code{cex} in function \code{text()}).
 #' @param scaleLegendGap Increases (if > 1) or decreases (if < 1) the distance between the labels in the legend; 
+#' @param legendCex The size of the legend font (the same as parameter \code{cex} in function \code{text()}).
+#' @param labCex The size of \code{xlab} and \code{ylab} (the same as parameter \code{cex.lab} in function \code{plot()}).
+#' @param axisCex The size of axis labels (the same as parameter \code{cex.axis} in function \code{plot()}).
 #' @return None
 #' @details Plots bivariate right-censored data distinguishing between uncensored, singly censored,
 #' and doubly censored observations. The singly and doubly censored observations are plotted
@@ -43,7 +45,7 @@
 ###################################################################
 ### Visualize bivariate right-cenosored data
 ###################################################################
-visualBivarTimeToEvent = function(X, Y, deltaX, deltaY, labelX, labelY, xlim = NULL, ylim = NULL, dotSize = 0.7, segLength=abs(mean(diff(c(X, Y)))), legendCex = 0.7, scaleLegendGap = 1){
+visualBivarTimeToEvent = function(X, Y, deltaX, deltaY, labelX, labelY, xlim = NULL, ylim = NULL, dotSize = 0.7, segLength=abs(mean(diff(c(X, Y)))), scaleLegendGap = 1, legendCex = 1, labCex = 1, axisCex = 1){
   cex = dotSize
   censoredX = deltaX==0 & deltaY==1 
   censoredY = deltaX==1 & deltaY==0
@@ -65,7 +67,8 @@ visualBivarTimeToEvent = function(X, Y, deltaX, deltaY, labelX, labelY, xlim = N
     ylim = range(Y)
   }
   
-  plot(range(X), range(Y), type="n", xlab=labelX, ylab=labelY, xlim = xlim, ylim = ylim)
+  plot(range(X), range(Y), type="n", xlab=labelX, ylab=labelY, xlim = xlim, ylim = ylim,
+       cex.lab = labCex, cex.axis = axisCex)
   ##################################  X censored
   segments(X[censoredX], Y[censoredX], X[censoredX]+segLength, Y[censoredX], col=siCenCol)
   points(X[censoredX], Y[censoredX], pch=23, col = siCenCol, bg = siCenCol, cex = cex)

@@ -77,7 +77,7 @@ survPMFPlot(bivarSurf = dabrSurf, gridWidthX = grid, gridWidthY = grid,
 
 }
 \references{
-Eden, S., Li, C., Shepherd B. (2020). Non-parametric Estimation of Spearman's Rank Correlation with Bivariate Survival Data. Biometrics (in revision).
+Eden, S., Li, C., Shepherd B. (2021). Non-parametric Estimation of Spearman's Rank Correlation with Bivariate Survival Data. Biometrics (under revision).
 }
 \author{
 Svetlana K Eden, \email{svetlanaeden@gmail.com}
