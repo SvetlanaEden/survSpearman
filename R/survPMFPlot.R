@@ -112,7 +112,10 @@ survPMFPlot <- function(bivarSurf, gridWidthX, gridWidthY, scaleGapX = 1, scaleG
   # startY = 0 - maxY - gapX
   # startX = 0 - maxX - gapY
   
+  oldMarPar = par("mar")
   par(mar = rep(4, 4))
+  on.exit(par(mar = oldMarPar))
+  
   xlim = c(startX, max(divPointsX))
   ylim = c(startY, max(divPointsY))
   plot(0, 0, xlim = xlim, ylim = ylim, type = "n", main = "", xlab = "", ylab = "", axes = FALSE)

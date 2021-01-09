@@ -55,7 +55,10 @@ visualBivarTimeToEvent = function(X, Y, deltaX, deltaY, labelX, labelY, xlim = N
   siCenCol = gray(0.5)
   noCenCol = "black"
   
+  oldMarPar = par("mar")
   par(mar=c(4, 5, 2, 1))
+  on.exit(par(mar = oldMarPar))
+  
   ##################################  Not censored
   if(is.null(xlim) & is.null(ylim)){
     xlim = ylim = range(c(X, Y))
