@@ -1,5 +1,5 @@
 ---
-title: "Spearman's Correlation for Bivariate Survival Data"
+title: "Nonparametric Spearman's Correlation for Survival Data"
 author: "Svetlana K. Eden, Chun Li, Bryan E. Shepherd"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -10,7 +10,8 @@ vignette: >
 ---
 
 ## Introduction
-This vignette shows how to use package `survSpearman` to estimate Spearman's correlation between two time-to-event variables. It also demonstrates some basic tools for visualizing bivariate survival data.
+This vignette shows how to use package `survSpearman` to nonparametrically estimate Spearman’s correlation between two time-to-event variables. It also demonstrates some basic tools for visualizing bivariate survival data.
+
 
 ## Notations and setup
 
@@ -161,7 +162,7 @@ colnames(bivarSurfWithTails) = c(colnames(dabrSurf), as.character(lastColVal))
 survPMFPlot(bivarSurf = bivarSurfWithTails, gridWidthX = gridWidth, gridWidthY = gridWidth, scaleGapX = 1.5, scaleGapY = 1.5, XAxisLabel = "X", YAxisLabel = "Y", timeLabelScale = 1, axisLabelScale = 1, labelSkipX = 2, labelSkipY = 2, roundX = 2, roundY = 2, plotLabel = "Bivariate PMF")
 ```
 
-Finally, let's plot a conditional PDF within the threstricted region $[0, 1.4) \times [0, 1.4)$,
+Finally, let's plot a conditional PDF within the restricted region $[0, 1.4) \times [0, 1.4)$,
 
 ```{r ex43, echo = TRUE}
 condSurf = survRestricted (bivarSurf = dabrSurf, tauX = 1.4, tauY = 1.4)$Sxy

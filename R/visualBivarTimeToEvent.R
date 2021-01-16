@@ -78,7 +78,6 @@ visualBivarTimeToEvent = function(X, Y, deltaX, deltaY, labelX, labelY, xlim = N
   ##################################  Y censored
   segments(X[censoredY], Y[censoredY], X[censoredY], Y[censoredY]+segLength, col=siCenCol)
   points(X[censoredY], Y[censoredY], pch=23, col = siCenCol, bg = siCenCol, cex = cex)
-  set.seed(1)
   newX = X[bothCensored]
   newY = Y[bothCensored]
   ##################################  Both censored
