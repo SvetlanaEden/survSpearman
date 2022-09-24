@@ -1,0 +1,4169 @@
+(1:(minNM-1))+matrOffset
+m1[indMatr == newInd][(1:(minNM-1))+matrOffset]
+crossDiag1[(1:(minNM-1))+offset]
+crossDiag2[2:minNM]
+crossDiag2[1:(minNM-1)]
+m1[indMatr == newInd][(1:(minNM-1))+matrOffset] = crossDiag1[(1:(minNM-1))+offset] + crossDiag2[2:minNM] + crossDiag2[1:(minNM-1)]#
+  newInd = newInd + 1#
+  offset = 1
+m1
+matrOffset
+offset = 0
+newInd
+newInd = minNM + 2#
+offset = 0#
+matrOffset = as.numeric(M < N)#
+while(newInd <= maxNM + 1){#
+  crossDiag1 = m1[indMatr == newInd-2] #
+  crossDiag2 = m1[indMatr == newInd-1] #
+  m1[indMatr == newInd][(1:(minNM-1))+matrOffset] = crossDiag1[(1:(minNM-1))+offset] + crossDiag2[2:minNM] + crossDiag2[1:(minNM-1)]#
+  newInd = newInd + 1#
+  offset = 1*(matrOffset-1)#
+}
+m1
+newInd = maxNM + 2#
+diagLen = minNM - 1#
+offset = 0#
+for (i in (newInd+(0:(minNM - 2)))){#
+  crossDiag1 = m1[indMatr == i-2] #
+  crossDiag2 = m1[indMatr == i-1] #
+  m1[indMatr == i] = crossDiag1[(1:diagLen)+offset] + crossDiag2[1:diagLen] + crossDiag2[2:(diagLen+1)]#
+  offset = 1#
+  diagLen = diagLen - 1#
+}
+m1
+m1 = matrix(1, nrow = 4, ncol = 7)#
+# m1 = matrix(1, nrow = 7, ncol = 4)#
+indMatr = row(m1) + col(m1)#
+#
+N = nrow(m1)#
+M = ncol(m1)#
+#
+minNM = min(N, M)#
+maxNM = max(N, M)#
+#
+diagLen = 1#
+for (i in 4:(minNM + 1)){#
+  # cat(i, "indRow", indRow, "\n")#
+  # cat("indCol", indCol, "\n")#
+  cat("---------------\n")#
+  crossDiag1 = m1[row(m1) + col(m1) == i-2] #
+  crossDiag2 = m1[row(m1) + col(m1) == i-1] #
+  m1[indMatr == i][(1:diagLen)+1] = crossDiag1[1:diagLen] + crossDiag2[(1:diagLen)+1] + crossDiag2[1:diagLen]#
+  diagLen = diagLen + 1#
+}#
+#
+### when there are more colums than rows#
+newInd = minNM + 2#
+offset = 0#
+matrOffset = as.numeric(M < N)#
+while(newInd <= maxNM + 1){#
+  crossDiag1 = m1[indMatr == newInd-2] #
+  crossDiag2 = m1[indMatr == newInd-1] #
+  m1[indMatr == newInd][(1:(minNM-1))+matrOffset] = crossDiag1[(1:(minNM-1))+offset] + crossDiag2[2:minNM] + crossDiag2[1:(minNM-1)]#
+  newInd = newInd + 1#
+  offset = 1*(matrOffset-1)#
+}#
+#
+newInd = maxNM + 2#
+diagLen = minNM - 1#
+offset = 0#
+for (i in (newInd+(0:(minNM - 2)))){#
+  crossDiag1 = m1[indMatr == i-2] #
+  crossDiag2 = m1[indMatr == i-1] #
+  m1[indMatr == i] = crossDiag1[(1:diagLen)+offset] + crossDiag2[1:diagLen] + crossDiag2[2:(diagLen+1)]#
+  offset = 1#
+  diagLen = diagLen - 1#
+}
+m1
+m1 = matrix(1, nrow = 4, ncol = 7)#
+# m1 = matrix(1, nrow = 7, ncol = 4)#
+indMatr = row(m1) + col(m1)#
+#
+N = nrow(m1)#
+M = ncol(m1)#
+#
+minNM = min(N, M)#
+maxNM = max(N, M)#
+#
+diagLen = 1#
+for (i in 4:(minNM + 1)){#
+  # cat(i, "indRow", indRow, "\n")#
+  # cat("indCol", indCol, "\n")#
+  cat("---------------\n")#
+  crossDiag1 = m1[row(m1) + col(m1) == i-2] #
+  crossDiag2 = m1[row(m1) + col(m1) == i-1] #
+  m1[indMatr == i][(1:diagLen)+1] = crossDiag1[1:diagLen] + crossDiag2[(1:diagLen)+1] + crossDiag2[1:diagLen]#
+  diagLen = diagLen + 1#
+}
+m1
+newInd = minNM + 2#
+offset = 0#
+matrOffset = as.numeric(M < N)
+newInd
+crossDiag1 = m1[indMatr == newInd-2] #
+  crossDiag2 = m1[indMatr == newInd-1]
+crossDiag
+crossDiag1
+crossDiag2
+m1[indMatr == newInd][(1:(minNM-1)) + matrOffset]
+matrOffset
+crossDiag1[(1:(minNM-1))+offset]
+crossDiag2[2:minNM]
+crossDiag2[1:(minNM-1)]
+m1[indMatr == newInd][(1:(minNM-1)) + matrOffset] = crossDiag1[(1:(minNM-1))+offset] + crossDiag2[2:minNM] + crossDiag2[1:(minNM-1)]
+m1
+newInd = newInd + 1#
+  offset = 1*(matrOffset-1)
+newInd
+offset
+### when there are more colums than rows#
+newInd = minNM + 2#
+offset = 0#
+matrOffset = as.numeric(M < N)#
+while(newInd <= maxNM + 1){#
+  crossDiag1 = m1[indMatr == newInd-2] #
+  crossDiag2 = m1[indMatr == newInd-1] #
+  m1[indMatr == newInd][(1:(minNM-1)) + matrOffset] = crossDiag1[(1:(minNM-1))+offset] + crossDiag2[2:minNM] + crossDiag2[1:(minNM-1)]#
+  newInd = newInd + 1#
+  offset = 1*(1 - matrOffset)#
+}
+m1
+m1 = matrix(1, nrow = 4, ncol = 7)#
+# m1 = matrix(1, nrow = 7, ncol = 4)#
+indMatr = row(m1) + col(m1)#
+#
+N = nrow(m1)#
+M = ncol(m1)#
+#
+minNM = min(N, M)#
+maxNM = max(N, M)#
+#
+diagLen = 1#
+for (i in 4:(minNM + 1)){#
+  # cat(i, "indRow", indRow, "\n")#
+  # cat("indCol", indCol, "\n")#
+  cat("---------------\n")#
+  crossDiag1 = m1[row(m1) + col(m1) == i-2] #
+  crossDiag2 = m1[row(m1) + col(m1) == i-1] #
+  m1[indMatr == i][(1:diagLen)+1] = crossDiag1[1:diagLen] + crossDiag2[(1:diagLen)+1] + crossDiag2[1:diagLen]#
+  diagLen = diagLen + 1#
+}#
+#
+### when there are more colums than rows#
+newInd = minNM + 2#
+offset = 0#
+matrOffset = as.numeric(M < N)#
+while(newInd <= maxNM + 1){#
+  crossDiag1 = m1[indMatr == newInd-2] #
+  crossDiag2 = m1[indMatr == newInd-1] #
+  m1[indMatr == newInd][(1:(minNM-1)) + matrOffset] = crossDiag1[(1:(minNM-1))+offset] + crossDiag2[2:minNM] + crossDiag2[1:(minNM-1)]#
+  newInd = newInd + 1#
+  offset = 1*(1 - matrOffset)#
+}#
+#
+newInd = maxNM + 2#
+diagLen = minNM - 1#
+offset = 0#
+for (i in (newInd+(0:(minNM - 2)))){#
+  crossDiag1 = m1[indMatr == i-2] #
+  crossDiag2 = m1[indMatr == i-1] #
+  m1[indMatr == i] = crossDiag1[(1:diagLen)+offset] + crossDiag2[1:diagLen] + crossDiag2[2:(diagLen+1)]#
+  offset = 1#
+  diagLen = diagLen - 1#
+}
+m1
+m1 = matrix(1, nrow = 7, ncol = 4)#
+indMatr = row(m1) + col(m1)#
+#
+N = nrow(m1)#
+M = ncol(m1)#
+#
+minNM = min(N, M)#
+maxNM = max(N, M)#
+#
+diagLen = 1#
+for (i in 4:(minNM + 1)){#
+  # cat(i, "indRow", indRow, "\n")#
+  # cat("indCol", indCol, "\n")#
+  cat("---------------\n")#
+  crossDiag1 = m1[row(m1) + col(m1) == i-2] #
+  crossDiag2 = m1[row(m1) + col(m1) == i-1] #
+  m1[indMatr == i][(1:diagLen)+1] = crossDiag1[1:diagLen] + crossDiag2[(1:diagLen)+1] + crossDiag2[1:diagLen]#
+  diagLen = diagLen + 1#
+}#
+#
+### when there are more colums than rows#
+newInd = minNM + 2#
+offset = 0#
+matrOffset = as.numeric(M < N)#
+while(newInd <= maxNM + 1){#
+  crossDiag1 = m1[indMatr == newInd-2] #
+  crossDiag2 = m1[indMatr == newInd-1] #
+  m1[indMatr == newInd][(1:(minNM-1)) + matrOffset] = crossDiag1[(1:(minNM-1))+offset] + crossDiag2[2:minNM] + crossDiag2[1:(minNM-1)]#
+  newInd = newInd + 1#
+  offset = 1*(1 - matrOffset)#
+}#
+#
+newInd = maxNM + 2#
+diagLen = minNM - 1#
+offset = 0#
+for (i in (newInd+(0:(minNM - 2)))){#
+  crossDiag1 = m1[indMatr == i-2] #
+  crossDiag2 = m1[indMatr == i-1] #
+  m1[indMatr == i] = crossDiag1[(1:diagLen)+offset] + crossDiag2[1:diagLen] + crossDiag2[2:(diagLen+1)]#
+  offset = 1#
+  diagLen = diagLen - 1#
+}
+m1
+m1 = matrix(1, nrow = 4, ncol = 7)#
+# m1 = matrix(1, nrow = 7, ncol = 4)#
+indMatr = row(m1) + col(m1)#
+#
+N = nrow(m1)#
+M = ncol(m1)#
+#
+minNM = min(N, M)#
+maxNM = max(N, M)#
+#
+diagLen = 1#
+for (i in 4:(minNM + 1)){#
+  # cat(i, "indRow", indRow, "\n")#
+  # cat("indCol", indCol, "\n")#
+  cat("---------------\n")#
+  crossDiag1 = m1[row(m1) + col(m1) == i-2] #
+  crossDiag2 = m1[row(m1) + col(m1) == i-1] #
+  m1[indMatr == i][(1:diagLen)+1] = crossDiag1[1:diagLen] + crossDiag2[(1:diagLen)+1] + crossDiag2[1:diagLen]#
+  diagLen = diagLen + 1#
+}#
+#
+### when there are more colums than rows#
+newInd = minNM + 2#
+offset = 0#
+matrOffset = as.numeric(M < N)#
+while(newInd <= maxNM + 1){#
+  crossDiag1 = m1[indMatr == newInd-2] #
+  crossDiag2 = m1[indMatr == newInd-1] #
+  m1[indMatr == newInd][(1:(minNM-1)) + matrOffset] = crossDiag1[(1:(minNM-1))+offset] + crossDiag2[2:minNM] + crossDiag2[1:(minNM-1)]#
+  newInd = newInd + 1#
+  offset = 1*(1 - matrOffset)#
+}
+m1
+newInd = maxNM + 2#
+diagLen = minNM - 1#
+offset = 0
+i = newInd
+i
+crossDiag1 = m1[indMatr == i-2] #
+  crossDiag2 = m1[indMatr == i-1]
+crossDiag1
+crossDiag2
+diagLen
+m1[indMatr == i]
+crossDiag1[(1:diagLen)+offset]
+(1 - matrOffset)
+crossDiag1[(1:diagLen)+offset]
+offset
+offset = (1 - matrOffset)
+crossDiag1[(1:diagLen)+offset]
+crossDiag2[1:diagLen]
+crossDiag2[2:(diagLen+1)]
+m1 = matrix(1, nrow = 4, ncol = 7)#
+# m1 = matrix(1, nrow = 7, ncol = 4)#
+indMatr = row(m1) + col(m1)#
+#
+N = nrow(m1)#
+M = ncol(m1)#
+#
+minNM = min(N, M)#
+maxNM = max(N, M)#
+#
+diagLen = 1#
+for (i in 4:(minNM + 1)){#
+  # cat(i, "indRow", indRow, "\n")#
+  # cat("indCol", indCol, "\n")#
+  cat("---------------\n")#
+  crossDiag1 = m1[row(m1) + col(m1) == i-2] #
+  crossDiag2 = m1[row(m1) + col(m1) == i-1] #
+  m1[indMatr == i][(1:diagLen)+1] = crossDiag1[1:diagLen] + crossDiag2[(1:diagLen)+1] + crossDiag2[1:diagLen]#
+  diagLen = diagLen + 1#
+}#
+#
+### when there are more colums than rows#
+newInd = minNM + 2#
+offset = 0#
+matrOffset = as.numeric(M < N)#
+while(newInd <= maxNM + 1){#
+  crossDiag1 = m1[indMatr == newInd-2] #
+  crossDiag2 = m1[indMatr == newInd-1] #
+  m1[indMatr == newInd][(1:(minNM-1)) + matrOffset] = crossDiag1[(1:(minNM-1))+offset] + crossDiag2[2:minNM] + crossDiag2[1:(minNM-1)]#
+  newInd = newInd + 1#
+  offset = 1*(1 - matrOffset)#
+}#
+#
+newInd = maxNM + 2#
+diagLen = minNM - 1#
+offset = (1 - matrOffset)#
+for (i in (newInd+(0:(minNM - 2)))){#
+  crossDiag1 = m1[indMatr == i-2] #
+  crossDiag2 = m1[indMatr == i-1] #
+  m1[indMatr == i] = crossDiag1[(1:diagLen)+offset] + crossDiag2[1:diagLen] + crossDiag2[2:(diagLen+1)]#
+  offset = 1#
+  diagLen = diagLen - 1#
+}
+m1
+61+85+377
+61+85+231
+fibonMatr = function(m1){#
+  indMatr = row(m1) + col(m1)#
+#
+  N = nrow(m1)#
+  M = ncol(m1)#
+#
+  minNM = min(N, M)#
+  maxNM = max(N, M)#
+  matrOffset = as.numeric(M < N)#
+#
+  diagLen = 1#
+  for (i in 4:(minNM + 1)){#
+    # cat(i, "indRow", indRow, "\n")#
+    # cat("indCol", indCol, "\n")#
+    cat("---------------\n")#
+    crossDiag1 = m1[row(m1) + col(m1) == i-2] #
+    crossDiag2 = m1[row(m1) + col(m1) == i-1] #
+    m1[indMatr == i][(1:diagLen)+1] = crossDiag1[1:diagLen] + crossDiag2[(1:diagLen)+1] + crossDiag2[1:diagLen]#
+    diagLen = diagLen + 1#
+  }#
+#
+  newInd = minNM + 2#
+  offset = 0#
+  while(newInd <= maxNM + 1){#
+    crossDiag1 = m1[indMatr == newInd-2] #
+    crossDiag2 = m1[indMatr == newInd-1] #
+    m1[indMatr == newInd][(1:(minNM-1)) + matrOffset] = crossDiag1[(1:(minNM-1))+offset] + crossDiag2[2:minNM] + crossDiag2[1:(minNM-1)]#
+    newInd = newInd + 1#
+    offset = 1*(1 - matrOffset)#
+  }#
+#
+  newInd = maxNM + 2#
+  diagLen = minNM - 1#
+  offset = (1 - matrOffset)#
+  for (i in (newInd+(0:(minNM - 2)))){#
+    crossDiag1 = m1[indMatr == i-2] #
+    crossDiag2 = m1[indMatr == i-1] #
+    m1[indMatr == i] = crossDiag1[(1:diagLen)+offset] + crossDiag2[1:diagLen] + crossDiag2[2:(diagLen+1)]#
+    diagLen = diagLen - 1#
+    offset = 1#
+  }#
+}#
+#
+fibonMatr_Old = function(m1){#
+  N = nrow(m1)#
+  M = ncol(m1)#
+  for(i in 2:N){#
+    for(j in 2:M){#
+      m1[i, j] = m1[i-1, j-1] + m1[i-1, j] + m1[i, j-1]#
+    }#
+  }#
+}#
+#
+m1 = matrix(1, nrow = 4, ncol = 7)#
+# m1 = matrix(1, nrow = 7, ncol = 4)#
+#
+fibonMatr_Old(m1)#
+fibonMatr(m1)
+fibonMatr = function(m1){#
+  indMatr = row(m1) + col(m1)#
+#
+  N = nrow(m1)#
+  M = ncol(m1)#
+#
+  minNM = min(N, M)#
+  maxNM = max(N, M)#
+  matrOffset = as.numeric(M < N)#
+#
+  diagLen = 1#
+  for (i in 4:(minNM + 1)){#
+    crossDiag1 = m1[row(m1) + col(m1) == i-2] #
+    crossDiag2 = m1[row(m1) + col(m1) == i-1] #
+    m1[indMatr == i][(1:diagLen)+1] = crossDiag1[1:diagLen] + crossDiag2[(1:diagLen)+1] + crossDiag2[1:diagLen]#
+    diagLen = diagLen + 1#
+  }#
+#
+  newInd = minNM + 2#
+  offset = 0#
+  while(newInd <= maxNM + 1){#
+    crossDiag1 = m1[indMatr == newInd-2] #
+    crossDiag2 = m1[indMatr == newInd-1] #
+    m1[indMatr == newInd][(1:(minNM-1)) + matrOffset] = crossDiag1[(1:(minNM-1))+offset] + crossDiag2[2:minNM] + crossDiag2[1:(minNM-1)]#
+    newInd = newInd + 1#
+    offset = 1*(1 - matrOffset)#
+  }#
+#
+  newInd = maxNM + 2#
+  diagLen = minNM - 1#
+  offset = (1 - matrOffset)#
+  for (i in (newInd+(0:(minNM - 2)))){#
+    crossDiag1 = m1[indMatr == i-2] #
+    crossDiag2 = m1[indMatr == i-1] #
+    m1[indMatr == i] = crossDiag1[(1:diagLen)+offset] + crossDiag2[1:diagLen] + crossDiag2[2:(diagLen+1)]#
+    diagLen = diagLen - 1#
+    offset = 1#
+  }#
+  m1#
+}#
+#
+fibonMatr_Old = function(m1){#
+  N = nrow(m1)#
+  M = ncol(m1)#
+  for(i in 2:N){#
+    for(j in 2:M){#
+      m1[i, j] = m1[i-1, j-1] + m1[i-1, j] + m1[i, j-1]#
+    }#
+  }#
+  m1#
+}#
+#
+m1 = matrix(1, nrow = 4, ncol = 7)#
+# m1 = matrix(1, nrow = 7, ncol = 4)#
+#
+fibonMatr_Old(m1)#
+fibonMatr(m1)
+Sys.time()
+m1 = matrix(1, nrow = 500, ncol = 501)#
+#
+# fibonMatr_Old(m1)#
+# fibonMatr(m1)#
+system.time({ for(i in 1:10) m1 = fibonMatr_Old(m1)})
+system.time({ for(i in 1:100) m1 = fibonMatr_Old(m1)})
+library(tictoc)
+install.package("tictoc")
+install.packages("tictoc")
+library(tictoc)
+tic("old way")#
+for(i in 1:100) {m2 = fibonMatr_Old(m1)}#
+toc()#
+#
+tic("old way")#
+for(i in 1:100) {m2 = fibonMatr(m1)}#
+toc()
+tic("old way")#
+for(i in 1:10) {m2 = fibonMatr_Old(m1)}#
+toc()#
+#
+tic("new way")#
+for(i in 1:10) {m2 = fibonMatr(m1)}#
+toc()
+fibonMatr(m1)
+m1 = matrix(1, nrow = 10, ncol = 10)#
+#
+m2 =  fibonMatr_Old(m1)#
+m2 =  fibonMatr(m1)
+m2
+m2 =  fibonMatr_Old(m1)#
+m3 =  fibonMatr(m1)
+m2
+m3
+m1 = matrix(1, nrow = 5, ncol = 5)
+indMatr = row(m1) + col(m1)#
+#
+  N = nrow(m1)#
+  M = ncol(m1)#
+#
+  minNM = min(N, M)#
+  maxNM = max(N, M)#
+  matrOffset = as.numeric(M < N)#
+#
+  diagLen = 1#
+  for (i in 4:(minNM + 1)){#
+    crossDiag1 = m1[row(m1) + col(m1) == i-2] #
+    crossDiag2 = m1[row(m1) + col(m1) == i-1] #
+    m1[indMatr == i][(1:diagLen)+1] = crossDiag1[1:diagLen] + crossDiag2[(1:diagLen)+1] + crossDiag2[1:diagLen]#
+    diagLen = diagLen + 1#
+  }#
+#
+  newInd = minNM + 2#
+  offset = 0#
+  while(newInd <= maxNM + 1){#
+    crossDiag1 = m1[indMatr == newInd-2] #
+    crossDiag2 = m1[indMatr == newInd-1] #
+    m1[indMatr == newInd][(1:(minNM-1)) + matrOffset] = crossDiag1[(1:(minNM-1))+offset] + crossDiag2[2:minNM] + crossDiag2[1:(minNM-1)]#
+    newInd = newInd + 1#
+    offset = 1*(1 - matrOffset)#
+  }
+m1
+newInd = maxNM + 2#
+  diagLen = minNM - 1#
+  offset = (1 - matrOffset)#
+  for (i in (newInd+(0:(minNM - 2)))){#
+    crossDiag1 = m1[indMatr == i-2] #
+    crossDiag2 = m1[indMatr == i-1] #
+    m1[indMatr == i] = crossDiag1[(1:diagLen)+offset] + crossDiag2[1:diagLen] + crossDiag2[2:(diagLen+1)]#
+    diagLen = diagLen - 1#
+    offset = 1#
+  }#
+  m1
+N = nrow(m1)#
+  M = ncol(m1)#
+#
+  minNM = min(N, M)#
+  maxNM = max(N, M)#
+  matrOffset = as.numeric(M < N)#
+#
+  diagLen = 1#
+  for (i in 4:(minNM + 1)){#
+    crossDiag1 = m1[row(m1) + col(m1) == i-2] #
+    crossDiag2 = m1[row(m1) + col(m1) == i-1] #
+    m1[indMatr == i][(1:diagLen)+1] = crossDiag1[1:diagLen] + crossDiag2[(1:diagLen)+1] + crossDiag2[1:diagLen]#
+    diagLen = diagLen + 1#
+  }#
+#
+  newInd = minNM + 2#
+  offset = 0#
+  while(newInd <= maxNM + 1){#
+    crossDiag1 = m1[indMatr == newInd-2] #
+    crossDiag2 = m1[indMatr == newInd-1] #
+    m1[indMatr == newInd][(1:(minNM-1)) + matrOffset] = crossDiag1[(1:(minNM-1))+offset] + crossDiag2[2:minNM] + crossDiag2[1:(minNM-1)]#
+    newInd = newInd + 1#
+    offset = 1*(1 - matrOffset)#
+  }
+newInd = maxNM + 2#
+  diagLen = minNM - 1#
+  offset = (1 - matrOffset)
+newInd = maxNM + 2#
+  diagLen = minNM - 1#
+  offset = (1 - (as.numeric(M <= N)))#
+  for (i in (newInd+(0:(minNM - 2)))){#
+    crossDiag1 = m1[indMatr == i-2] #
+    crossDiag2 = m1[indMatr == i-1] #
+    m1[indMatr == i] = crossDiag1[(1:diagLen)+offset] + crossDiag2[1:diagLen] + crossDiag2[2:(diagLen+1)]#
+    diagLen = diagLen - 1#
+    offset = 1#
+  }#
+  m1
+fibonMatr = function(m1){#
+  indMatr = row(m1) + col(m1)#
+#
+  N = nrow(m1)#
+  M = ncol(m1)#
+#
+  minNM = min(N, M)#
+  maxNM = max(N, M)#
+  matrOffset = as.numeric(M < N)#
+#
+  diagLen = 1#
+  for (i in 4:(minNM + 1)){#
+    crossDiag1 = m1[row(m1) + col(m1) == i-2] #
+    crossDiag2 = m1[row(m1) + col(m1) == i-1] #
+    m1[indMatr == i][(1:diagLen)+1] = crossDiag1[1:diagLen] + crossDiag2[(1:diagLen)+1] + crossDiag2[1:diagLen]#
+    diagLen = diagLen + 1#
+  }#
+#
+  newInd = minNM + 2#
+  offset = 0#
+  while(newInd <= maxNM + 1){#
+    crossDiag1 = m1[indMatr == newInd-2] #
+    crossDiag2 = m1[indMatr == newInd-1] #
+    m1[indMatr == newInd][(1:(minNM-1)) + matrOffset] = crossDiag1[(1:(minNM-1))+offset] + crossDiag2[2:minNM] + crossDiag2[1:(minNM-1)]#
+    newInd = newInd + 1#
+    offset = 1*(1 - matrOffset)#
+  }#
+#
+  newInd = maxNM + 2#
+  diagLen = minNM - 1#
+  offset = (1 - (as.numeric(M <= N)))#
+  for (i in (newInd+(0:(minNM - 2)))){#
+    crossDiag1 = m1[indMatr == i-2] #
+    crossDiag2 = m1[indMatr == i-1] #
+    m1[indMatr == i] = crossDiag1[(1:diagLen)+offset] + crossDiag2[1:diagLen] + crossDiag2[2:(diagLen+1)]#
+    diagLen = diagLen - 1#
+    offset = 1#
+  }#
+  m1#
+}#
+#
+fibonMatr_Old = function(m1){#
+  N = nrow(m1)#
+  M = ncol(m1)#
+  for(i in 2:N){#
+    for(j in 2:M){#
+      m1[i, j] = m1[i-1, j-1] + m1[i-1, j] + m1[i, j-1]#
+    }#
+  }#
+  m1#
+}#
+#
+m1 = matrix(1, nrow = 5, ncol = 5)#
+#
+m2 =  fibonMatr_Old(m1)#
+m3 =  fibonMatr(m1)
+m2
+m3
+m1 = matrix(1, nrow = 100, ncol = 100)#
+#
+m2 =  fibonMatr_Old(m1)#
+m3 =  fibonMatr(m1)
+tic("old way")#
+for(i in 1:10) {m2 = fibonMatr_Old(m1)}#
+toc()#
+#
+tic("new way")#
+for(i in 1:10) {m2 = fibonMatr(m1)}#
+toc()
+tic("old way")#
+for(i in 1:100) {m2 = fibonMatr_Old(m1)}#
+toc()#
+#
+tic("new way")#
+for(i in 1:100) {m2 = fibonMatr(m1)}#
+toc()
+q()
+main_constants <- function(){#
+  dateFormat = "%d-%B-%Y"#
+  acceptedDOB45 = 45#
+  acceptedDOB = 55#
+  LAFDecimals = 4#
+  testValue = c("+ 10", "+10")#
+  # testValueWithSpace = "+ 10"#
+  referenceName = "RF01"#
+  idPrefix = "PRE-"#
+  idVarName = "id"#
+  variableName13C = "var13C"#
+  correctedVarName13C = "corrected13C"#
+  totalCO2Name = "totalCO2"#
+  percentCO2Name = "percentCO2"#
+  inputVarNames = c("tubeNumer", idVarName, "var3", "var4", "var5", "var6", totalCO2Name, percentCO2Name, "var9", "var10", "var11", "var12", "var13", "var14", "var15", variableName13C, "var180", "tubeNumerChar")#
+  outputVarNames = c("tubeNumer", idVarName, totalCO2Name, percentCO2Name, "var180", variableName13C, correctedVarName13C)#
+  outputLabels = c("Tube", "ID", "Total CO2", "% CO2", "180", "13C", "Corrected 13C")#
+  inputFileExtension = "PRN"#
+  outputFileExtension = "csv"#
+  noIDValue = "NR"    ### Value put instead of ID when the machine cannot read the tube id#
+  machineID = "C"     ### Change to "D" if used on a different machine#
+  columnSep = "\t"#
+  LAFLogFileName = "LAF_log_file.csv"#
+  folderFrom = "/Users/svetlanaeden/stuff/KERRY/KERRY_SOFTWARE/KERRY_SOFTWARE_YOUR_FILES/DATA_FILES"#
+  folderTo = "/Users/svetlanaeden/stuff/KERRY/KERRY_SOFTWARE/KERRY_SOFTWARE_YOUR_FILES/DATA_FILES/DATA_TO"#
+  list(dateFormat = dateFormat, acceptedDOB45 = acceptedDOB45, acceptedDOB = acceptedDOB, LAFDecimals = LAFDecimals, testValue = testValue, referenceName = referenceName, idPrefix = idPrefix, idVarName = idVarName, variableName13C = variableName13C, correctedVarName13C = correctedVarName13C, totalCO2Name = totalCO2Name, percentCO2Name = percentCO2Name, inputVarNames = inputVarNames, outputVarNames = outputVarNames, outputLabels = outputLabels, inputFileExtension = inputFileExtension, outputFileExtension = outputFileExtension, machineID = machineID, columnSep = columnSep, LAFLogFileName = LAFLogFileName, folderFrom = folderFrom, folderTo = folderTo)#
+}#
+#
+makeFileNameTemplate <- function(date, subBatch = ""){#
+  getConst = main_constants()#
+  processDate = dateHandler(date)#
+  dateStr = paste(substr(processDate, 6, 7), substr(processDate, 9, 10), substr(processDate, 3, 4), sep = "")#
+  if(subBatch == ""){#
+    subBatchStr = subBatch#
+  }else{#
+    subBatchStr = paste(rep("0", 2 - nchar(subBatch)), subBatch, sep = "")#
+  }#
+  paste(getConst$machineID, dateStr, "P", subBatchStr, sep = "")#
+}#
+#
+makeFileName <- function(date, subBatch, extension, fileDir){#
+  if(class(subBatch) == "character") stop("Argument subBatch has to be a number")#
+  if(subBatch > 99 | subBatch < 1 | round(subBatch) != subBatch) stop("Argument subBatch has to be a whole positive number between 1 and 99")#
+  templateName = makeFileNameTemplate(date = date, subBatch = subBatch)#
+  fileName = paste(templateName, ".", extension, sep = "")#
+  file.path(fileDir, fileName)#
+}#
+#
+dateHandler <- function(date){#
+  ### converts dates and handles errors#
+  ### takes dateStr in formate "%d-%b-%Y", or DD-MMM-YYYY, for example 01-JAN-1999"#
+  ### returns date in format YYYY-MM-DD, for example 1999-01-01#
+  dateFormat = main_constants()$dateFormat#
+  if (date == "today"){#
+    dateStr = substr(Sys.time(), 1, 10)#
+  }else{#
+    if(nchar(date) != 11){stop("Argument date should be 11 characters long, for example date = 01-JAN-1999.")}#
+    ########################################
+    ### if the date format is not correct throw an error message#
+    dateAsDate = as.Date(date, format = dateFormat)#
+    if(is.na(dateAsDate)){#
+      stop("The date seems to be in the wrong format. Please make sure that the date format should be: DD-MMM-YYYY, for example 01-JAN-1999")#
+    }#
+    # returnErrorMessage = "date is wrong"#
+    # errorMessage = tryCatch(, error = function(cond){returnErrorMessage}, warning = function(cond){returnErrorMessage})#
+    # if (as.character(errorMessage) == returnErrorMessage) stop("The date seems to be in the wrong format. Please make sure that the date format should be: DD-MMM-YYYY, for example 01-JAN-1999".")#
+    dateStr = as.character(dateAsDate)#
+  }  #
+  dateStr#
+}#
+#
+read_PRN_file <- function(fileDir, fileName){#
+  ########################################
+  ### the function read the input file and returns the data in data.frame format#
+  ### argument "date" has to be in the following format: "DD-MMM-YYYY", for example "01-JAN-1999"#
+  ####
+  ########################################
+  ### construct the name of the file depending on the date#
+  getConst = main_constants()#
+  # fileName = makeFileName(date = date, subBatch = subBatch, extension = getConst$inputFileExtension, fileDir = getConst$folderFrom)#
+  ########################################
+  ### if the folder does not exist throw an error#
+  fileNameAndDir = file.path(fileDir, fileName)#
+#
+  if (!file.exists(fileDir)){  #
+    stop(paste("Fokder ", fileDir, " does not exist. Please check the folder name  and try again."))#
+  }  #
+  if (!file.exists(fileNameAndDir)){  #
+    stop(paste("File ", fileName, " does not exist. Please check the date (argument date) and try again. Please keep in mind that the date format should be: DD-MMM-YYYY, for example 01-JAN-1999."))#
+  }#
+  ########################################
+  ### if everything is fine read the file and return it in data.frame format#
+  rawData = read.csv(fileNameAndDir, skip = 3, sep = getConst$columnSep, header = FALSE, col.names = getConst$inputVarNames, stringsAsFactors = FALSE)#
+#
+  rawData   #
+}#
+#
+getLAF <- function(data){#
+  getConst = main_constants()#
+  testValue = getConst$testValue#
+  counter = 1#
+  acceptedDOB = getConst$acceptedDOB                                         #
+  acceptedDOB45 = getConst$acceptedDOB45#
+  variableName13C = getConst$variableName13C#
+  while(!(data$id[counter] %in% testValue) & counter <= nrow(data)){#
+    counter = counter + 1#
+  }#
+  stopCounter = counter#
+  if(stopCounter == nrow(data)){#
+    stop("File does not contain test values\n")#
+  }#
+  while((data$id[counter] %in% testValue) & counter <= nrow(data)){#
+    counter = counter + 1#
+  }#
+  ###############################################
+  ### take a mean of all test values#
+  if(stopCounter > counter-1){#
+    LAF = NA#
+    errorStatus = "No LAF values"#
+  }else{#
+    subData = data[stopCounter:(counter-1), ]#
+    ###############################################
+    ### if any values variables total_CO2, percent_CO2, or varC13 is out of#
+    ### range then record this as an error#
+    badValues = any(subData[[getConst$totalCO2Name]] < 10^(-8) )   |    any(subData[[getConst$percentCO2Name]]  < 0.1)  |  any(subData[[getConst$variableName13C]] < 8) |  any(subData[[getConst$variableName13C]] > 10)#
+    if(badValues){#
+      LAF = NA#
+      errorStatus = "Bad LAF values"#
+    }else{#
+      mean13C = mean(data[[variableName13C]][stopCounter:(counter-1)])    # B11#
+      measuredDOB = mean13C + acceptedDOB45                               # B13#
+      ###############################################
+      ### Linearity adjustment factor#
+      LAF = (1 - (measuredDOB/acceptedDOB)) + 1#
+      errorStatus = "Good LAF values"#
+    }#
+  }#
+  list(LAF = LAF, errorStatus = errorStatus)#
+}  #
+#
+correct_data_using_LAF <- function(data, LAF){#
+  getConst = main_constants()#
+  acceptedDOB45 = getConst$acceptedDOB45#
+  referenceName = getConst$referenceName#
+  idVarName = getConst$idVarName#
+  variableName13C = getConst$variableName13C#
+  correctedVarName13C = getConst$correctedVarName13C#
+  whatToCorrect = (data[[idVarName]] != referenceName )#
+  data[[correctedVarName13C]] = data[[variableName13C]]#
+  data[[correctedVarName13C]][whatToCorrect] = ((data[[variableName13C]] + acceptedDOB45)*LAF - acceptedDOB45)[whatToCorrect]#
+  data#
+}#
+#
+findPatientIndices <- function(data){#
+  ###############################################
+  ###############################################
+  ###############################################
+  ### read patient data:#
+  ###############################################
+  ###############################################
+  ###############################################
+  getConst = main_constants()#
+  patients = list()#
+  failToScanID = getConst$noIDValue#
+  idVarName = getConst$idVarName#
+  idPrefix = getConst$idPrefix#
+  i = 1#
+  while(i <= nrow(data)){#
+    foundID = substr(data[[idVarName]][i], 1, 4) == idPrefix#
+    ###############################################
+    ### skip the records with non-patient info#
+    while(!foundID & i <= nrow(data)){#
+      cat("looking for id .... ", i, data[[idVarName]][i], "\n")#
+      foundID = substr(data[[idVarName]][i], 1, 4) == idPrefix#
+      i = i + 1#
+    }#
+    ###############################################
+    ### if found patient record#
+    if(foundID){#
+      newID = substr(data[[idVarName]][i-1], 5, nchar(data[[idVarName]][i-1]))#
+      collectInfo = TRUE#
+      startInfo = i#
+    }#
+    ###############################################
+    ### if found patient record:#
+    ### record the start and the end index for each subjects#
+    while(collectInfo & i <= nrow(data)){#
+      getID = strsplit(data[[idVarName]][i], split = "-")[[1]][2]#
+      collectInfo = ((!is.na(getID) & newID == getID) | data[[idVarName]][i] == failToScanID)#
+      # cat(newID, "\n")#
+      # cat("collecting info ................ ", data[[idVarName]][i], "\n")#
+      i = i + 1#
+    }#
+    endInfo = i - 2#
+    ###############################################
+    ### collect patient info#
+    if(foundID){#
+      # patients[[newID]] = data[[idVarName]][startInfo:endInfo]#
+      patients[[newID]] = startInfo:endInfo#
+      foundID = FALSE#
+    }#
+    # cat("START: ", startInfo, "      END:", endInfo, "\n")#
+  }#
+  ###############################################
+  ### return:#
+  patients#
+}#
+#
+findIndicesForPrinting <- function(data){#
+  ###############################################
+  ###############################################
+  ###############################################
+  ### read patient data:#
+  ###############################################
+  ###############################################
+  ###############################################
+#
+  getConst = main_constants()#
+  referenceName = getConst$referenceName#
+  idVarName = getConst$idVarName#
+  # outputVarNames = getConst$outputVarNames#
+#
+  indexList = list()#
+  indexListCount = 1#
+  i = startInd = 1#
+  ### look for first RF01#
+  while(i <= nrow(data) & data[[idVarName]][i] != referenceName){#
+    i = i + 1#
+  }#
+  i = i + 1#
+  while(i <= nrow(data) & data[[idVarName]][i] != referenceName){#
+    i = i + 1#
+  }#
+  endInd = i#
+  indexList[[indexListCount]] = startInd:endInd#
+  indexListCount = indexListCount + 1#
+  i = i + 1#
+  while(i <= nrow(data)){  #
+    while(i <= nrow(data) & data[[idVarName]][i] != referenceName){#
+      i = i + 1#
+    }#
+    startInd = i#
+    i = i + 1#
+    while(i <= nrow(data) & data[[idVarName]][i] != referenceName){#
+      i = i + 1#
+    }#
+    endInd = i#
+    i = i + 1#
+    indexList[[indexListCount]] = startInd:endInd#
+    indexListCount = indexListCount + 1#
+    # cat("START: ", startInfo, "      END:", endInfo, "\n")#
+  }#
+  indexList#
+}#
+#
+saveLAF <- function(LAF, date, fileDir){#
+  getConst = main_constants()#
+  columnSep = getConst$columnSep#
+  lafLogFile = getConst$LAFLogFileName#
+  dateFormat = getConst$dateFormat#
+#
+  dirAndFileName = file.path(fileDir, lafLogFile)#
+  if (!file.exists(fileDir)) stop(paste("Folder ", fileDir, " does not exists. Please check argument fileDir and try again."))#
+  if (!file.exists(dirAndFileName)){#
+    res = data.frame(date = date, LAF = LAF)#
+  }else{#
+    res = read.csv(dirAndFileName, sep = columnSep, stringsAsFactors = FALSE)#
+    newDate = as.Date(date, format = dateFormat)#
+    prevDates = as.Date(res$date, format = dateFormat)#
+    if(!(newDate %in% prevDates)){#
+      res = rbind(res, data.frame(date = date, LAF = LAF))#
+      res = res[order(as.Date(res$date, format = dateFormat)),]#
+    }#
+  }#
+  # write.table(res, file = dirAndFileName, sep = columnSep)#
+  dumpToCSV(res, dirAndFileName, sep = columnSep)#
+}#
+#
+dumpToCSV <-function(dataframe, fileName, sep=",", quotes="\""){#
+  bigsep = paste(quotes, sep, quotes, sep="")#
+  for (n in names(dataframe)){#
+    dataframe[[n]] = as.character(dataframe[[n]])#
+  }#
+  cat(quotes, paste(names(dataframe), collapse=bigsep), quotes, "\n", sep="", file=fileName)#
+  for (i in 1:nrow(dataframe)){#
+    str = paste(quotes, paste(dataframe[i,], collapse=bigsep), quotes, "\n", sep="")#
+    str = gsub("\"NA\"", "\"\"", str)#
+    cat(str, file=fileName, append=TRUE)#
+  }#
+}#
+#
+printCorrectedData <-function(data, date, readFromFileName, LAF, LAF_date, LAF_file, subBatch){#
+  getConst = main_constants()#
+  machineID = getConst$machineID#
+  outputFileExtension = getConst$outputFileExtension#
+  inputFileExtension = getConst$inputFileExtension#
+  outputVarNames = getConst$outputVarNames#
+  outputLabels = getConst$outputLabels#
+  dateFormat = getConst$dateFormat#
+  machineID = getConst$machineID#
+  LAFDecimals = getConst$LAFDecimals#
+  fileDir = getConst$folderTo#
+  processDate = dateHandler(date)#
+  dateStr = paste(substr(processDate, 6, 7), substr(processDate, 9, 10), substr(processDate, 3, 4), sep = "")#
+  writeToFileName = gsub(paste(getConst$inputFileExtension, "$", sep = ""), getConst$outputFileExtension, readFromFileName)#
+  writeToFileName = file.path(fileDir, writeToFileName)#
+  ########################################
+  ### if the folder does not exist throw an error#
+  if (!file.exists(fileDir)) stop(paste("Folder ", fileDir, " does not exists. Please check your settings and try again."))#
+  printIndices = findIndicesForPrinting(data)#
+  sink(writeToFileName)#
+  for (j in 1:length(printIndices)){#
+    cat("------------------------------------------------------------------\n")#
+    cat("SerCon ABCA 13C Breath Test\n")#
+    cat("Sub Batch Report - Drift Corrected Results, LAF Corrected Results\n")#
+    cat("LAF = ", round(LAF, LAFDecimals), " (", LAF_date, ") was obtained from file ", LAF_file, "\n\n", sep = "")#
+    printData = data[printIndices[[j]], outputVarNames]#
+    rownames(printData) = NULL#
+    colnames(printData) = outputLabels#
+    print(printData)#
+    cat("\nTest date:", format(as.Date(date, format = dateFormat), dateFormat), "\n")#
+    cat("Current date/time: ", format(as.Date(Sys.time()), dateFormat), ", ", substr(Sys.time(), 12, 16), "\n", sep = "")#
+    cat("Instrument", machineID,"\n")#
+    cat("Read from:", readFromFileName,"\n")#
+    cat("Sub Batch:", subBatch,"\n\f\n") #
+  }#
+  sink()#
+  return("OK")#
+}#
+#
+###############################################
+###############################################
+mainFunction <- function(date, LAF_date = date){#
+  ###############################################
+  ### main functions: reads and corrects the data and saves the corrected data#
+  ###############################################
+  ### get all constatns#
+  ###############################################
+  constants = main_constants()#
+  ### allow to start searching for data files#
+  ###############################################
+  dataFileExists = TRUE#
+#
+  ### determine LAF value: file all files that may have LAF#
+  ###############################################
+  LAFFilesTemplate = makeFileNameTemplate(date = LAF_date, subBatch = "")#
+  allFilesInDataFolder = list.files(constants$folderFrom)#
+  allFilesWithLAFDate = grep(LAFFilesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithLAFDate = allFilesWithLAFDate[order(allFilesWithLAFDate)]#
+  LAF = NA  #
+  ### determine LAF value: look inside each file until LAF is obtained#
+  ###############################################
+  countFiles = 1#
+  LAFLog = list()#
+  while(is.na(LAF) & countFiles <= length(allFilesWithLAFDate)){#
+    dataForLAF = read_PRN_file(fileDir = constants$folderFrom, fileName = allFilesWithLAFDate[countFiles])#
+    LAFInfo = getLAF(dataForLAF)#
+    LAF = LAFInfo$LAF#
+    LAFErrorStatus = LAFInfo$errorStatus#
+    LAFLog[[allFilesWithLAFDate[countFiles]]] = LAFErrorStatus#
+    if(is.na(LAF)){#
+      warning(paste(LAFErrorStatus, "in file", allFilesWithLAFDate[countFiles]))#
+    }#
+    countFiles = countFiles + 1#
+  }#
+  ###############################################
+  ### if LAF has not been obtained print the error code for each file#
+  ### and throw an error#
+  if(is.na(LAF)){#
+    for (n_i in names(LAFLog)){#
+      cat("In file ", n_i, ": ", LAFLog[[n_i]])#
+    }#
+    stop("LAF could not been obtained")#
+  }else{#
+    ###############################################
+    ### Determine which file the LAF came from and save the value of LAF#
+    FileWithGoodLAFValues = names(unlist(LAFLog) == "Good LAF values")#
+    saveLAF(LAF = LAF, date = LAF_date, fileDir = constants$folderTo)#
+  }#
+#
+  ###############################################
+  ### Look for files with the same date and different sub-batches #
+  ### and correct them using LAF#
+  ###############################################
+  filesTemplate = makeFileNameTemplate(date = date, subBatch = "")#
+  allFilesWithDate = grep(filesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithDate = allFilesWithLAFDate[order(allFilesWithDate)]#
+  ###############################################
+  ### Define subbatches from the names of the file:#
+  ###############################################
+  allSubBatches = gsub(filesTemplate, "", allFilesWithDate)#
+  allSubBatches = as.numeric(gsub(constants$inputFileExtension, "", allSubBatches))#
+  LAFLog = list()#
+  for(i in 1:length(allFilesWithDate)){#
+    f_i = allFilesWithDate[i]#
+    data = read_PRN_file(fileDir = constants$folderFrom, fileName = f_i)#
+    corData = correct_data_using_LAF(data = data, LAF = LAF)#
+#
+    oldWidthOfPrinting = options("width")$width#
+    options(width = 120)#
+    ### making sure that if something happens during printing#
+    ### we close the file (sink())#
+    tryObj = try(#
+      printCorrectedData(data = corData, date = date, readFromFileName = f_i, LAF = LAF, LAF_date = LAF_date, LAF_file = FileWithGoodLAFValues, subBatch = allSubBatches[i])#
+    )#
+    ### if something is wrong, close the sink quitely:#
+    if(tryObj != "OK"){#
+      cat(tryObj[1])#
+      try(sink())#
+      stop("Could not print the data\n")#
+    }#
+    options(width = oldWidthOfPrinting)#
+  }#
+}
+mainFunction(date = "27-SEP-2018", LAF_date = "30-SEP-2018")
+traceback()
+dateHandler <- function(date = "27-SEP-2018)
+dateHandler <- function(date = "27-SEP-2018)"
+dateHandler(date = "27-SEP-2018")
+date = "27-SEP-2018"; LAF_date = date
+### get all constatns#
+  ###############################################
+  constants = main_constants()#
+  ### allow to start searching for data files#
+  ###############################################
+  dataFileExists = TRUE#
+#
+  ### determine LAF value: file all files that may have LAF#
+  ###############################################
+  LAFFilesTemplate = makeFileNameTemplate(date = LAF_date, subBatch = "")#
+  allFilesInDataFolder = list.files(constants$folderFrom)#
+  allFilesWithLAFDate = grep(LAFFilesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithLAFDate = allFilesWithLAFDate[order(allFilesWithLAFDate)]#
+  LAF = NA  #
+  ### determine LAF value: look inside each file until LAF is obtained#
+  ###############################################
+  countFiles = 1#
+  LAFLog = list()#
+  while(is.na(LAF) & countFiles <= length(allFilesWithLAFDate)){#
+    dataForLAF = read_PRN_file(fileDir = constants$folderFrom, fileName = allFilesWithLAFDate[countFiles])#
+    LAFInfo = getLAF(dataForLAF)#
+    LAF = LAFInfo$LAF#
+    LAFErrorStatus = LAFInfo$errorStatus#
+    LAFLog[[allFilesWithLAFDate[countFiles]]] = LAFErrorStatus#
+    if(is.na(LAF)){#
+      warning(paste(LAFErrorStatus, "in file", allFilesWithLAFDate[countFiles]))#
+    }#
+    countFiles = countFiles + 1#
+  }
+warnings()
+###############################################
+  ### if LAF has not been obtained print the error code for each file#
+  ### and throw an error#
+  if(is.na(LAF)){#
+    for (n_i in names(LAFLog)){#
+      cat("In file ", n_i, ": ", LAFLog[[n_i]])#
+    }#
+    stop("LAF could not been obtained")#
+  }else{#
+    ###############################################
+    ### Determine which file the LAF came from and save the value of LAF#
+    FileWithGoodLAFValues = names(unlist(LAFLog) == "Good LAF values")#
+    saveLAF(LAF = LAF, date = LAF_date, fileDir = constants$folderTo)#
+  }
+warnings()
+filesTemplate = makeFileNameTemplate(date = date, subBatch = "")#
+  allFilesWithDate = grep(filesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithDate = allFilesWithLAFDate[order(allFilesWithDate)]
+allSubBatches = gsub(filesTemplate, "", allFilesWithDate)#
+  allSubBatches = as.numeric(gsub(constants$inputFileExtension, "", allSubBatches))#
+  LAFLog = list()
+for(i in 1:length(allFilesWithDate)){#
+    f_i = allFilesWithDate[i]#
+    data = read_PRN_file(fileDir = constants$folderFrom, fileName = f_i)#
+    corData = correct_data_using_LAF(data = data, LAF = LAF)#
+#
+    oldWidthOfPrinting = options("width")$width#
+    options(width = 120)#
+    ### making sure that if something happens during printing#
+    ### we close the file (sink())#
+    tryObj = try(#
+      printCorrectedData(data = corData, date = date, readFromFileName = f_i, LAF = LAF, LAF_date = LAF_date, LAF_file = FileWithGoodLAFValues, subBatch = allSubBatches[i])#
+    )#
+    ### if something is wrong, close the sink quitely:#
+    if(tryObj != "OK"){#
+      cat(tryObj[1])#
+      try(sink())#
+      stop("Could not print the data\n")#
+    }#
+    options(width = oldWidthOfPrinting)#
+  }
+mainFunction <- function(date, LAF_date = date){#
+  ###############################################
+  ### main functions: reads and corrects the data and saves the corrected data#
+  ###############################################
+  ### get all constatns#
+  ###############################################
+  constants = main_constants()#
+  ### allow to start searching for data files#
+  ###############################################
+  dataFileExists = TRUE#
+#
+  ### determine LAF value: file all files that may have LAF#
+  ###############################################
+  LAFFilesTemplate = makeFileNameTemplate(date = LAF_date, subBatch = "")#
+  allFilesInDataFolder = list.files(constants$folderFrom)#
+  allFilesWithLAFDate = grep(LAFFilesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithLAFDate = allFilesWithLAFDate[order(allFilesWithLAFDate)]#
+  LAF = NA  #
+  ### determine LAF value: look inside each file until LAF is obtained#
+  ###############################################
+  countFiles = 1#
+  LAFLog = list()#
+  while(is.na(LAF) & countFiles <= length(allFilesWithLAFDate)){#
+    dataForLAF = read_PRN_file(fileDir = constants$folderFrom, fileName = allFilesWithLAFDate[countFiles])#
+    LAFInfo = getLAF(dataForLAF)#
+    LAF = LAFInfo$LAF#
+    LAFErrorStatus = LAFInfo$errorStatus#
+    LAFLog[[allFilesWithLAFDate[countFiles]]] = LAFErrorStatus#
+    if(is.na(LAF)){#
+      warning(paste(LAFErrorStatus, "in file", allFilesWithLAFDate[countFiles]))#
+    }#
+    countFiles = countFiles + 1#
+  }#
+  if(FALSE){#
+  ###############################################
+  ### if LAF has not been obtained print the error code for each file#
+  ### and throw an error#
+  if(is.na(LAF)){#
+    for (n_i in names(LAFLog)){#
+      cat("In file ", n_i, ": ", LAFLog[[n_i]])#
+    }#
+    stop("LAF could not been obtained")#
+  }else{#
+    ###############################################
+    ### Determine which file the LAF came from and save the value of LAF#
+    FileWithGoodLAFValues = names(unlist(LAFLog) == "Good LAF values")#
+    saveLAF(LAF = LAF, date = LAF_date, fileDir = constants$folderTo)#
+  }#
+#
+  ###############################################
+  ### Look for files with the same date and different sub-batches #
+  ### and correct them using LAF#
+  ###############################################
+  filesTemplate = makeFileNameTemplate(date = date, subBatch = "")#
+  allFilesWithDate = grep(filesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithDate = allFilesWithLAFDate[order(allFilesWithDate)]#
+  ###############################################
+  ### Define subbatches from the names of the file:#
+  ###############################################
+  allSubBatches = gsub(filesTemplate, "", allFilesWithDate)#
+  allSubBatches = as.numeric(gsub(constants$inputFileExtension, "", allSubBatches))#
+  LAFLog = list()#
+  for(i in 1:length(allFilesWithDate)){#
+    f_i = allFilesWithDate[i]#
+    data = read_PRN_file(fileDir = constants$folderFrom, fileName = f_i)#
+    corData = correct_data_using_LAF(data = data, LAF = LAF)#
+#
+    oldWidthOfPrinting = options("width")$width#
+    options(width = 120)#
+    ### making sure that if something happens during printing#
+    ### we close the file (sink())#
+    tryObj = try(#
+      printCorrectedData(data = corData, date = date, readFromFileName = f_i, LAF = LAF, LAF_date = LAF_date, LAF_file = FileWithGoodLAFValues, subBatch = allSubBatches[i])#
+    )#
+    ### if something is wrong, close the sink quitely:#
+    if(tryObj != "OK"){#
+      cat(tryObj[1])#
+      try(sink())#
+      stop("Could not print the data\n")#
+    }#
+    options(width = oldWidthOfPrinting)#
+  }#
+  }#
+}
+mainFunction(date = "27-SEP-2018", LAF_date = "30-SEP-2018")
+mainFunction <- function(date, LAF_date = date){#
+  ###############################################
+  ### main functions: reads and corrects the data and saves the corrected data#
+  ###############################################
+  ### get all constatns#
+  ###############################################
+  constants = main_constants()#
+  ### allow to start searching for data files#
+  ###############################################
+  dataFileExists = TRUE#
+#
+  ### determine LAF value: file all files that may have LAF#
+  ###############################################
+  LAFFilesTemplate = makeFileNameTemplate(date = LAF_date, subBatch = "")#
+  allFilesInDataFolder = list.files(constants$folderFrom)#
+  allFilesWithLAFDate = grep(LAFFilesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithLAFDate = allFilesWithLAFDate[order(allFilesWithLAFDate)]#
+  LAF = NA  #
+  ### determine LAF value: look inside each file until LAF is obtained#
+  ###############################################
+  countFiles = 1#
+  LAFLog = list()#
+  while(is.na(LAF) & countFiles <= length(allFilesWithLAFDate)){#
+    dataForLAF = read_PRN_file(fileDir = constants$folderFrom, fileName = allFilesWithLAFDate[countFiles])#
+    LAFInfo = getLAF(dataForLAF)#
+    LAF = LAFInfo$LAF#
+    LAFErrorStatus = LAFInfo$errorStatus#
+    LAFLog[[allFilesWithLAFDate[countFiles]]] = LAFErrorStatus#
+    if(is.na(LAF)){#
+      warning(paste(LAFErrorStatus, "in file", allFilesWithLAFDate[countFiles]))#
+    }#
+    countFiles = countFiles + 1#
+  }#
+  ###############################################
+  ### if LAF has not been obtained print the error code for each file#
+  ### and throw an error#
+  if(is.na(LAF)){#
+    for (n_i in names(LAFLog)){#
+      cat("In file ", n_i, ": ", LAFLog[[n_i]])#
+    }#
+    stop("LAF could not been obtained")#
+  }else{#
+    ###############################################
+    ### Determine which file the LAF came from and save the value of LAF#
+    FileWithGoodLAFValues = names(unlist(LAFLog) == "Good LAF values")#
+    saveLAF(LAF = LAF, date = LAF_date, fileDir = constants$folderTo)#
+  }#
+#
+  ###############################################
+  ### Look for files with the same date and different sub-batches #
+  ### and correct them using LAF#
+  ###############################################
+  filesTemplate = makeFileNameTemplate(date = date, subBatch = "")#
+  allFilesWithDate = grep(filesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithDate = allFilesWithLAFDate[order(allFilesWithDate)]#
+  ###############################################
+  ### Define subbatches from the names of the file:#
+  ###############################################
+  allSubBatches = gsub(filesTemplate, "", allFilesWithDate)#
+  allSubBatches = as.numeric(gsub(constants$inputFileExtension, "", allSubBatches))#
+  LAFLog = list()#
+  if(FALSE){#
+  for(i in 1:length(allFilesWithDate)){#
+    f_i = allFilesWithDate[i]#
+    data = read_PRN_file(fileDir = constants$folderFrom, fileName = f_i)#
+    corData = correct_data_using_LAF(data = data, LAF = LAF)#
+#
+    oldWidthOfPrinting = options("width")$width#
+    options(width = 120)#
+    ### making sure that if something happens during printing#
+    ### we close the file (sink())#
+    tryObj = try(#
+      printCorrectedData(data = corData, date = date, readFromFileName = f_i, LAF = LAF, LAF_date = LAF_date, LAF_file = FileWithGoodLAFValues, subBatch = allSubBatches[i])#
+    )#
+    ### if something is wrong, close the sink quitely:#
+    if(tryObj != "OK"){#
+      cat(tryObj[1])#
+      try(sink())#
+      stop("Could not print the data\n")#
+    }#
+    options(width = oldWidthOfPrinting)#
+  }#
+  }#
+}
+mainFunction(date = "27-SEP-2018", LAF_date = "30-SEP-2018")
+mainFunction <- function(date, LAF_date = date){#
+  ###############################################
+  ### main functions: reads and corrects the data and saves the corrected data#
+  ###############################################
+  ### get all constatns#
+  ###############################################
+  constants = main_constants()#
+  ### allow to start searching for data files#
+  ###############################################
+  dataFileExists = TRUE#
+#
+  ### determine LAF value: file all files that may have LAF#
+  ###############################################
+  LAFFilesTemplate = makeFileNameTemplate(date = LAF_date, subBatch = "")#
+  allFilesInDataFolder = list.files(constants$folderFrom)#
+  allFilesWithLAFDate = grep(LAFFilesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithLAFDate = allFilesWithLAFDate[order(allFilesWithLAFDate)]#
+  LAF = NA  #
+  ### determine LAF value: look inside each file until LAF is obtained#
+  ###############################################
+  countFiles = 1#
+  LAFLog = list()#
+  while(is.na(LAF) & countFiles <= length(allFilesWithLAFDate)){#
+    dataForLAF = read_PRN_file(fileDir = constants$folderFrom, fileName = allFilesWithLAFDate[countFiles])#
+    LAFInfo = getLAF(dataForLAF)#
+    LAF = LAFInfo$LAF#
+    LAFErrorStatus = LAFInfo$errorStatus#
+    LAFLog[[allFilesWithLAFDate[countFiles]]] = LAFErrorStatus#
+    if(is.na(LAF)){#
+      warning(paste(LAFErrorStatus, "in file", allFilesWithLAFDate[countFiles]))#
+    }#
+    countFiles = countFiles + 1#
+  }#
+  ###############################################
+  ### if LAF has not been obtained print the error code for each file#
+  ### and throw an error#
+  if(is.na(LAF)){#
+    for (n_i in names(LAFLog)){#
+      cat("In file ", n_i, ": ", LAFLog[[n_i]])#
+    }#
+    stop("LAF could not been obtained")#
+  }else{#
+    ###############################################
+    ### Determine which file the LAF came from and save the value of LAF#
+    FileWithGoodLAFValues = names(unlist(LAFLog) == "Good LAF values")#
+    saveLAF(LAF = LAF, date = LAF_date, fileDir = constants$folderTo)#
+  }#
+#
+  if(FALSE){#
+  ###############################################
+  ### Look for files with the same date and different sub-batches #
+  ### and correct them using LAF#
+  ###############################################
+  filesTemplate = makeFileNameTemplate(date = date, subBatch = "")#
+  allFilesWithDate = grep(filesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithDate = allFilesWithLAFDate[order(allFilesWithDate)]#
+  ###############################################
+  ### Define subbatches from the names of the file:#
+  ###############################################
+  allSubBatches = gsub(filesTemplate, "", allFilesWithDate)#
+  allSubBatches = as.numeric(gsub(constants$inputFileExtension, "", allSubBatches))#
+  LAFLog = list()#
+  for(i in 1:length(allFilesWithDate)){#
+    f_i = allFilesWithDate[i]#
+    data = read_PRN_file(fileDir = constants$folderFrom, fileName = f_i)#
+    corData = correct_data_using_LAF(data = data, LAF = LAF)#
+#
+    oldWidthOfPrinting = options("width")$width#
+    options(width = 120)#
+    ### making sure that if something happens during printing#
+    ### we close the file (sink())#
+    tryObj = try(#
+      printCorrectedData(data = corData, date = date, readFromFileName = f_i, LAF = LAF, LAF_date = LAF_date, LAF_file = FileWithGoodLAFValues, subBatch = allSubBatches[i])#
+    )#
+    ### if something is wrong, close the sink quitely:#
+    if(tryObj != "OK"){#
+      cat(tryObj[1])#
+      try(sink())#
+      stop("Could not print the data\n")#
+    }#
+    options(width = oldWidthOfPrinting)#
+  }#
+  }#
+}
+mainFunction(date = "27-SEP-2018", LAF_date = "30-SEP-2018")
+mainFunction <- function(date, LAF_date = date){#
+  ###############################################
+  ### main functions: reads and corrects the data and saves the corrected data#
+  ###############################################
+  ### get all constatns#
+  ###############################################
+  constants = main_constants()#
+  ### allow to start searching for data files#
+  ###############################################
+  dataFileExists = TRUE#
+#
+  ### determine LAF value: file all files that may have LAF#
+  ###############################################
+  LAFFilesTemplate = makeFileNameTemplate(date = LAF_date, subBatch = "")#
+  allFilesInDataFolder = list.files(constants$folderFrom)#
+  allFilesWithLAFDate = grep(LAFFilesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithLAFDate = allFilesWithLAFDate[order(allFilesWithLAFDate)]#
+  LAF = NA  #
+  ### determine LAF value: look inside each file until LAF is obtained#
+  ###############################################
+  countFiles = 1#
+  LAFLog = list()#
+  while(is.na(LAF) & countFiles <= length(allFilesWithLAFDate)){#
+    dataForLAF = read_PRN_file(fileDir = constants$folderFrom, fileName = allFilesWithLAFDate[countFiles])#
+    LAFInfo = getLAF(dataForLAF)#
+    LAF = LAFInfo$LAF#
+    LAFErrorStatus = LAFInfo$errorStatus#
+    LAFLog[[allFilesWithLAFDate[countFiles]]] = LAFErrorStatus#
+    if(is.na(LAF)){#
+      warning(paste(LAFErrorStatus, "in file", allFilesWithLAFDate[countFiles]))#
+    }#
+    countFiles = countFiles + 1#
+  }#
+  ###############################################
+  ### if LAF has not been obtained print the error code for each file#
+  ### and throw an error#
+  if(is.na(LAF)){#
+    for (n_i in names(LAFLog)){#
+      cat("In file ", n_i, ": ", LAFLog[[n_i]])#
+    }#
+    stop("LAF could not been obtained")#
+  }else{#
+    ###############################################
+    ### Determine which file the LAF came from and save the value of LAF#
+    FileWithGoodLAFValues = names(unlist(LAFLog) == "Good LAF values")#
+    saveLAF(LAF = LAF, date = LAF_date, fileDir = constants$folderTo)#
+  }#
+#
+  if(FALSE){#
+  ###############################################
+  ### Look for files with the same date and different sub-batches #
+  ### and correct them using LAF#
+  ###############################################
+  filesTemplate = makeFileNameTemplate(date = date, subBatch = "")#
+  allFilesWithDate = grep(filesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithDate = allFilesWithLAFDate[order(allFilesWithDate)]#
+  ###############################################
+  ### Define subbatches from the names of the file:#
+  ###############################################
+  allSubBatches = gsub(filesTemplate, "", allFilesWithDate)#
+  allSubBatches = as.numeric(gsub(constants$inputFileExtension, "", allSubBatches))#
+  }#
+  LAFLog = list()#
+  for(i in 1:length(allFilesWithDate)){#
+    f_i = allFilesWithDate[i]#
+    data = read_PRN_file(fileDir = constants$folderFrom, fileName = f_i)#
+    corData = correct_data_using_LAF(data = data, LAF = LAF)#
+#
+    oldWidthOfPrinting = options("width")$width#
+    options(width = 120)#
+    ### making sure that if something happens during printing#
+    ### we close the file (sink())#
+    tryObj = try(#
+      printCorrectedData(data = corData, date = date, readFromFileName = f_i, LAF = LAF, LAF_date = LAF_date, LAF_file = FileWithGoodLAFValues, subBatch = allSubBatches[i])#
+    )#
+    ### if something is wrong, close the sink quitely:#
+    if(tryObj != "OK"){#
+      cat(tryObj[1])#
+      try(sink())#
+      stop("Could not print the data\n")#
+    }#
+    options(width = oldWidthOfPrinting)#
+  }#
+}
+mainFunction(date = "27-SEP-2018", LAF_date = "30-SEP-2018")
+mainFunction <- function(date, LAF_date = date){#
+  ###############################################
+  ### main functions: reads and corrects the data and saves the corrected data#
+  ###############################################
+  ### get all constatns#
+  ###############################################
+  constants = main_constants()#
+  ### allow to start searching for data files#
+  ###############################################
+  dataFileExists = TRUE#
+#
+  ### determine LAF value: file all files that may have LAF#
+  ###############################################
+  LAFFilesTemplate = makeFileNameTemplate(date = LAF_date, subBatch = "")#
+  allFilesInDataFolder = list.files(constants$folderFrom)#
+  allFilesWithLAFDate = grep(LAFFilesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithLAFDate = allFilesWithLAFDate[order(allFilesWithLAFDate)]#
+  LAF = NA  #
+  ### determine LAF value: look inside each file until LAF is obtained#
+  ###############################################
+  countFiles = 1#
+  LAFLog = list()#
+  while(is.na(LAF) & countFiles <= length(allFilesWithLAFDate)){#
+    dataForLAF = read_PRN_file(fileDir = constants$folderFrom, fileName = allFilesWithLAFDate[countFiles])#
+    LAFInfo = getLAF(dataForLAF)#
+    LAF = LAFInfo$LAF#
+    LAFErrorStatus = LAFInfo$errorStatus#
+    LAFLog[[allFilesWithLAFDate[countFiles]]] = LAFErrorStatus#
+    if(is.na(LAF)){#
+      warning(paste(LAFErrorStatus, "in file", allFilesWithLAFDate[countFiles]))#
+    }#
+    countFiles = countFiles + 1#
+  }#
+  ###############################################
+  ### if LAF has not been obtained print the error code for each file#
+  ### and throw an error#
+  if(is.na(LAF)){#
+    for (n_i in names(LAFLog)){#
+      cat("In file ", n_i, ": ", LAFLog[[n_i]])#
+    }#
+    stop("LAF could not been obtained")#
+  }else{#
+    ###############################################
+    ### Determine which file the LAF came from and save the value of LAF#
+    FileWithGoodLAFValues = names(unlist(LAFLog) == "Good LAF values")#
+    saveLAF(LAF = LAF, date = LAF_date, fileDir = constants$folderTo)#
+  }#
+#
+  ###############################################
+  ### Look for files with the same date and different sub-batches #
+  ### and correct them using LAF#
+  ###############################################
+  filesTemplate = makeFileNameTemplate(date = date, subBatch = "")#
+  allFilesWithDate = grep(filesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithDate = allFilesWithLAFDate[order(allFilesWithDate)]#
+  if(FALSE){#
+  ###############################################
+  ### Define subbatches from the names of the file:#
+  ###############################################
+  allSubBatches = gsub(filesTemplate, "", allFilesWithDate)#
+  allSubBatches = as.numeric(gsub(constants$inputFileExtension, "", allSubBatches))#
+  }#
+  LAFLog = list()#
+  for(i in 1:length(allFilesWithDate)){#
+    f_i = allFilesWithDate[i]#
+    data = read_PRN_file(fileDir = constants$folderFrom, fileName = f_i)#
+    corData = correct_data_using_LAF(data = data, LAF = LAF)#
+#
+    oldWidthOfPrinting = options("width")$width#
+    options(width = 120)#
+    ### making sure that if something happens during printing#
+    ### we close the file (sink())#
+    tryObj = try(#
+      printCorrectedData(data = corData, date = date, readFromFileName = f_i, LAF = LAF, LAF_date = LAF_date, LAF_file = FileWithGoodLAFValues, subBatch = allSubBatches[i])#
+    )#
+    ### if something is wrong, close the sink quitely:#
+    if(tryObj != "OK"){#
+      cat(tryObj[1])#
+      try(sink())#
+      stop("Could not print the data\n")#
+    }#
+    options(width = oldWidthOfPrinting)#
+  }#
+}
+mainFunction(date = "27-SEP-2018", LAF_date = "30-SEP-2018")
+mainFunction <- function(date, LAF_date = date){#
+  ###############################################
+  ### main functions: reads and corrects the data and saves the corrected data#
+  ###############################################
+  ### get all constatns#
+  ###############################################
+  constants = main_constants()#
+  ### allow to start searching for data files#
+  ###############################################
+  dataFileExists = TRUE#
+#
+  ### determine LAF value: file all files that may have LAF#
+  ###############################################
+  LAFFilesTemplate = makeFileNameTemplate(date = LAF_date, subBatch = "")#
+  allFilesInDataFolder = list.files(constants$folderFrom)#
+  allFilesWithLAFDate = grep(LAFFilesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithLAFDate = allFilesWithLAFDate[order(allFilesWithLAFDate)]#
+  LAF = NA  #
+  ### determine LAF value: look inside each file until LAF is obtained#
+  ###############################################
+  countFiles = 1#
+  LAFLog = list()#
+  while(is.na(LAF) & countFiles <= length(allFilesWithLAFDate)){#
+    dataForLAF = read_PRN_file(fileDir = constants$folderFrom, fileName = allFilesWithLAFDate[countFiles])#
+    LAFInfo = getLAF(dataForLAF)#
+    LAF = LAFInfo$LAF#
+    LAFErrorStatus = LAFInfo$errorStatus#
+    LAFLog[[allFilesWithLAFDate[countFiles]]] = LAFErrorStatus#
+    if(is.na(LAF)){#
+      warning(paste(LAFErrorStatus, "in file", allFilesWithLAFDate[countFiles]))#
+    }#
+    countFiles = countFiles + 1#
+  }#
+  ###############################################
+  ### if LAF has not been obtained print the error code for each file#
+  ### and throw an error#
+  if(is.na(LAF)){#
+    for (n_i in names(LAFLog)){#
+      cat("In file ", n_i, ": ", LAFLog[[n_i]])#
+    }#
+    stop("LAF could not been obtained")#
+  }else{#
+    ###############################################
+    ### Determine which file the LAF came from and save the value of LAF#
+    FileWithGoodLAFValues = names(unlist(LAFLog) == "Good LAF values")#
+    saveLAF(LAF = LAF, date = LAF_date, fileDir = constants$folderTo)#
+  }#
+#
+  ###############################################
+  ### Look for files with the same date and different sub-batches #
+  ### and correct them using LAF#
+  ###############################################
+  filesTemplate = makeFileNameTemplate(date = date, subBatch = "")#
+  allFilesWithDate = grep(filesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithDate = allFilesWithLAFDate[order(allFilesWithDate)]#
+  if(TRUE){#
+  ###############################################
+  ### Define subbatches from the names of the file:#
+  ###############################################
+  allSubBatches = gsub(filesTemplate, "", allFilesWithDate)#
+  allSubBatches = as.numeric(gsub(constants$inputFileExtension, "", allSubBatches))#
+  }#
+  LAFLog = list()#
+  for(i in 1:length(allFilesWithDate)){#
+    f_i = allFilesWithDate[i]#
+    data = read_PRN_file(fileDir = constants$folderFrom, fileName = f_i)#
+    corData = correct_data_using_LAF(data = data, LAF = LAF)#
+#
+    oldWidthOfPrinting = options("width")$width#
+    options(width = 120)#
+    ### making sure that if something happens during printing#
+    ### we close the file (sink())#
+    tryObj = try(#
+      printCorrectedData(data = corData, date = date, readFromFileName = f_i, LAF = LAF, LAF_date = LAF_date, LAF_file = FileWithGoodLAFValues, subBatch = allSubBatches[i])#
+    )#
+    ### if something is wrong, close the sink quitely:#
+    if(tryObj != "OK"){#
+      cat(tryObj[1])#
+      try(sink())#
+      stop("Could not print the data\n")#
+    }#
+    options(width = oldWidthOfPrinting)#
+  }#
+}
+mainFunction(date = "27-SEP-2018", LAF_date = "30-SEP-2018")
+traceback()
+### get all constatns#
+  ###############################################
+  constants = main_constants()#
+  ### allow to start searching for data files#
+  ###############################################
+  dataFileExists = TRUE#
+#
+  ### determine LAF value: file all files that may have LAF#
+  ###############################################
+  LAFFilesTemplate = makeFileNameTemplate(date = LAF_date, subBatch = "")#
+  allFilesInDataFolder = list.files(constants$folderFrom)#
+  allFilesWithLAFDate = grep(LAFFilesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithLAFDate = allFilesWithLAFDate[order(allFilesWithLAFDate)]#
+  LAF = NA  #
+  ### determine LAF value: look inside each file until LAF is obtained#
+  ###############################################
+  countFiles = 1#
+  LAFLog = list()#
+  while(is.na(LAF) & countFiles <= length(allFilesWithLAFDate)){#
+    dataForLAF = read_PRN_file(fileDir = constants$folderFrom, fileName = allFilesWithLAFDate[countFiles])#
+    LAFInfo = getLAF(dataForLAF)#
+    LAF = LAFInfo$LAF#
+    LAFErrorStatus = LAFInfo$errorStatus#
+    LAFLog[[allFilesWithLAFDate[countFiles]]] = LAFErrorStatus#
+    if(is.na(LAF)){#
+      warning(paste(LAFErrorStatus, "in file", allFilesWithLAFDate[countFiles]))#
+    }#
+    countFiles = countFiles + 1#
+  }#
+  ###############################################
+  ### if LAF has not been obtained print the error code for each file#
+  ### and throw an error#
+  if(is.na(LAF)){#
+    for (n_i in names(LAFLog)){#
+      cat("In file ", n_i, ": ", LAFLog[[n_i]])#
+    }#
+    stop("LAF could not been obtained")#
+  }else{#
+    ###############################################
+    ### Determine which file the LAF came from and save the value of LAF#
+    FileWithGoodLAFValues = names(unlist(LAFLog) == "Good LAF values")#
+    saveLAF(LAF = LAF, date = LAF_date, fileDir = constants$folderTo)#
+  }#
+#
+  ###############################################
+  ### Look for files with the same date and different sub-batches #
+  ### and correct them using LAF#
+  ###############################################
+  filesTemplate = makeFileNameTemplate(date = date, subBatch = "")#
+  allFilesWithDate = grep(filesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithDate = allFilesWithLAFDate[order(allFilesWithDate)]#
+  ###############################################
+  ### Define subbatches from the names of the file:#
+  ###############################################
+  allSubBatches = gsub(filesTemplate, "", allFilesWithDate)
+allSubBatches
+gsub(constants$inputFileExtension, "", allSubBatches)
+as.numeric(gsub(constants$inputFileExtension, "", allSubBatches))
+allFilesWithDate
+allSubBatches = gsub(filesTemplate, "", allFilesWithDate)#
+  allSubBatches = gsub(constants$inputFileExtension, "", allSubBatches)#
+  allSubBatches = as.numeric(gsub(allSubBatches)
+allSubBatches = gsub(filesTemplate, "", allFilesWithDate)#
+  allSubBatches = gsub(constants$inputFileExtension, "", allSubBatches)#
+  allSubBatches = as.numeric(allSubBatches)
+filesTemplate
+allFilesWithDate
+gsub(filesTemplate, "", allFilesWithDate)
+allSubBatches = gsub(filesTemplate, "", allFilesWithDate)
+allSubBatches = gsub(constants$inputFileExtension, "", allSubBatches)#
+  allSubBatches = as.numeric(allSubBatches)
+mainFunction <- function(date, LAF_date = date){#
+  ###############################################
+  ### main functions: reads and corrects the data and saves the corrected data#
+  ###############################################
+  ### get all constatns#
+  ###############################################
+  constants = main_constants()#
+  ### allow to start searching for data files#
+  ###############################################
+  dataFileExists = TRUE#
+#
+  ### determine LAF value: file all files that may have LAF#
+  ###############################################
+  LAFFilesTemplate = makeFileNameTemplate(date = LAF_date, subBatch = "")#
+  allFilesInDataFolder = list.files(constants$folderFrom)#
+  allFilesWithLAFDate = grep(LAFFilesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithLAFDate = allFilesWithLAFDate[order(allFilesWithLAFDate)]#
+  LAF = NA  #
+  ### determine LAF value: look inside each file until LAF is obtained#
+  ###############################################
+  countFiles = 1#
+  LAFLog = list()#
+  while(is.na(LAF) & countFiles <= length(allFilesWithLAFDate)){#
+    dataForLAF = read_PRN_file(fileDir = constants$folderFrom, fileName = allFilesWithLAFDate[countFiles])#
+    LAFInfo = getLAF(dataForLAF)#
+    LAF = LAFInfo$LAF#
+    LAFErrorStatus = LAFInfo$errorStatus#
+    LAFLog[[allFilesWithLAFDate[countFiles]]] = LAFErrorStatus#
+    if(is.na(LAF)){#
+      warning(paste(LAFErrorStatus, "in file", allFilesWithLAFDate[countFiles]))#
+    }#
+    countFiles = countFiles + 1#
+  }#
+  ###############################################
+  ### if LAF has not been obtained print the error code for each file#
+  ### and throw an error#
+  if(is.na(LAF)){#
+    for (n_i in names(LAFLog)){#
+      cat("In file ", n_i, ": ", LAFLog[[n_i]])#
+    }#
+    stop("LAF could not been obtained")#
+  }else{#
+    ###############################################
+    ### Determine which file the LAF came from and save the value of LAF#
+    FileWithGoodLAFValues = names(unlist(LAFLog) == "Good LAF values")#
+    saveLAF(LAF = LAF, date = LAF_date, fileDir = constants$folderTo)#
+  }#
+#
+  ###############################################
+  ### Look for files with the same date and different sub-batches #
+  ### and correct them using LAF#
+  ###############################################
+  filesTemplate = makeFileNameTemplate(date = date, subBatch = "")#
+  allFilesWithDate = grep(filesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithDate = allFilesWithLAFDate[order(allFilesWithDate)]#
+  ###############################################
+  ### Define subbatches from the names of the file:#
+  ###############################################
+  allSubBatches = gsub(filesTemplate, "", allFilesWithDate)#
+  allSubBatches = gsub(constants$inputFileExtension, "", allSubBatches)#
+  allSubBatches = as.numeric(allSubBatches)#
+#
+  LAFLog = list()#
+  for(i in 1:length(allFilesWithDate)){#
+    f_i = allFilesWithDate[i]#
+    data = read_PRN_file(fileDir = constants$folderFrom, fileName = f_i)#
+    corData = correct_data_using_LAF(data = data, LAF = LAF)#
+#
+    oldWidthOfPrinting = options("width")$width#
+    options(width = 120)#
+    ### making sure that if something happens during printing#
+    ### we close the file (sink())#
+    tryObj = try(#
+      printCorrectedData(data = corData, date = date, readFromFileName = f_i, LAF = LAF, LAF_date = LAF_date, LAF_file = FileWithGoodLAFValues, subBatch = allSubBatches[i])#
+    )#
+    ### if something is wrong, close the sink quitely:#
+    if(tryObj != "OK"){#
+      cat(tryObj[1])#
+      try(sink())#
+      stop("Could not print the data\n")#
+    }#
+    options(width = oldWidthOfPrinting)#
+  }#
+}
+mainFunction(date = "23-MAY-2018")
+mainFunction(date = "27-SEP-2018", LAF_date = "30-SEP-2018")
+traceback()
+warnings()
+options(warn=2)
+mainFunction(date = "27-SEP-2018", LAF_date = "30-SEP-2018")
+traceback()
+mainFunction(date = "27-SEP-2018", LAF_date = "30-OCT-2018")
+LAF_date = "30-OCT-2018"
+options(width = oldWidthOfPrinting)
+mainFunction(date = "27-SEP-2018", LAF_date = "30-SEP-2018")
+browser()
+mainFunction <- function(){#
+  date = "27-SEP-2018"#
+  LAF_date = date#
+  ###############################################
+  ### main functions: reads and corrects the data and saves the corrected data#
+  ###############################################
+  ### get all constatns#
+  ###############################################
+  constants = main_constants()#
+  ### allow to start searching for data files#
+  ###############################################
+  dataFileExists = TRUE#
+#
+  ### determine LAF value: file all files that may have LAF#
+  ###############################################
+  LAFFilesTemplate = makeFileNameTemplate(date = LAF_date, subBatch = "")#
+  allFilesInDataFolder = list.files(constants$folderFrom)#
+  allFilesWithLAFDate = grep(LAFFilesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithLAFDate = allFilesWithLAFDate[order(allFilesWithLAFDate)]#
+  LAF = NA  #
+  ### determine LAF value: look inside each file until LAF is obtained#
+  ###############################################
+  countFiles = 1#
+  LAFLog = list()#
+  while(is.na(LAF) & countFiles <= length(allFilesWithLAFDate)){#
+    dataForLAF = read_PRN_file(fileDir = constants$folderFrom, fileName = allFilesWithLAFDate[countFiles])#
+    LAFInfo = getLAF(dataForLAF)#
+    LAF = LAFInfo$LAF#
+    LAFErrorStatus = LAFInfo$errorStatus#
+    LAFLog[[allFilesWithLAFDate[countFiles]]] = LAFErrorStatus#
+    if(is.na(LAF)){#
+      warning(paste(LAFErrorStatus, "in file", allFilesWithLAFDate[countFiles]))#
+    }#
+    countFiles = countFiles + 1#
+  }#
+  ###############################################
+  ### if LAF has not been obtained print the error code for each file#
+  ### and throw an error#
+  if(is.na(LAF)){#
+    for (n_i in names(LAFLog)){#
+      cat("In file ", n_i, ": ", LAFLog[[n_i]])#
+    }#
+    stop("LAF could not been obtained")#
+  }else{#
+    ###############################################
+    ### Determine which file the LAF came from and save the value of LAF#
+    FileWithGoodLAFValues = names(unlist(LAFLog) == "Good LAF values")#
+    saveLAF(LAF = LAF, date = LAF_date, fileDir = constants$folderTo)#
+  }#
+#
+  ###############################################
+  ### Look for files with the same date and different sub-batches #
+  ### and correct them using LAF#
+  ###############################################
+  filesTemplate = makeFileNameTemplate(date = date, subBatch = "")#
+  allFilesWithDate = grep(filesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithDate = allFilesWithLAFDate[order(allFilesWithDate)]#
+  ###############################################
+  ### Define subbatches from the names of the file:#
+  ###############################################
+  allSubBatches = gsub(filesTemplate, "", allFilesWithDate)#
+  allSubBatches = gsub(constants$inputFileExtension, "", allSubBatches)#
+  allSubBatches = as.numeric(allSubBatches)#
+#
+  LAFLog = list()#
+  for(i in 1:length(allFilesWithDate)){#
+    f_i = allFilesWithDate[i]#
+    data = read_PRN_file(fileDir = constants$folderFrom, fileName = f_i)#
+    corData = correct_data_using_LAF(data = data, LAF = LAF)#
+#
+    oldWidthOfPrinting = options("width")$width#
+    options(width = 120)#
+    ### making sure that if something happens during printing#
+    ### we close the file (sink())#
+    tryObj = try(#
+      printCorrectedData(data = corData, date = date, readFromFileName = f_i, LAF = LAF, LAF_date = LAF_date, LAF_file = FileWithGoodLAFValues, subBatch = allSubBatches[i])#
+    )#
+    ### if something is wrong, close the sink quitely:#
+    if(tryObj != "OK"){#
+      cat(tryObj[1])#
+      try(sink())#
+      stop("Could not print the data\n")#
+    }#
+    options("width" = oldWidthOfPrinting)#
+  }#
+}
+mainFunction()
+debug()
+browse()
+debug(mainFunction)
+mainFunction()
+mainFunction <- function(date, LAF_date = date){#
+# mainFunction <- function(){#
+  date = "27-SEP-2018"#
+  LAF_date = date#
+  ###############################################
+  ### main functions: reads and corrects the data and saves the corrected data#
+  ###############################################
+  ### get all constatns#
+  ###############################################
+  constants = main_constants()#
+  ### allow to start searching for data files#
+  ###############################################
+  dataFileExists = TRUE#
+#
+  ### determine LAF value: file all files that may have LAF#
+  ###############################################
+  LAFFilesTemplate = makeFileNameTemplate(date = LAF_date, subBatch = "")#
+  allFilesInDataFolder = list.files(constants$folderFrom)#
+  allFilesWithLAFDate = grep(LAFFilesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithLAFDate = allFilesWithLAFDate[order(allFilesWithLAFDate)]#
+  LAF = NA  #
+  ### determine LAF value: look inside each file until LAF is obtained#
+  ###############################################
+  countFiles = 1#
+  LAFLog = list()#
+  while(is.na(LAF) & countFiles <= length(allFilesWithLAFDate)){#
+    dataForLAF = read_PRN_file(fileDir = constants$folderFrom, fileName = allFilesWithLAFDate[countFiles])#
+    LAFInfo = getLAF(dataForLAF)#
+    LAF = LAFInfo$LAF#
+    LAFErrorStatus = LAFInfo$errorStatus#
+    LAFLog[[allFilesWithLAFDate[countFiles]]] = LAFErrorStatus#
+    if(is.na(LAF)){#
+      warning(paste(LAFErrorStatus, "in file", allFilesWithLAFDate[countFiles]))#
+    }#
+    countFiles = countFiles + 1#
+  }#
+  ###############################################
+  ### if LAF has not been obtained print the error code for each file#
+  ### and throw an error#
+  if(is.na(LAF)){#
+    for (n_i in names(LAFLog)){#
+      cat("In file ", n_i, ": ", LAFLog[[n_i]])#
+    }#
+    stop("LAF could not been obtained")#
+  }else{#
+    ###############################################
+    ### Determine which file the LAF came from and save the value of LAF#
+    FileWithGoodLAFValues = names(unlist(LAFLog) == "Good LAF values")#
+    saveLAF(LAF = LAF, date = LAF_date, fileDir = constants$folderTo)#
+  }#
+#
+  ###############################################
+  ### Look for files with the same date and different sub-batches #
+  ### and correct them using LAF#
+  ###############################################
+  filesTemplate = makeFileNameTemplate(date = date, subBatch = "")#
+  allFilesWithDate = grep(filesTemplate, allFilesInDataFolder, value = TRUE)#
+  allFilesWithDate = allFilesWithLAFDate[order(allFilesWithDate)]#
+  ###############################################
+  ### Define subbatches from the names of the file:#
+  ###############################################
+  allSubBatches = gsub(filesTemplate, "", allFilesWithDate)#
+  allSubBatches = gsub(constants$inputFileExtension, "", allSubBatches)#
+  allSubBatches = as.numeric(allSubBatches)#
+#
+  LAFLog = list()#
+  for(i in 1:length(allFilesWithDate)){#
+    f_i = allFilesWithDate[i]#
+    data = read_PRN_file(fileDir = constants$folderFrom, fileName = f_i)#
+    corData = correct_data_using_LAF(data = data, LAF = LAF)#
+#
+    oldWidthOfPrinting = options("width")$width#
+    options(width = 120)#
+    ### making sure that if something happens during printing#
+    ### we close the file (sink())#
+    tryObj = try(#
+      printCorrectedData(data = corData, date = date, readFromFileName = f_i, LAF = LAF, LAF_date = LAF_date, LAF_file = FileWithGoodLAFValues, subBatch = allSubBatches[i])#
+    )#
+    ### if something is wrong, close the sink quitely:#
+    if(tryObj != "OK"){#
+      cat(tryObj[1])#
+      try(sink())#
+      stop("Could not print the data\n")#
+    }#
+    options("width" = oldWidthOfPrinting)#
+  }#
+}
+mainFunction()
+mainFunction(date = "27-SEP-2018", LAF_date = "30-OCT-2018")
+q()
+c(1, 1, 0) %in% c(NA, 0, 1)
+data.frame(X = 1:4, Y = 5:8, deltaX = 1, deltaY = 1)
+data = data.frame(X = 1:4, Y = 5:8, deltaX = 1, deltaY = 1)
+data[1, 2] = NA
+data
+apply(data, 2, function(x){any(is.na(x))})
+apply(data, 1, function(x){any(is.na(x))})
+apply(data, 1, function(x){all(!is.na(x))})
+nonMissingRec = apply(data, 1, function(x){all(!is.na(x))})
+warning(sum(!nonMissingRec)" records will be excluded because of missingness\n")
+warning(sum(!nonMissingRec), " records will be excluded because of missingness\n")
+recordWord = "record"#
+    if(sum(!nonMissingRec) > 1) {recordWord = paste0(recordWord, "s")}#
+    warning(sum(!nonMissingRec), " records will be excluded because of missingness\n")
+recordWord = "record"#
+    if(sum(!nonMissingRec) > 1) {recordWord = paste0(recordWord, "s")}#
+    warning(sum(!nonMissingRec), recordWord, " will be excluded because of missingness\n")
+warning(sum(!nonMissingRec), " ", recordWord, " will be excluded because of missing value/s.\n")
+recordWord = "record"  #
+    if(sum(!nonMissingRec) > 1) {recordWord = paste0(recordWord, "s")}#
+    if(sum(nonMissingRec) > 1) {recordWordOther = paste0(recordWord, "s")}#
+    warning(sum(!nonMissingRec), " ", recordWord, " will be excluded because of missing value/s leaving a total of ", sum(nonMissingRec), " ", recordWordOther, ".\n")
+data[3, 2] = NA
+nonMissingRec = apply(data, 1, function(x){all(!is.na(x))})
+recordWord = "record"  #
+    if(sum(!nonMissingRec) > 1) {recordWord = paste0(recordWord, "s")}#
+    if(sum(nonMissingRec) > 1) {recordWordOther = paste0(recordWord, "s")}#
+    warning(sum(!nonMissingRec), " ", recordWord, " will be excluded because of missing value/s resulting in a total of ", sum(nonMissingRec), " ", recordWordOther, ".\n")
+warning(sum(!nonMissingRec), " record/s will be excluded because of missing value/s resulting in a total of ", sum(nonMissingRec), "record/s.\n")
+warning(sum(!nonMissingRec), " record/s will be excluded because of missing value/s resulting in a total of ", sum(nonMissingRec), " record/s.\n")
+data = data.frame(X = c(.51, .68, .11, .21), deltaX = c(1, 1, 1, 0), Y = c(.02, .68, .62, .24), deltaY = c(1, 1, 0, 0))
+####################################################################
+######### computes KM #
+####################################################################
+myOwnKM = function(time, delta, returnToOriginalOrder = TRUE){#
+  ###-----------------------------------------------#
+  ### time - time to event#
+  ### delta - event indicator#
+  ### returnToOriginalOrder = TRUE - the order of time values is the same as in original data#
+  ###            it also returns the delta (event indicator)#
+  ### returnToOriginalOrder = FALSE - the time is unique and ordered and the resulting data#
+  ###            frame does not contain delta (event indicator).#
+  uniqueAndOrderedTime = unique(time)[order(unique(time))]#
+  nEvents = tapply(delta, time, sum)#
+  nDrop = tapply(delta, time, length)#
+  atRisk = c(length(time), length(time) - cumsum(nDrop))[1:length(nDrop)]#
+  probForEachTime = (1-nEvents/atRisk)#
+  dataKM = data.frame(time=uniqueAndOrderedTime, nEvents = nEvents, atRisk = atRisk, KM = cumprod(probForEachTime))#
+  dataKM$CDF = 1 - dataKM$KM#
+  dataKM$CDF_M = c(0, dataKM$CDF[1:(nrow(dataKM)-1)])#
+  if(returnToOriginalOrder){#
+    rownames(dataKM) = uniqueAndOrderedTime#
+    ### let's order the output according to the original order of time#
+    dataKM = dataKM[as.character(time),]#
+    dataKM$delta = delta#
+  }#
+  rownames(dataKM) = 1:nrow(dataKM)#
+  dataKM#
+}#
+#
+####################################################################
+### Plot of the two methods, the way Bryan suggested#
+####################################################################
+grayScale = function(x, X0, X1, Y0, Y1, method, lowerThreshold = -Inf, YValueForLowerThreshold = NA){#
+  ### there are points (X0,Y0) and (X1, Y1) that we aim for#
+  if(X0 == X1){#
+    stop("X0 should not be equal to X1.")#
+  }else{    #
+    if(!(method %in% c(1, 2, 3))){#
+      stop("Argument 'method' can equal only to 1, 2, or 3.")#
+    }#
+    if(method == 1){#
+      a = (Y0 - Y1)/(X0 - X1)#
+      b = Y1 - a*X1#
+      res = a*x  + b#
+    }#
+    if(method == 2){#
+      a = (Y1 - Y0)/((X1 - X0)^2)#
+      b = -2*a*X0#
+      c = Y0 + a*X0^2#
+      res = a*x^2  + b*x + c#
+    }#
+    if(method == 3){#
+      a = -(Y1 - Y0)/((X1 - X0)^2)#
+      b = -2*a*X1#
+      c = Y0 - a*X0^2 + 2*a*X1*X0#
+      res = a*x^2  + b*x + c#
+    }#
+  }#
+  ### assignToWhiteWhenZero#
+  res[x < lowerThreshold] = YValueForLowerThreshold#
+  # res[res < upperThreshold] = YValueForUpperThreshold#
+  res#
+}#
+#
+####################################################################
+######### function used as a 1-D histogram#
+####################################################################
+oneDimHistBreakCells = function(Sdx, divPointsX){#
+  ### Takes a one dimensional function (as a vector)#
+  ### this vector has to have names as points#
+  ### Takes division points: divPointsX#
+  ### and sums up the pieces of the vector based on these division points.#
+  if(FALSE){#
+    Sdx = c(1, 2, 3, 1, 2, 5, 9); names(Sdx) = as.character(1:length(Sdx))#
+    divPointsX = c(0, 3.5, 5, 5.1, 5.2, 8, 9)#
+    oneDimHistBreakCells(Sdx, divPointsX)#
+  }#
+  # browser()#
+  arrangeIndicesForHist = function(X, divPointsX){#
+    indicesX = matrix(NA, ncol = 2, nrow = length(divPointsX) - 1)#
+    # indicesX[1, 1] = 1#
+    i = iterX = 1#
+    while(iterX <= nrow(indicesX) & i <= length(X)){#
+      anythingInside = divPointsX[iterX] < X[i] & X[i] <= divPointsX[iterX+1]#
+      if(anythingInside){#
+        indicesX[iterX, 1] = i#
+        while( divPointsX[iterX] < X[i] & X[i] <= divPointsX[iterX+1] & i <= length(X)){#
+          i = i + 1#
+        }#
+        indicesX[iterX, 2] = i - 1#
+      }#
+      iterX = iterX + 1#
+    }#
+    divPX = cbind(divPointsX[1:(length(divPointsX) - 1)], divPointsX[2:(length(divPointsX))])#
+    # divPX = divPX[!is.na(indicesX[, 1]), ]#
+    # divPX[2:(nrow(divPX)), 1] = divPX[1:(nrow(divPX) - 1), 2]#
+    # indicesX = indicesX[!is.na(indicesX[, 1]), ]#
+    list(divisP = divPX, indices = indicesX)#
+  }#
+#
+  resX = arrangeIndicesForHist(as.numeric(names(Sdx)), divPointsX)#
+  indicesX = resX$indices#
+#
+  newVec = rep(NA, nrow(indicesX))#
+  for(i in 1:nrow(indicesX)){#
+    if(all(is.na(indicesX[i, ]))){#
+      newVec[i] = 0#
+    }else{#
+      newVec[i] = sum(Sdx[indicesX[i, 1]:indicesX[i, 2]])#
+    }#
+  }#
+  # newX = cbind(X[indicesX[,1]], X[indicesX[,2]])#
+  # list(newX = newX, newVec = newVec, divPX = resX$divisP)#
+  list(newVec = newVec, divPX = resX$divisP)#
+}#
+#
+####################################################################
+######### function used as a 2-D histogram#
+####################################################################
+twoDimHistBreakCells = function(Sdxdy, divPointsX, divPointsY){#
+  ### Takes a two dimensional function (as a matrix)#
+  ### this matrix has to have col and row names as points#
+  ### rows are Y's and cols are X's#
+  ### Takes division points:#
+  ### divPointsX are for colnames#
+  ### divPointsY are for rownames#
+  ### and sums up the pieces of the matrix based on these division points.#
+  arrangeIndicesForHist = function(X, divPointsX){#
+    indicesX = matrix(NA, ncol = 2, nrow = length(divPointsX) - 1)#
+    indicesX[1, 1] = 1#
+    i = iterX = 1#
+    while(iterX <= nrow(indicesX) & i <= length(X)){#
+      anythingInside = divPointsX[iterX] < X[i] & X[i] <= divPointsX[iterX+1]#
+      if(anythingInside){#
+        indicesX[iterX, 1] = i#
+        while( divPointsX[iterX] < X[i] & X[i] <= divPointsX[iterX+1] & i <= length(X)){#
+          i = i + 1#
+        }#
+        indicesX[iterX, 2] = i - 1#
+      }#
+      iterX = iterX + 1#
+    }#
+    divPX = cbind(divPointsX[1:(length(divPointsX) - 1)], divPointsX[2:(length(divPointsX))])#
+    # divPX = divPX[!is.na(indicesX[, 1]), ]#
+    # divPX[2:(nrow(divPX)), 1] = divPX[1:(nrow(divPX) - 1), 2]#
+    # indicesX = indicesX[!is.na(indicesX[, 1]), ]#
+    list(divisP = divPX, indices = indicesX)#
+  }#
+  # set.seed(1)#
+  # X = unique(round(runif(10), 3)); X = X[order(X)]#
+  # Y = unique(round(runif(15), 3)); Y = Y[order(Y)]#
+  # Sdxdy = matrix(round(runif(length(X)*length(Y)), 2), nrow = length(Y), ncol = length(X))#
+  # rownames(Sdxdy) = as.character(Y)#
+  # colnames(Sdxdy) = as.character(X)#
+  ##
+  # divPointsX = c(0, 0.33, 0.66, 1)#
+  # divPointsY = c(0, 0.2, 0.4, 0.7, 0.8, 1)#
+  # #X = c(1, 2, 3, 4, 5, 6)#
+  # #divPointsX = c(0, 2, 3.5, 3.6, 7)#
+#
+  resX = arrangeIndicesForHist(as.numeric(rownames(Sdxdy)), divPointsX)#
+  resY = arrangeIndicesForHist(as.numeric(colnames(Sdxdy)), divPointsY)#
+  indicesX = resX$indices#
+  indicesY = resY$indices#
+#
+  newMatr = matrix(NA, nrow = nrow(indicesX), ncol = nrow(indicesY))#
+  for(i in 1:nrow(indicesX)){#
+    for(j in 1:nrow(indicesY)){#
+      if(any(is.na(indicesX[i, ])) | any(is.na(indicesY[j, ]))){#
+        newMatr[i, j] = 0#
+      }else{#
+        newMatr[i, j] = sum(Sdxdy[indicesX[i, 1]:indicesX[i, 2], indicesY[j, 1]:indicesY[j, 2]])#
+      }#
+    }#
+  }#
+  # X = as.numeric(rownames(Sdxdy))#
+  # Y = as.numeric(colnames(Sdxdy))#
+  # newX = cbind(X[indicesX[,1]], X[indicesX[,2]])#
+  # newY = cbind(Y[indicesY[,1]], Y[indicesY[,2]])#
+  # list(newX = newX, newY = newY, newMatr = newMatr, divPX = resX$divisP, divPY = resY$divisP)#
+  list(newMatr = newMatr, divPX = resX$divisP, divPY = resY$divisP)#
+}#
+#
+####################################################################
+######### function that plots a 1-D histogram#
+####################################################################
+plot1DHistWithRotation = function(startX = 0, startY = 0, rotationRadians = 0, newVec, divPX, xlab = "", method = 1, whitestCol = 0.9,  grayMaxCol = 0.001){#
+  # colVec = grayScale(abs(newVec), X0 = min(abs(newVec)), X1 = max(abs(newVec)), Y0 = whitestCol, Y1 = grayMaxCol, method = 3)#
+  colVec = rep(0.2, length(newVec))#
+  if(min(colVec) < 0){#
+    if(abs(min(colVec)) > 10^(13)){#
+      stop("Function: plot1DHistWithRotation, strange color values\n")#
+    }else{#
+      colVec[colVec < 0] = 0#
+    }#
+  }#
+  rotationMatrix = matrix(c(cos(rotationRadians), - sin(rotationRadians), sin(rotationRadians), cos(rotationRadians)), nrow = 2, ncol = 2, byrow = TRUE)#
+  xyRange = apply(rotationMatrix %*% rbind(as.vector(divPX), c(newVec, newVec)), 1, range)#
+  xlim = c(xyRange[,1])#
+  ylim = c(xyRange[,2])#
+  #plot(0, 0, type = "n", xlim = xlim, ylim = ylim)#
+  cat("xlim", xlim, "ylim", ylim, "\n")#
+  for(i in 1:length(newVec)){#
+    borderCol = "white"#
+    col = gray(colVec[i])#
+    #col = "gray"; borderCol = "white"#
+    xCoord = c(divPX[i, 1], divPX[i, 1], divPX[i, 2], divPX[i, 2])#
+    yCoord = c(0, newVec[i], newVec[i], 0)#
+    newCoord = rotationMatrix %*% rbind(xCoord, yCoord)#
+    polygon(newCoord[1,] + startX, newCoord[2,] + startY, border = borderCol, col = col) ### new#
+  }#
+}#
+#
+####################################################################
+######### function that plots a 2-D histogram#
+####################################################################
+plot2DHist = function(startX = 0, startY = 0, newMatr, divPX, divPY, xlab = "", ylab = "", method = 1, whitestCol = 0.9, grayMaxCol = 0.001, colMatr = NULL, borderCol = NULL){#
+  if(is.null(colMatr)){#
+    colMatr = grayScale(newMatr, X0 = min(newMatr), X1 = max(newMatr), Y0 = whitestCol, Y1 = grayMaxCol, method = method, lowerThreshold = 10^(-5), YValueForLowerThreshold = 1)#
+  }#
+  if(min(colMatr) < 0){#
+    if(abs(min(colMatr)) > 10^(13)){#
+      stop("Function: plot2DHist, strange color values\n")#
+    }else{#
+      colMatr[colMatr < 0] = 0#
+    }#
+  }#
+  #plot(0, 0, type = "n", xlim = c(0, max(divPX)), ylim = c(0, max(newVec)), xlab = "", ylab = xlab)#
+  for(i in 1:nrow(divPX)){#
+    for(j in 1:nrow(divPY)){#
+      col = (colMatr[i,j])#
+      # if(is.null(borderCol)){borderCol = col}#
+      # borderCol = col#
+      borderCol = "white"#
+      # cat("borderCol", borderCol, "\n")#
+      polygon(x = c(divPX[i, 1], divPX[i, 1], divPX[i, 2], divPX[i, 2]) + startX, y = c(divPY[j, 1:2], divPY[j, 2:1]) + startY, border = borderCol, col = col)#
+    }#
+  }#
+}#
+#
+## Plot 2D histogram with provided colors#
+## Colors are provided in order of lowest value to highest value: (default) black -> white ~ 0 -> 1#
+plot2DHistColor = function(startX = 0, startY = 0, newMatr, divPX, divPY, xlab = "", ylab = "", method = 1, colors = c("black", "white"), gradientSteps = 100, colMatr = NULL, borderCol = NULL){#
+  if(is.null(colMatr)){#
+    colMatr = grayScale(newMatr, X0 = min(newMatr), X1 = max(newMatr), Y0 = colors[1], Y1 = colors[2], method = method, lowerThreshold = 10^(-5), YValueForLowerThreshold = 1)#
+  }#
+  ## Generate a sequence of colors linking those provided in the function call#
+  colfunc = colorRampPalette(colors = colors)#
+  colVector = colfunc(gradientSteps)#
+  if(min(colMatr) < 0){#
+    if(abs(min(colMatr)) > 10^(13)){#
+      stop("Function: plot2DHist, strange color values\n")#
+    }else{#
+      colMatr[colMatr < 0] = 0#
+    }#
+  }#
+  #plot(0, 0, type = "n", xlim = c(0, max(divPX)), ylim = c(0, max(newVec)), xlab = "", ylab = xlab)#
+  for(i in 1:nrow(divPX)){#
+    for(j in 1:nrow(divPY)){#
+      col = colVector[trunc( (colMatr[i,j] * 100) / (100 / gradientSteps) )]#
+      # if(is.null(borderCol)){borderCol = col}#
+      # borderCol = col#
+      borderCol = "white"#
+      # cat("borderCol", borderCol, "\n")#
+      polygon(x = c(divPX[i, 1], divPX[i, 1], divPX[i, 2], divPX[i, 2]) + startX, y = c(divPY[j, 1:2], divPY[j, 2:1]) + startY, border = borderCol, col = col)#
+    }#
+  }#
+}#
+#
+library(inline) # inline is required for the cfunction to work#
+#
+survDabrowska = function(X, Y, deltaX, deltaY){#
+  ### Optimized by Joey Sherrill#
+  ###############################
+  ### data is the bivariate survival data.frame. It has to contain the following:#
+  ### data$X and data$deltaX - time to event and event indicator for subject 1#
+  ### data$Y and data$deltaY- time to event and event indicator for subject 2#
+  ### Example from Dabrowska's paper:#
+  ###     X = c(.51, .68, .11, .21); deltaX = c(1, 1, 1, 0); Y = c(.02, .68, .62, .24); deltaY = c(1, 1, 0, 0)#
+  ###     survDabrowska(X, Y, deltaX, deltaY)#
+  if(is.null(X) | is.null(Y) | is.null(deltaX) | is.null(deltaY)){#
+    stop("The following four arguments should not be NULL: 'X', 'Y', 'deltaX', 'deltaY'")#
+  }#
+  lengthOfX = length(X)#
+  if(length(Y) ! = lengthOfX | length(deltaX) ! = lengthOfX | length(deltaY) ! = lengthOfX){#
+    stop("The following four arguments should be the same length: 'X', 'Y', 'deltaX', and 'deltaY'")#
+    if(!(all(unique(deltaX) %in% c(1, 0, NA)) & all(unique(deltaY) %in% c(1, 0, NA)))){#
+      stop("Arguments 'deltaX' and 'deltaY' can only have values 0, 1, or NA")#
+  }#
+  data = data.frame(X = X, Y = Y, deltaX = deltaX, deltaY = deltaY)#
+  ### find missing records:#
+  nonMissingRec = apply(data, 1, function(x){all(!is.na(x))})#
+  if(any(!nonMissingRec)){#
+    warning(sum(!nonMissingRec), " record/s will be excluded because of missing value/s resulting in a total of ", sum(nonMissingRec), " record/s.\n")#
+  }#
+#
+  if(nrow(data)<2) stop("Not enough data")#
+  ### first let's find two marginal KM curves:#
+  Sx = myOwnKM(time = X, delta = deltaX)#
+  Sy = myOwnKM(time = Y, delta = deltaY)#
+  SxUnique = unique(Sx[order(Sx$time), c("time", "KM")])#
+  SyUnique = unique(Sy[order(Sy$time), c("time", "KM")])#
+  uniqueKM1 = unique(Sx[, c("time", "nEvents", "atRisk")])#
+  uniqueKM2 = unique(Sy[, c("time", "nEvents", "atRisk")])#
+  uniqueKM1 = uniqueKM1[order(uniqueKM1$time),]#
+  uniqueKM2 = uniqueKM2[order(uniqueKM2$time),]  #
+  lambdaX = uniqueKM1$nEven/uniqueKM1$atRisk#
+  lambdaY = uniqueKM2$nEven/uniqueKM2$atRisk#
+  ### now let's find the bivariate hazard and univariate hazards:#
+  nX = nY = length(X)#
+  uniqueTimeX = unique(unlist(X))#
+  uniqueTimeY = unique(unlist(Y))#
+  numXTimes = length(uniqueTimeX)#
+  numYTimes = length(uniqueTimeY)#
+  Lam = matrix(NA, nrow=numXTimes, ncol=numYTimes)#
+  LamX = matrix(NA, nrow=numXTimes, ncol=numYTimes)#
+  LamY = matrix(NA, nrow=numXTimes, ncol=numYTimes)#
+  ### auxilary matrices:#
+  XEventMatr = matrix(NA, nrow=numXTimes, ncol=nX)#
+  YEventMatr = matrix(NA, nrow=numYTimes, ncol=nY)#
+  XAtRiskMatr =  matrix(NA, nrow=numXTimes, ncol=nX)#
+  YAtRiskMatr =  matrix(NA, nrow=numYTimes, ncol=nY)#
+  for(i in 1:nX){#
+    XAtRiskMatr[,i] = (X[i] >= uniqueTimeX)#
+    YAtRiskMatr[,i] = (Y[i] >= uniqueTimeY)#
+    XEventMatr[,i] = (X[i] == uniqueTimeX)*deltaX[i]#
+    YEventMatr[,i] = (Y[i] == uniqueTimeY)*deltaY[i]#
+  }#
+  atRiskMatr = XAtRiskMatr %*% t(YAtRiskMatr)#
+  M11 = XEventMatr %*% t(YEventMatr)#
+  M10 = XEventMatr %*% t(YAtRiskMatr)#
+  M01 = XAtRiskMatr %*% t(YEventMatr)#
+  ######## double hazard#
+  Lam = M11/atRiskMatr#
+  ######## single hazard for X conditional on Y#
+  LamX = M10 /atRiskMatr#
+  ######## single hazard for Y conditional on X#
+  LamY = M01 /atRiskMatr#
+  ######## here, we are just following the formula for Dabrowska estimator:#
+  bigL = (LamX*LamY - Lam)/((1 - LamX)*(1 - LamY))#
+  indicesX = data.frame(rowNames = uniqueTimeX, rowIndex = 1:length(uniqueTimeX))#
+  indicesY = data.frame(colNames = uniqueTimeY, colIndex = 1:length(uniqueTimeY))#
+  indicesX = indicesX[order(uniqueTimeX), ]#
+  indicesY = indicesY[order(uniqueTimeY), ]#
+  DabrowskaEstNew = matrix(NA, nrow=numXTimes+1, ncol=numYTimes+1)#
+  DabrowskaEstNew[1, 1] = 1#
+  DabrowskaEstNew[2:nrow(DabrowskaEstNew), 1] = SxUnique["KM"][,1]#
+  DabrowskaEstNew[1, 2:ncol(DabrowskaEstNew)] = SyUnique["KM"][,1]#
+  colnames(DabrowskaEstNew) = c("0", indicesY$colNames)#
+  rownames(DabrowskaEstNew) = c("0", indicesX$rowNames)#
+  DabrowskaCDF = 1 - DabrowskaEstNew#
+  subBigLNonMiss = 1 - bigL#
+  subBigLNonMiss[is.na(subBigLNonMiss)] = 1#
+  ### recursive way of computing the estimator#
+  rowInd = indicesX$rowIndex#
+  colInd = indicesY$colIndex#
+  ## The cfuncion is located outside this function and should be loaded along with the rest of the library functions#
+  recurseEstimator(numXTimes, rowInd, colInd, DabrowskaEstNew, subBigLNonMiss)#
+  # The cfunction returns the matrix flipped, make sure it's transposed before continuing#
+  # DabrowskaEstNew = t(DabrowskaEstNew)#
+  ### some values will be NaN because of division by zero (because we DabrowskaEstNew[i, j] = 0 at some point), so we will assign NA's to 0 #
+  DabrowskaEstNew[is.na(DabrowskaEstNew)] = 0#
+  DabrowskaCDF = 1 + DabrowskaEstNew - matrix(DabrowskaEstNew[1, ], nrow = nrow(DabrowskaEstNew), ncol = ncol(DabrowskaEstNew), byrow = TRUE) -  matrix(DabrowskaEstNew[, 1], nrow = nrow(DabrowskaEstNew), ncol = ncol(DabrowskaEstNew))#
+  list(DabrowskaEst = DabrowskaEstNew, DabrowskaCDF = DabrowskaCDF)#
+}#
+#
+####################################################################
+######### C-function used by SurvSurfaceOfDabrowska_Optimized()#
+####################################################################
+recurseEstimator = cfunction(#
+  signature(#
+    matrixSize = "integer",#
+    rowInd = "numeric",#
+    colInd = "numeric",#
+    DabrowskaEstNew = "numeric",#
+    subBigLNonMiss = "numeric"#
+  ),#
+  "#
+  int size = asInteger(matrixSize);#
+  int x = size + 1;#
+  int *row = INTEGER(rowInd);#
+  int *col = INTEGER(colInd);#
+  double *DabEst = REAL(DabrowskaEstNew);#
+  double *subL = REAL(subBigLNonMiss);#
+  for (int i = 0; i < size; i++)#
+  {#
+    for (int j = 0; j < size; j++)#
+  {#
+      double L = subL[row[i]-1 + (col[j] - 1)*size];#
+#
+      double left = DabEst[i   + (j+1)*x];#
+      double top  = DabEst[i+1 + j*x];#
+      double diag = DabEst[i   + j*x];#
+      DabEst[i+1 + (j+1)*x] = ((left * top) / diag) * L;#
+    }#
+  }#
+  return DabrowskaEstNew;#
+",otherdefs="#include <stdio.h>",language="C",convention=".Call"#
+)#
+#
+####################################################################
+######### Get probability mass function from survival surface#
+####################################################################
+survPMF = function(bivarSurf){  #
+  if(bivarSurf[1,1] != 1)#
+    {stop("Element bivarSurf[1,1] should be equal to 1")}#
+  numericX = as.numeric(rownames(bivarSurf))#
+  if(any(is.na(numericX)) | any(numericX != numericX[order(numericX)]) | numericX[1] != 0)#
+    {stop("Please check the row names of 'bivarSurf': they should be ORDERED NUMERIC values with FIRST element equal to '0'")}#
+  numericY = as.numeric(colnames(bivarSurf))#
+  if(any(is.na(numericY)) | any(numericY != numericY[order(numericY)]) | numericY[1] != 0)#
+    {stop("Please check the column names of 'bivarSurf': they should be ORDERED NUMERIC values with FIRST element equal to '0'")}#
+  nX = nrow(bivarSurf) - 1#
+  nY = ncol(bivarSurf) - 1#
+  unitVecX = matrix(1, ncol = nX)#
+  unitVecY = matrix(1, ncol = nY)#
+#
+  Sx = matrix(as.numeric(bivarSurf[(1:nX)+1,1]), nrow = nX) %*% unitVecY#
+  Sy = t(matrix(as.numeric(bivarSurf[1,(1:nY)+1]), nrow = nY) %*% unitVecX)#
+  SxM = matrix(as.numeric(bivarSurf[1:nX,1]), nrow = nX) %*% unitVecY#
+  SyM = t(matrix(as.numeric(bivarSurf[1,1:nY]), nrow = nY) %*% unitVecX)#
+  Sdx = SxM - Sx#
+  Sdy = SyM - Sy#
+#
+  SxMyM = rbind(rep(NA, nY + 1), cbind(rep(NA, nX), bivarSurf[1:nX, 1:nY]))#
+  SxM_y = rbind(rep(NA, nY+1), bivarSurf[1:nX, ])#
+  Sx_yM = cbind(rep(NA, nX+1), bivarSurf[, 1:nY])#
+  Sdx_y = SxM_y - bivarSurf#
+  Sx_dy = Sx_yM - bivarSurf#
+  Sdx_yM = SxMyM - Sx_yM#
+  SxM_dy = SxMyM - SxM_y#
+  Sdxdy = SxM_dy - Sx_dy#
+  rangeX = 1+(1:nX)#
+  rangeY = 1+(1:nY)#
+  pmfWithMarginalPMFs = Sdxdy#
+  rownames(pmfWithMarginalPMFs) = rownames(bivarSurf)#
+  colnames(pmfWithMarginalPMFs) = colnames(bivarSurf)#
+  pmfWithMarginalPMFs[,1] = c(0, Sdx[,1])#
+  pmfWithMarginalPMFs[1,] = c(0, Sdy[1,])#
+  returnRes = list(Sdxdy = pmfWithMarginalPMFs, Sxy = bivarSurf[rangeX, rangeY], SxMyM = SxMyM[rangeX, rangeY],  Sx = Sx, Sy = Sy, Sdx = Sdx, Sdy = Sdy, SxM = SxM, SyM = SyM, SxM_y = SxM_y[rangeX, rangeY], Sx_yM = Sx_yM[rangeX, rangeY], Sdx_y = Sdx_y[rangeX, rangeY], Sx_dy = Sx_dy[rangeX, rangeY], Sdx_yM = Sdx_yM[rangeX, rangeY], SxM_dy = SxM_dy[rangeX, rangeY])#
+#
+  returnRes#
+}#
+#
+##################################################################
+######### Conditional survival surface (final version)#
+##################################################################
+survRestricted = function(bivarSurf, tauX = NULL, tauY = NULL){#
+  Xs = as.numeric(rownames(bivarSurf))#
+  Ys = as.numeric(colnames(bivarSurf))#
+  if (tauX < min(Xs)) stop("tauY is out of bounds.")#
+  if (tauY < min(Ys)) stop("tauY is out of bounds.")#
+#
+  deltaDiff = min(abs(c(diff(Xs), diff(Ys))))/2#
+  if(is.null(tauX)){tauX = max(Xs) + deltaDiff}#
+  if(is.null(tauY)){tauY = max(Ys) + deltaDiff}#
+#
+  dimX = nrow(bivarSurf)#
+  dimY = ncol(bivarSurf)#
+  Fxy = bivarSurf*0#
+  Fxy[1,1] = 0#
+  Fxy[1, 2:dimY] = 1 - bivarSurf[1, 2:dimY]#
+  Fxy[2:dimX, 1] = 1 - bivarSurf[2:dimX, 1]#
+  Fxy[2:dimX, 2:dimY] = 1 - matrix(bivarSurf[1, 2:dimY], nrow = dimX-1, ncol = dimY-1, byrow = TRUE) - matrix(bivarSurf[2:dimX, 1], nrow = dimX-1, ncol = dimY-1) + bivarSurf[2:dimX, 2:dimY]#
+  transition = Fxy[as.numeric(rownames(Fxy)) < tauX, ]#
+  transition = transition[, as.numeric(colnames(transition)) < tauY]#
+  if(is.null(dim(transition))){#
+    stop("Not enough data points or the restricted region is too small.")#
+  }#
+  if(all(abs(transition[2:nrow(transition), 2:ncol(transition)]) < 10^(-13))){#
+    stop("Not enough data points or the restricted region is too small.")#
+  }  #
+  FxyCond = transition#
+#
+  FxyCond[2:nrow(FxyCond), 2:ncol(FxyCond)] = FxyCond[2:nrow(FxyCond), 2:ncol(FxyCond)]/transition[nrow(transition), ncol(transition)]#
+  if(transition[nrow(transition), ncol(transition)] <= 0){#
+    cat("The probability of being in the restricted region is less or equal to zero, so the conditional survival probability cannot be computed.")#
+    res = list(Sxy = NA, SxMyM = NA,  Sx = NA, Sy = NA, Sdx = NA, Sdy = NA, SxM = NA, SyM = NA, SxM_y = NA, Sx_yM = NA, Sdx_y = NA, Sx_dy = NA, Sdx_yM = NA, SxM_dy = NA, Sdxdy = NA)#
+    return(res)#
+  }#
+  ### Computing the joint probability mass:#
+  ##################################################################
+  FxyCond[, 1] = 0#
+  FxyCond[1, ] = 0#
+  massMatr = FxyCond#
+  for(i in 2:nrow(FxyCond)){#
+    for(j in 2:ncol(FxyCond)){#
+      massMatr[i, j] = FxyCond[i, j] - FxyCond[i-1, j] - FxyCond[i, j-1] + FxyCond[i-1, j-1]#
+    }#
+  }#
+  ### Computing the marginal probability mass:#
+  ##################################################################
+  reducedRows = massMatr[2:nrow(massMatr), ]#
+  if(is.null(dim(reducedRows))){reducedRows = matrix(reducedRows, nrow = nrow(massMatr)-1, ncol = ncol(massMatr))}#
+  massMatr[1, ] = apply(reducedRows, 2, sum)#
+  reducedCols = massMatr[, 2:ncol(massMatr)]#
+  if(is.null(dim(reducedCols))){reducedCols = matrix(reducedCols, nrow = nrow(massMatr), ncol = ncol(massMatr) - 1)}#
+  massMatr[, 1] = apply(reducedCols, 1, sum)#
+  massMatr[1, 1] = 0#
+  ### Finishing conditional CDF:#
+  ##################################################################
+  FxyCond[1, ] = cumsum(massMatr[1, ])#
+  FxyCond[, 1] = cumsum(massMatr[, 1])#
+  ### Computing conditional survival surface:#
+  ##################################################################
+  SurvCond = FxyCond*0#
+  SurvCond[1,1] = 1#
+  SurvCond[2:nrow(SurvCond), 1] = 1 - FxyCond[2:nrow(FxyCond), 1]#
+  SurvCond[1, 2:ncol(SurvCond)] = 1 - FxyCond[1, 2:ncol(FxyCond)]#
+  SurvCond[2:nrow(SurvCond), 2:ncol(SurvCond)] = 1 - matrix(FxyCond[1, 2:ncol(SurvCond)], nrow = nrow(SurvCond)-1, ncol = ncol(SurvCond)-1, byrow = TRUE)- matrix(FxyCond[2:nrow(SurvCond), 1], nrow = nrow(SurvCond)-1, ncol = ncol(SurvCond)-1) + FxyCond[2:nrow(SurvCond), 2:ncol(SurvCond)]#
+#
+  ### Prepare the rest of the surfaces#
+  ##################################################################
+  newDimX = nrow(SurvCond); newDimY = ncol(SurvCond)#
+  baseMatr = matrix(0, nrow = newDimX - 1, ncol = newDimY - 1)#
+  rownames(baseMatr) = rownames(SurvCond)[2:newDimX]#
+  colnames(baseMatr) = colnames(SurvCond)[2:newDimY]#
+  unitVecX = matrix(1, ncol = newDimX - 1)#
+  unitVecY = matrix(1, ncol = newDimY - 1)#
+  Sxy = Sx = Sy = Sdx = Sdy = SxM = SyM = SxM_y = Sx_yM = Sdx_y = Sx_dy = Sdx_yM = SxM_dy = SxMyM = Fxy = baseMatr#
+  Sxy = SurvCond[2:nrow(SurvCond), 2:ncol(SurvCond)]#
+  Sx = SurvCond[2:nrow(SurvCond), 1] %*% unitVecY#
+  Sy = t(SurvCond[1, 2:ncol(SurvCond)] %*% unitVecX)#
+#
+  SxMyM = SurvCond[1:(newDimX-1), 1:(newDimY-1)]#
+#
+  Sdx = -diff(c(1, Sx[, 1])) %*% unitVecY#
+  Sdy = t(-diff(c(1, Sy[1, ])) %*% unitVecX)#
+  SxM = Sdx + Sx; SyM = Sdy + Sy#
+  SxM_y = rbind(Sy[1, ], Sxy[1:(newDimX-2), ])#
+  Sx_yM = cbind(Sx[, 1], Sxy[, 1:(newDimY-2)])#
+  Sdx_y = SxM_y - Sxy; Sx_dy = Sx_yM - Sxy #
+  Sdx_yM = SxMyM - Sx_yM; SxM_dy = SxMyM - SxM_y#
+  Sdxdy = Sdx_yM - Sdx_y#
+  res = list(Sxy = SurvCond, SxMyM = SxMyM,  Sx = Sx, Sy = Sy, Sdx = Sdx, Sdy = Sdy, SxM = SxM, SyM = SyM, SxM_y = SxM_y, Sx_yM = Sx_yM, Sdx_y = Sdx_y, Sx_dy = Sx_dy, Sdx_yM = Sdx_yM, SxM_dy = SxM_dy, Sdxdy = Sdxdy)#
+  for(n_i in setdiff(names(res), "Sxy")){#
+    rownames(res[[n_i]]) = NULL#
+    colnames(res[[n_i]]) = NULL#
+  }#
+  res#
+}#
+#
+####################################################################
+####### Overall and Restrcited Spearman's Rho#
+####################################################################
+HighestRankAndRestrictedSpearman = function(bivarSurf, tauX = Inf, tauY = Inf){#
+  ######## computes 1) Overall Spearmans correlation using highest rank approach#
+  ########          2) Restricted Spearmans correlation#
+  #########
+  ######## "bivarSurf" is a matrix representing a bivariate surface fit#
+  ########     with the following format:#
+  ########     1) the 1st row is the marginal survival function for Y#
+  ########     2) the 1nd column is the marginal survival function for X#
+  ########     3) bivarSurf[1,1] equals to 1#
+  ########     4) row names of "bivarSurf" are ordered X values including 0#
+  ########     5) column names of "bivarSurf" are ordered Y values including 0#
+  ######## Note: the covariance (the numerator of the correlation) of the #
+  ########     highest rank estimator can be also computed using formula:#
+  ########     Numerator = \sum_i \sum_j S(x_i,y_i)S_X(dx_i)S_Y(dy_i) - S(x_i,dy_i)S_X(dx_i)S_Y(y_i)  - S(dx_i,y_i)S_X(x_i)S_Y(dy_i)  + S(dx_i,dy_i)S_X(x_i)S_Y(y_i)#
+  ########     The above is equivalent to the highest rank estimator#
+  ########     Numerator = \sum _{i^*}\sum _{j^*}  \left\{1 - \widehat{S}^H_X(x_{i^*}) - \widehat{S}^H_X(x_{i^*}^-) \right\}   \left\{1 - \widehat{S}^H_Y(y_{j^*}) - \widehat{S}^H_Y(y_{j^*}^-) \right\} \widehat{S}^H(dx_{i^*}, dy_{j^*}) #
+#
+  ######## By setting the survival proability to zero outside of the data support#
+  ########     we effectively assume a left-over probability mass#
+  ########     which is what highest rank estimator is doing #
+  ######## This ensures that the above two estimators are the same#
+  oldrownames = rownames(bivarSurf)#
+  oldcolnames = colnames(bivarSurf)#
+  bivarSurfnew = bivarSurf#
+  bivarSurfnew = cbind(bivarSurfnew, rep(0, nrow(bivarSurfnew)))#
+  bivarSurfnew = rbind(bivarSurfnew, rep(0, ncol(bivarSurfnew)))#
+  rownames(bivarSurfnew) = c(oldrownames, "Inf")#
+  colnames(bivarSurfnew) = c(oldcolnames, "Inf")#
+  bivarSurf = bivarSurfnew#
+  ######## End of the part that ensures that the above two estimators are the same#
+  Xs = as.numeric(rownames(bivarSurf))#
+  Ys = as.numeric(colnames(bivarSurf))#
+  rP1 = rP2 = c(NA, NA)#
+  ######## Identify the resticted region for X:#
+  ####################################################################
+  maxX = max(Xs[Xs < tauX])#
+  maxY = max(Ys[Ys < tauY])#
+  if((tauX <= Inf) & (sum(Xs < tauX) <= nrow(bivarSurf))){#
+    rowsInRegion = Xs <= maxX#
+    rX1 = 1:(sum(rowsInRegion)-1)#
+  }else{#
+    rX1 = 1:(nrow(bivarSurf)-2)#
+  }#
+  rP1[1] = rX1[length(rX1)] + 1#
+  rP2[1] = rP1[1] + 1#
+  rX2 = rX1 + 1#
+  ######## Identify the resticted region for Y:#
+  ####################################################################
+  if((tauY <= Inf) & (sum(Ys < tauY) <= ncol(bivarSurf))){#
+    colsInRegion = Ys <= maxY#
+    rY1 = 1:(sum(colsInRegion)-1)#
+  }else{#
+    rY1 = 1:(ncol(bivarSurf)-2)#
+  }#
+  rP1[2] = rY1[length(rY1)] + 1#
+  rP2[2] = rP1[2] + 1#
+  rY2 = rY1 + 1#
+  nX = nrow(bivarSurf) - 1#
+  nY = ncol(bivarSurf) - 1#
+  rangeX = 1+(1:nX)#
+  rangeY = 1+(1:nY)#
+#
+  unitVecX = matrix(1, ncol = nX)#
+  unitVecY = matrix(1, ncol = nY)#
+  Sx = matrix(as.numeric(bivarSurf[(1:nX)+1,1]), nrow = nX) %*% unitVecY#
+  Sy = t(matrix(as.numeric(bivarSurf[1,(1:nY)+1]), nrow = nY) %*% unitVecX)#
+  SxM = matrix(as.numeric(bivarSurf[1:nX,1]), nrow = nX) %*% unitVecY#
+  SyM = t(matrix(as.numeric(bivarSurf[1,1:nY]), nrow = nY) %*% unitVecX)#
+  Sdx = SxM - Sx#
+  Sdy = SyM - Sy#
+  SxMyM = rbind(rep(NA, nY + 1), cbind(rep(NA, nX), bivarSurf[1:nX, 1:nY]))#
+  SxM_y = rbind(rep(NA, nY+1), bivarSurf[1:nX, ])#
+  Sx_yM = cbind(rep(NA, nX+1), bivarSurf[, 1:nY])#
+  Sdx_y = SxM_y - bivarSurf#
+  Sx_dy = Sx_yM - bivarSurf#
+  Sdx_yM = SxMyM - Sx_yM#
+  SxM_dy = SxMyM - SxM_y#
+  Sdxdy = SxM_dy - Sx_dy#
+  ### my favorite estimator#
+  numerator = sum(SxMyM[rangeX, rangeY] * Sdx * Sdy  -  SxM_dy[rangeX, rangeY] * Sdx * SyM  -  Sdx_yM[rangeX, rangeY] * SxM * Sdy  +  Sdxdy[rangeX, rangeY] * SxM * SyM)#
+  ### Highest rank estimator, which is equivalent to my favorite estimator#
+  ###   when compu#
+  numerator0 = sum(   (2*SxM - Sdx - 1) * (2*SyM - Sdy - 1) * Sdxdy[rangeX, rangeY], na.rm=TRUE )#
+#
+  Sx_Stuff_Tail = c(Sx[,1], 0); SxM_Stuff_Tail = c(1, Sx[,1]); Sdx_Stuff_Tail = SxM_Stuff_Tail - Sx_Stuff_Tail#
+  Sy_Stuff_Tail = c(Sy[1,], 0); SyM_Stuff_Tail = c(1, Sy[1,]); Sdy_Stuff_Tail = SyM_Stuff_Tail - Sy_Stuff_Tail#
+  PSR_X_like = (1 - Sx_Stuff_Tail - SxM_Stuff_Tail)#
+  PSR_Y_like = (1 - Sy_Stuff_Tail - SyM_Stuff_Tail)#
+  PSR_X_mean = sum(PSR_X_like * Sdx_Stuff_Tail)#
+  PSR_Y_mean = sum(PSR_Y_like * Sdy_Stuff_Tail)#
+  PSR_X_var = sum(Sdx_Stuff_Tail*(PSR_X_like - PSR_X_mean)^2)#
+  PSR_Y_var = sum(Sdy_Stuff_Tail*(PSR_Y_like - PSR_Y_mean)^2)#
+  rhoConst = 1/sqrt(PSR_X_var * PSR_Y_var)#
+  ####### Compute overall rho#
+  ####################################################################
+  localRhoRhoConst = rhoConst*numerator#
+  prsLikeNoTails = rhoConst*numerator0#
+  ####### Restricted Estimator#
+  ####################################################################
+  ProbOmegaRMatr = 1 - Sx[rX1, rY1] - Sy[rX1, rY1] + bivarSurf[rX2, rY2]#
+  if(length(rX1)==1 | length(rY1) == 1){#
+    ProbOmegaRMatr = matrix(ProbOmegaRMatr, nrow = length(rX1), ncol = length(rY1))#
+    ProbOmegaR = ProbOmegaRMatr[nrow(ProbOmegaRMatr), ncol(ProbOmegaRMatr)]#
+  }else{#
+    ProbOmegaR = ProbOmegaRMatr[nrow(ProbOmegaRMatr), ncol(ProbOmegaRMatr)]#
+  }#
+  SX_tauXM = Sx[rX1[length(rX1)], 1]#
+  SY_tauYM = Sy[1, rY1[length(rY1)]]#
+  ####### Compute S(x, tauY-), S(x-, tauY-), S(tauX-, y), S(tauX-, y) #
+  ################################################################### #
+  S_x_TauYM = matrix(bivarSurf[rX2, rY2[length(rY2)]], nrow = length(rX2), ncol = length(rY2))#
+  S_xM_TauYM = matrix(SxM_y[rX2, rY2[length(rY2)]], nrow = length(rX2), ncol = length(rY2))#
+  S_TauXM_y = matrix(bivarSurf[rX2[length(rX2)], rY2], nrow = length(rX2), ncol = length(rY2), byrow = TRUE)#
+  S_TauXM_yM = matrix(Sx_yM[rX2[length(rX2)], rY2], nrow = length(rX2), ncol = length(rY2), byrow = TRUE) #
+  g_X_No_OmegaR = (2 - Sx[rX1, rY1]  - SxM[rX1, rY1] - 2*SY_tauYM  + S_x_TauYM + S_xM_TauYM - ProbOmegaR)#
+  g_Y_No_OmegaR = (2 - Sy[rX1, rY1] - SyM[rX1, rY1] - 2*SX_tauXM + S_TauXM_y + S_TauXM_yM - ProbOmegaR)#
+  ####### Compute SX(dx|OmegaR), SY(dy|OmegaR) for covariance#
+  ####### According to our paper, it is: SX(dx) - S(dx, tauYM)#
+  ####################################################################
+  SX_dx_No_OmR = (Sdx[rX1, 1] - (S_xM_TauYM[,1] - S_x_TauYM[,1]))#
+  SY_dy_No_OmR = (Sdy[1, rY1] - (S_TauXM_yM[1,] - S_TauXM_y[1,]))#
+  SX_dx_OmR = SX_dx_No_OmR/ProbOmegaR#
+  SY_dy_OmR = SY_dy_No_OmR/ProbOmegaR#
+  ####### Compute SX(dx|OmegaR), SY(dy|OmegaR) for rho (the normalizing const)#
+  ####### take care of negative variance#
+  ####################################################################
+  SX_dx_No_OmR_const = pmax(SX_dx_No_OmR, 0)#
+  SY_dy_No_OmR_const = pmax(SY_dy_No_OmR, 0)#
+  SX_dx_No_OmR_const = ProbOmegaR*SX_dx_No_OmR_const/sum(SX_dx_No_OmR_const)#
+  SY_dy_No_OmR_const = ProbOmegaR*SY_dy_No_OmR_const/sum(SY_dy_No_OmR_const)#
+  ####### Compute terms related to variance#
+  ####################################################################
+  var_g_X_No_OmR = sum(((g_X_No_OmegaR[,1] - sum(g_X_No_OmegaR[,1]*SX_dx_No_OmR)/ProbOmegaR)^2) * SX_dx_No_OmR)#
+  var_g_Y_No_OmR = sum(((g_Y_No_OmegaR[1,] - sum(g_Y_No_OmegaR[1,]*SY_dy_No_OmR)/ProbOmegaR)^2) * SY_dy_No_OmR) #
+  ####### If the probability of being in the region is negative -> the #
+  ####### restricted correlation is not defined#
+  ####################################################################
+  if(ProbOmegaR <= 0){#
+    warning("Restricted Spearman's correlation is not defined because the probability of being in the restricted region is less or equal to zero.")#
+    rhoX0Y0_restr_No_OmR = NA#
+  }else{#
+    if(var_g_X_No_OmR < 0 | var_g_Y_No_OmR < 0){#
+      cat("Restricted Spearman's correlation was corrected.\n")#
+      warning("Restricted Spearman's correlation was corrected.")#
+    }#
+    if(var_g_X_No_OmR < 0){#
+      var_g_X_No_OmR = sum(((g_X_No_OmegaR[,1] - sum(g_X_No_OmegaR[,1]*SX_dx_No_OmR_const)/ProbOmegaR)^2) * SX_dx_No_OmR_const)#
+    }#
+    if(var_g_Y_No_OmR < 0){#
+      var_g_Y_No_OmR = sum(((g_Y_No_OmegaR[1,] - sum(g_Y_No_OmegaR[1,]*SY_dy_No_OmR_const)/ProbOmegaR)^2) * SY_dy_No_OmR_const)#
+    }#
+    ####### Compute the constant for restricted correlation:#
+    ####################################################################
+    inv_rhoCons_cond_form_No_OmR = sqrt(var_g_X_No_OmR * var_g_Y_No_OmR)#
+    ####### Compute restricted correlation:#
+    ####################################################################
+    rhoX0Y0_restr_No_OmR = sum(  g_X_No_OmegaR  *  g_Y_No_OmegaR  * Sdxdy[rX2, rY2], na.rm=TRUE )/inv_rhoCons_cond_form_No_OmR#
+  }#
+  # res = matrix(c(localRhoRhoConst, prsLikeNoTails, rhoX0Y0_restr_No_OmR), ncol = 1)#
+  # rownames(res) = c("HighestRank", "HighestRankNoTails", "Restricted")#
+  res = matrix(c(prsLikeNoTails, rhoX0Y0_restr_No_OmR), ncol = 1)#
+  rownames(res) = c("HighestRank", "Restricted")#
+  colnames(res) = "Spearman's Correlation"#
+  ####### Make sure that all values are in the proper range#
+  ####################################################################
+  for(n_i in rownames(res)){#
+    res[n_i, ] = min(abs(res[n_i, ]), 1)*sign(res[n_i, ])#
+  }#
+  res#
+}#
+#
+####################################################################
+####### Highest Rank and Restrcited Spearman's Rho in the Restricted Region#
+####################################################################
+survSpearman = function(bivarSurf = NULL, X = NULL, Y = NULL, deltaX = NULL, deltaY = NULL, tauX = Inf, tauY = Inf){#
+  ### The function returns three correlation values:#
+  ### 1) "HighestRankInRestrictedRegion" is computed#
+  ###         using Highest Rank approach in the restricted region#
+  ### 2) "RestrictedRegion" is computed in the restricted region#
+  ####################################################################
+  ### Indentify randomTauX, lastEventX#
+  if(is.null(bivarSurf) & is.null(X) & is.null(Y) & is.null(deltaX) & is.null(deltaY)){#
+    stop("Please supply either 'bivarSurf' or the following four arguments: 'X', 'Y', 'deltaX', 'deltaY'")#
+  }#
+  if(is.null(bivarSurf)){#
+    bivarSurf = survDabrowska(X, Y, deltaX, deltaY)#
+  }#
+  if(bivarSurf[nrow(bivarSurf),1] > 0){  ### last X event is censored#
+    randomTauX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+    lastEventX = Inf#
+  }else{                                 ### last X event is not censored#
+    randomTauX = Inf#
+    lastEventX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+  }#
+  ### Indentify randomTauY, lastEventY#
+  if(bivarSurf[1,ncol(bivarSurf)] > 0){#
+    randomTauY = as.numeric(colnames(bivarSurf)[ncol(bivarSurf)])#
+    lastEventY = Inf#
+  }else{#
+    randomTauY = Inf#
+    lastEventY = as.numeric(colnames(bivarSurf)[ncol(bivarSurf)])#
+  }#
+  if(randomTauX != Inf){#
+    tauX = min(tauX, c(randomTauX, lastEventX))#
+  }#
+  if(randomTauY != Inf){#
+    tauY = min(tauY, c(randomTauY, lastEventY))#
+  }#
+  # tauX = min(tauX, c(randomTauX))#
+  # tauY = min(tauY, c(randomTauY))#
+  if(tauX == lastEventX){#
+    tauX = paste(tauX, "+", sep = " ")#
+  }#
+  if(tauY == lastEventY){#
+    tauY = paste(tauY, "+", sep = " ")#
+  }#
+  res1 = HighestRankAndRestrictedSpearman(bivarSurf, tauX = tauX, tauY = tauY)#
+  bivarSurfForHR = bivarSurf#
+  bivarSurfForHR[as.numeric(rownames(bivarSurfForHR)) >= tauX, ] = 0#
+  bivarSurfForHR[, as.numeric(colnames(bivarSurfForHR)) >= tauY ] = 0#
+  res2 = HighestRankAndRestrictedSpearman(bivarSurfForHR, tauX = Inf, tauY = Inf)#
+  resCor = c("HighestRank" = res2["HighestRank", ], "Restricted" = res1["Restricted", ])#
+  resReg = c("tauX" = as.character(tauX), "tauY" = as.character(tauY))#
+  list(Region = resReg, Correlation = resCor)#
+}
+survDabrowska = function(X, Y, deltaX, deltaY){#
+  ### Optimized by Joey Sherrill#
+  ###############################
+  ### data is the bivariate survival data.frame. It has to contain the following:#
+  ### data$X and data$deltaX - time to event and event indicator for subject 1#
+  ### data$Y and data$deltaY- time to event and event indicator for subject 2#
+  ### Example from Dabrowska's paper:#
+  ###     X = c(.51, .68, .11, .21); deltaX = c(1, 1, 1, 0); Y = c(.02, .68, .62, .24); deltaY = c(1, 1, 0, 0)#
+  ###     survDabrowska(X, Y, deltaX, deltaY)#
+  if(is.null(X) | is.null(Y) | is.null(deltaX) | is.null(deltaY)){#
+    stop("The following four arguments should not be NULL: 'X', 'Y', 'deltaX', 'deltaY'")#
+  }#
+  lengthOfX = length(X)#
+  if(length(Y) != lengthOfX | length(deltaX) != lengthOfX | length(deltaY) != lengthOfX){#
+    stop("The following four arguments should be the same length: 'X', 'Y', 'deltaX', and 'deltaY'")#
+    if(!(all(unique(deltaX) %in% c(1, 0, NA)) & all(unique(deltaY) %in% c(1, 0, NA)))){#
+      stop("Arguments 'deltaX' and 'deltaY' can only have values 0, 1, or NA")#
+  }#
+  data = data.frame(X = X, Y = Y, deltaX = deltaX, deltaY = deltaY)#
+  ### find missing records:#
+  nonMissingRec = apply(data, 1, function(x){all(!is.na(x))})#
+  if(any(!nonMissingRec)){#
+    warning(sum(!nonMissingRec), " record/s will be excluded because of missing value/s resulting in a total of ", sum(nonMissingRec), " record/s.\n")#
+  }#
+#
+  if(nrow(data)<2) stop("Not enough data")#
+  ### first let's find two marginal KM curves:#
+  Sx = myOwnKM(time = X, delta = deltaX)#
+  Sy = myOwnKM(time = Y, delta = deltaY)#
+  SxUnique = unique(Sx[order(Sx$time), c("time", "KM")])#
+  SyUnique = unique(Sy[order(Sy$time), c("time", "KM")])#
+  uniqueKM1 = unique(Sx[, c("time", "nEvents", "atRisk")])#
+  uniqueKM2 = unique(Sy[, c("time", "nEvents", "atRisk")])#
+  uniqueKM1 = uniqueKM1[order(uniqueKM1$time),]#
+  uniqueKM2 = uniqueKM2[order(uniqueKM2$time),]  #
+  lambdaX = uniqueKM1$nEven/uniqueKM1$atRisk#
+  lambdaY = uniqueKM2$nEven/uniqueKM2$atRisk#
+  ### now let's find the bivariate hazard and univariate hazards:#
+  nX = nY = length(X)#
+  uniqueTimeX = unique(unlist(X))#
+  uniqueTimeY = unique(unlist(Y))#
+  numXTimes = length(uniqueTimeX)#
+  numYTimes = length(uniqueTimeY)#
+  Lam = matrix(NA, nrow=numXTimes, ncol=numYTimes)#
+  LamX = matrix(NA, nrow=numXTimes, ncol=numYTimes)#
+  LamY = matrix(NA, nrow=numXTimes, ncol=numYTimes)#
+  ### auxilary matrices:#
+  XEventMatr = matrix(NA, nrow=numXTimes, ncol=nX)#
+  YEventMatr = matrix(NA, nrow=numYTimes, ncol=nY)#
+  XAtRiskMatr =  matrix(NA, nrow=numXTimes, ncol=nX)#
+  YAtRiskMatr =  matrix(NA, nrow=numYTimes, ncol=nY)#
+  for(i in 1:nX){#
+    XAtRiskMatr[,i] = (X[i] >= uniqueTimeX)#
+    YAtRiskMatr[,i] = (Y[i] >= uniqueTimeY)#
+    XEventMatr[,i] = (X[i] == uniqueTimeX)*deltaX[i]#
+    YEventMatr[,i] = (Y[i] == uniqueTimeY)*deltaY[i]#
+  }#
+  atRiskMatr = XAtRiskMatr %*% t(YAtRiskMatr)#
+  M11 = XEventMatr %*% t(YEventMatr)#
+  M10 = XEventMatr %*% t(YAtRiskMatr)#
+  M01 = XAtRiskMatr %*% t(YEventMatr)#
+  ######## double hazard#
+  Lam = M11/atRiskMatr#
+  ######## single hazard for X conditional on Y#
+  LamX = M10 /atRiskMatr#
+  ######## single hazard for Y conditional on X#
+  LamY = M01 /atRiskMatr#
+  ######## here, we are just following the formula for Dabrowska estimator:#
+  bigL = (LamX*LamY - Lam)/((1 - LamX)*(1 - LamY))#
+  indicesX = data.frame(rowNames = uniqueTimeX, rowIndex = 1:length(uniqueTimeX))#
+  indicesY = data.frame(colNames = uniqueTimeY, colIndex = 1:length(uniqueTimeY))#
+  indicesX = indicesX[order(uniqueTimeX), ]#
+  indicesY = indicesY[order(uniqueTimeY), ]#
+  DabrowskaEstNew = matrix(NA, nrow=numXTimes+1, ncol=numYTimes+1)#
+  DabrowskaEstNew[1, 1] = 1#
+  DabrowskaEstNew[2:nrow(DabrowskaEstNew), 1] = SxUnique["KM"][,1]#
+  DabrowskaEstNew[1, 2:ncol(DabrowskaEstNew)] = SyUnique["KM"][,1]#
+  colnames(DabrowskaEstNew) = c("0", indicesY$colNames)#
+  rownames(DabrowskaEstNew) = c("0", indicesX$rowNames)#
+  DabrowskaCDF = 1 - DabrowskaEstNew#
+  subBigLNonMiss = 1 - bigL#
+  subBigLNonMiss[is.na(subBigLNonMiss)] = 1#
+  ### recursive way of computing the estimator#
+  rowInd = indicesX$rowIndex#
+  colInd = indicesY$colIndex#
+  ## The cfuncion is located outside this function and should be loaded along with the rest of the library functions#
+  recurseEstimator(numXTimes, rowInd, colInd, DabrowskaEstNew, subBigLNonMiss)#
+  # The cfunction returns the matrix flipped, make sure it's transposed before continuing#
+  # DabrowskaEstNew = t(DabrowskaEstNew)#
+  ### some values will be NaN because of division by zero (because we DabrowskaEstNew[i, j] = 0 at some point), so we will assign NA's to 0 #
+  DabrowskaEstNew[is.na(DabrowskaEstNew)] = 0#
+  DabrowskaCDF = 1 + DabrowskaEstNew - matrix(DabrowskaEstNew[1, ], nrow = nrow(DabrowskaEstNew), ncol = ncol(DabrowskaEstNew), byrow = TRUE) -  matrix(DabrowskaEstNew[, 1], nrow = nrow(DabrowskaEstNew), ncol = ncol(DabrowskaEstNew))#
+  list(DabrowskaEst = DabrowskaEstNew, DabrowskaCDF = DabrowskaCDF)#
+}
+}
+survDabrowska = function(X, Y, deltaX, deltaY){#
+  ### Optimized by Joey Sherrill#
+  ###############################
+  ### data is the bivariate survival data.frame. It has to contain the following:#
+  ### data$X and data$deltaX - time to event and event indicator for subject 1#
+  ### data$Y and data$deltaY- time to event and event indicator for subject 2#
+  ### Example from Dabrowska's paper:#
+  ###     X = c(.51, .68, .11, .21); deltaX = c(1, 1, 1, 0); Y = c(.02, .68, .62, .24); deltaY = c(1, 1, 0, 0)#
+  ###     survDabrowska(X, Y, deltaX, deltaY)#
+  if(is.null(X) | is.null(Y) | is.null(deltaX) | is.null(deltaY)){#
+    stop("The following four arguments should not be NULL: 'X', 'Y', 'deltaX', 'deltaY'")#
+  }#
+  lengthOfX = length(X)#
+  if(length(Y) != lengthOfX | length(deltaX) != lengthOfX | length(deltaY) != lengthOfX){#
+    stop("The following four arguments should be the same length: 'X', 'Y', 'deltaX', and 'deltaY'")#
+  }#
+  if(!(all(unique(deltaX) %in% c(1, 0, NA)) & all(unique(deltaY) %in% c(1, 0, NA)))){#
+    stop("Arguments 'deltaX' and 'deltaY' can only have values 0, 1, or NA")#
+  }#
+  data = data.frame(X = X, Y = Y, deltaX = deltaX, deltaY = deltaY)#
+  ### find missing records:#
+  nonMissingRec = apply(data, 1, function(x){all(!is.na(x))})#
+  if(any(!nonMissingRec)){#
+    warning(sum(!nonMissingRec), " record/s will be excluded because of missing value/s resulting in a total of ", sum(nonMissingRec), " record/s.\n")#
+  }#
+#
+  if(nrow(data)<2) stop("Not enough data")#
+  ### first let's find two marginal KM curves:#
+  Sx = myOwnKM(time = X, delta = deltaX)#
+  Sy = myOwnKM(time = Y, delta = deltaY)#
+  SxUnique = unique(Sx[order(Sx$time), c("time", "KM")])#
+  SyUnique = unique(Sy[order(Sy$time), c("time", "KM")])#
+  uniqueKM1 = unique(Sx[, c("time", "nEvents", "atRisk")])#
+  uniqueKM2 = unique(Sy[, c("time", "nEvents", "atRisk")])#
+  uniqueKM1 = uniqueKM1[order(uniqueKM1$time),]#
+  uniqueKM2 = uniqueKM2[order(uniqueKM2$time),]  #
+  lambdaX = uniqueKM1$nEven/uniqueKM1$atRisk#
+  lambdaY = uniqueKM2$nEven/uniqueKM2$atRisk#
+  ### now let's find the bivariate hazard and univariate hazards:#
+  nX = nY = length(X)#
+  uniqueTimeX = unique(unlist(X))#
+  uniqueTimeY = unique(unlist(Y))#
+  numXTimes = length(uniqueTimeX)#
+  numYTimes = length(uniqueTimeY)#
+  Lam = matrix(NA, nrow=numXTimes, ncol=numYTimes)#
+  LamX = matrix(NA, nrow=numXTimes, ncol=numYTimes)#
+  LamY = matrix(NA, nrow=numXTimes, ncol=numYTimes)#
+  ### auxilary matrices:#
+  XEventMatr = matrix(NA, nrow=numXTimes, ncol=nX)#
+  YEventMatr = matrix(NA, nrow=numYTimes, ncol=nY)#
+  XAtRiskMatr =  matrix(NA, nrow=numXTimes, ncol=nX)#
+  YAtRiskMatr =  matrix(NA, nrow=numYTimes, ncol=nY)#
+  for(i in 1:nX){#
+    XAtRiskMatr[,i] = (X[i] >= uniqueTimeX)#
+    YAtRiskMatr[,i] = (Y[i] >= uniqueTimeY)#
+    XEventMatr[,i] = (X[i] == uniqueTimeX)*deltaX[i]#
+    YEventMatr[,i] = (Y[i] == uniqueTimeY)*deltaY[i]#
+  }#
+  atRiskMatr = XAtRiskMatr %*% t(YAtRiskMatr)#
+  M11 = XEventMatr %*% t(YEventMatr)#
+  M10 = XEventMatr %*% t(YAtRiskMatr)#
+  M01 = XAtRiskMatr %*% t(YEventMatr)#
+  ######## double hazard#
+  Lam = M11/atRiskMatr#
+  ######## single hazard for X conditional on Y#
+  LamX = M10 /atRiskMatr#
+  ######## single hazard for Y conditional on X#
+  LamY = M01 /atRiskMatr#
+  ######## here, we are just following the formula for Dabrowska estimator:#
+  bigL = (LamX*LamY - Lam)/((1 - LamX)*(1 - LamY))#
+  indicesX = data.frame(rowNames = uniqueTimeX, rowIndex = 1:length(uniqueTimeX))#
+  indicesY = data.frame(colNames = uniqueTimeY, colIndex = 1:length(uniqueTimeY))#
+  indicesX = indicesX[order(uniqueTimeX), ]#
+  indicesY = indicesY[order(uniqueTimeY), ]#
+  DabrowskaEstNew = matrix(NA, nrow=numXTimes+1, ncol=numYTimes+1)#
+  DabrowskaEstNew[1, 1] = 1#
+  DabrowskaEstNew[2:nrow(DabrowskaEstNew), 1] = SxUnique["KM"][,1]#
+  DabrowskaEstNew[1, 2:ncol(DabrowskaEstNew)] = SyUnique["KM"][,1]#
+  colnames(DabrowskaEstNew) = c("0", indicesY$colNames)#
+  rownames(DabrowskaEstNew) = c("0", indicesX$rowNames)#
+  DabrowskaCDF = 1 - DabrowskaEstNew#
+  subBigLNonMiss = 1 - bigL#
+  subBigLNonMiss[is.na(subBigLNonMiss)] = 1#
+  ### recursive way of computing the estimator#
+  rowInd = indicesX$rowIndex#
+  colInd = indicesY$colIndex#
+  ## The cfuncion is located outside this function and should be loaded along with the rest of the library functions#
+  recurseEstimator(numXTimes, rowInd, colInd, DabrowskaEstNew, subBigLNonMiss)#
+  # The cfunction returns the matrix flipped, make sure it's transposed before continuing#
+  # DabrowskaEstNew = t(DabrowskaEstNew)#
+  ### some values will be NaN because of division by zero (because we DabrowskaEstNew[i, j] = 0 at some point), so we will assign NA's to 0 #
+  DabrowskaEstNew[is.na(DabrowskaEstNew)] = 0#
+  DabrowskaCDF = 1 + DabrowskaEstNew - matrix(DabrowskaEstNew[1, ], nrow = nrow(DabrowskaEstNew), ncol = ncol(DabrowskaEstNew), byrow = TRUE) -  matrix(DabrowskaEstNew[, 1], nrow = nrow(DabrowskaEstNew), ncol = ncol(DabrowskaEstNew))#
+  list(DabrowskaEst = DabrowskaEstNew, DabrowskaCDF = DabrowskaCDF)#
+}
+recurseEstimator = cfunction(#
+  signature(#
+    matrixSize = "integer",#
+    rowInd = "numeric",#
+    colInd = "numeric",#
+    DabrowskaEstNew = "numeric",#
+    subBigLNonMiss = "numeric"#
+  ),#
+  "#
+  int size = asInteger(matrixSize);#
+  int x = size + 1;#
+  int *row = INTEGER(rowInd);#
+  int *col = INTEGER(colInd);#
+  double *DabEst = REAL(DabrowskaEstNew);#
+  double *subL = REAL(subBigLNonMiss);#
+  for (int i = 0; i < size; i++)#
+  {#
+    for (int j = 0; j < size; j++)#
+  {#
+      double L = subL[row[i]-1 + (col[j] - 1)*size];#
+#
+      double left = DabEst[i   + (j+1)*x];#
+      double top  = DabEst[i+1 + j*x];#
+      double diag = DabEst[i   + j*x];#
+      DabEst[i+1 + (j+1)*x] = ((left * top) / diag) * L;#
+    }#
+  }#
+  return DabrowskaEstNew;#
+",otherdefs="#include <stdio.h>",language="C",convention=".Call"#
+)#
+#
+####################################################################
+######### Get probability mass function from survival surface#
+####################################################################
+survPMF = function(bivarSurf){  #
+  if(bivarSurf[1,1] != 1)#
+    {stop("Element bivarSurf[1,1] should be equal to 1")}#
+  numericX = as.numeric(rownames(bivarSurf))#
+  if(any(is.na(numericX)) | any(numericX != numericX[order(numericX)]) | numericX[1] != 0)#
+    {stop("Please check the row names of 'bivarSurf': they should be ORDERED NUMERIC values with FIRST element equal to '0'")}#
+  numericY = as.numeric(colnames(bivarSurf))#
+  if(any(is.na(numericY)) | any(numericY != numericY[order(numericY)]) | numericY[1] != 0)#
+    {stop("Please check the column names of 'bivarSurf': they should be ORDERED NUMERIC values with FIRST element equal to '0'")}#
+  nX = nrow(bivarSurf) - 1#
+  nY = ncol(bivarSurf) - 1#
+  unitVecX = matrix(1, ncol = nX)#
+  unitVecY = matrix(1, ncol = nY)#
+#
+  Sx = matrix(as.numeric(bivarSurf[(1:nX)+1,1]), nrow = nX) %*% unitVecY#
+  Sy = t(matrix(as.numeric(bivarSurf[1,(1:nY)+1]), nrow = nY) %*% unitVecX)#
+  SxM = matrix(as.numeric(bivarSurf[1:nX,1]), nrow = nX) %*% unitVecY#
+  SyM = t(matrix(as.numeric(bivarSurf[1,1:nY]), nrow = nY) %*% unitVecX)#
+  Sdx = SxM - Sx#
+  Sdy = SyM - Sy#
+#
+  SxMyM = rbind(rep(NA, nY + 1), cbind(rep(NA, nX), bivarSurf[1:nX, 1:nY]))#
+  SxM_y = rbind(rep(NA, nY+1), bivarSurf[1:nX, ])#
+  Sx_yM = cbind(rep(NA, nX+1), bivarSurf[, 1:nY])#
+  Sdx_y = SxM_y - bivarSurf#
+  Sx_dy = Sx_yM - bivarSurf#
+  Sdx_yM = SxMyM - Sx_yM#
+  SxM_dy = SxMyM - SxM_y#
+  Sdxdy = SxM_dy - Sx_dy#
+  rangeX = 1+(1:nX)#
+  rangeY = 1+(1:nY)#
+  pmfWithMarginalPMFs = Sdxdy#
+  rownames(pmfWithMarginalPMFs) = rownames(bivarSurf)#
+  colnames(pmfWithMarginalPMFs) = colnames(bivarSurf)#
+  pmfWithMarginalPMFs[,1] = c(0, Sdx[,1])#
+  pmfWithMarginalPMFs[1,] = c(0, Sdy[1,])#
+  returnRes = list(Sdxdy = pmfWithMarginalPMFs, Sxy = bivarSurf[rangeX, rangeY], SxMyM = SxMyM[rangeX, rangeY],  Sx = Sx, Sy = Sy, Sdx = Sdx, Sdy = Sdy, SxM = SxM, SyM = SyM, SxM_y = SxM_y[rangeX, rangeY], Sx_yM = Sx_yM[rangeX, rangeY], Sdx_y = Sdx_y[rangeX, rangeY], Sx_dy = Sx_dy[rangeX, rangeY], Sdx_yM = Sdx_yM[rangeX, rangeY], SxM_dy = SxM_dy[rangeX, rangeY])#
+#
+  returnRes#
+}#
+#
+##################################################################
+######### Conditional survival surface (final version)#
+##################################################################
+survRestricted = function(bivarSurf, tauX = NULL, tauY = NULL){#
+  Xs = as.numeric(rownames(bivarSurf))#
+  Ys = as.numeric(colnames(bivarSurf))#
+  if (tauX < min(Xs)) stop("tauY is out of bounds.")#
+  if (tauY < min(Ys)) stop("tauY is out of bounds.")#
+#
+  deltaDiff = min(abs(c(diff(Xs), diff(Ys))))/2#
+  if(is.null(tauX)){tauX = max(Xs) + deltaDiff}#
+  if(is.null(tauY)){tauY = max(Ys) + deltaDiff}#
+#
+  dimX = nrow(bivarSurf)#
+  dimY = ncol(bivarSurf)#
+  Fxy = bivarSurf*0#
+  Fxy[1,1] = 0#
+  Fxy[1, 2:dimY] = 1 - bivarSurf[1, 2:dimY]#
+  Fxy[2:dimX, 1] = 1 - bivarSurf[2:dimX, 1]#
+  Fxy[2:dimX, 2:dimY] = 1 - matrix(bivarSurf[1, 2:dimY], nrow = dimX-1, ncol = dimY-1, byrow = TRUE) - matrix(bivarSurf[2:dimX, 1], nrow = dimX-1, ncol = dimY-1) + bivarSurf[2:dimX, 2:dimY]#
+  transition = Fxy[as.numeric(rownames(Fxy)) < tauX, ]#
+  transition = transition[, as.numeric(colnames(transition)) < tauY]#
+  if(is.null(dim(transition))){#
+    stop("Not enough data points or the restricted region is too small.")#
+  }#
+  if(all(abs(transition[2:nrow(transition), 2:ncol(transition)]) < 10^(-13))){#
+    stop("Not enough data points or the restricted region is too small.")#
+  }  #
+  FxyCond = transition#
+#
+  FxyCond[2:nrow(FxyCond), 2:ncol(FxyCond)] = FxyCond[2:nrow(FxyCond), 2:ncol(FxyCond)]/transition[nrow(transition), ncol(transition)]#
+  if(transition[nrow(transition), ncol(transition)] <= 0){#
+    cat("The probability of being in the restricted region is less or equal to zero, so the conditional survival probability cannot be computed.")#
+    res = list(Sxy = NA, SxMyM = NA,  Sx = NA, Sy = NA, Sdx = NA, Sdy = NA, SxM = NA, SyM = NA, SxM_y = NA, Sx_yM = NA, Sdx_y = NA, Sx_dy = NA, Sdx_yM = NA, SxM_dy = NA, Sdxdy = NA)#
+    return(res)#
+  }#
+  ### Computing the joint probability mass:#
+  ##################################################################
+  FxyCond[, 1] = 0#
+  FxyCond[1, ] = 0#
+  massMatr = FxyCond#
+  for(i in 2:nrow(FxyCond)){#
+    for(j in 2:ncol(FxyCond)){#
+      massMatr[i, j] = FxyCond[i, j] - FxyCond[i-1, j] - FxyCond[i, j-1] + FxyCond[i-1, j-1]#
+    }#
+  }#
+  ### Computing the marginal probability mass:#
+  ##################################################################
+  reducedRows = massMatr[2:nrow(massMatr), ]#
+  if(is.null(dim(reducedRows))){reducedRows = matrix(reducedRows, nrow = nrow(massMatr)-1, ncol = ncol(massMatr))}#
+  massMatr[1, ] = apply(reducedRows, 2, sum)#
+  reducedCols = massMatr[, 2:ncol(massMatr)]#
+  if(is.null(dim(reducedCols))){reducedCols = matrix(reducedCols, nrow = nrow(massMatr), ncol = ncol(massMatr) - 1)}#
+  massMatr[, 1] = apply(reducedCols, 1, sum)#
+  massMatr[1, 1] = 0#
+  ### Finishing conditional CDF:#
+  ##################################################################
+  FxyCond[1, ] = cumsum(massMatr[1, ])#
+  FxyCond[, 1] = cumsum(massMatr[, 1])#
+  ### Computing conditional survival surface:#
+  ##################################################################
+  SurvCond = FxyCond*0#
+  SurvCond[1,1] = 1#
+  SurvCond[2:nrow(SurvCond), 1] = 1 - FxyCond[2:nrow(FxyCond), 1]#
+  SurvCond[1, 2:ncol(SurvCond)] = 1 - FxyCond[1, 2:ncol(FxyCond)]#
+  SurvCond[2:nrow(SurvCond), 2:ncol(SurvCond)] = 1 - matrix(FxyCond[1, 2:ncol(SurvCond)], nrow = nrow(SurvCond)-1, ncol = ncol(SurvCond)-1, byrow = TRUE)- matrix(FxyCond[2:nrow(SurvCond), 1], nrow = nrow(SurvCond)-1, ncol = ncol(SurvCond)-1) + FxyCond[2:nrow(SurvCond), 2:ncol(SurvCond)]#
+#
+  ### Prepare the rest of the surfaces#
+  ##################################################################
+  newDimX = nrow(SurvCond); newDimY = ncol(SurvCond)#
+  baseMatr = matrix(0, nrow = newDimX - 1, ncol = newDimY - 1)#
+  rownames(baseMatr) = rownames(SurvCond)[2:newDimX]#
+  colnames(baseMatr) = colnames(SurvCond)[2:newDimY]#
+  unitVecX = matrix(1, ncol = newDimX - 1)#
+  unitVecY = matrix(1, ncol = newDimY - 1)#
+  Sxy = Sx = Sy = Sdx = Sdy = SxM = SyM = SxM_y = Sx_yM = Sdx_y = Sx_dy = Sdx_yM = SxM_dy = SxMyM = Fxy = baseMatr#
+  Sxy = SurvCond[2:nrow(SurvCond), 2:ncol(SurvCond)]#
+  Sx = SurvCond[2:nrow(SurvCond), 1] %*% unitVecY#
+  Sy = t(SurvCond[1, 2:ncol(SurvCond)] %*% unitVecX)#
+#
+  SxMyM = SurvCond[1:(newDimX-1), 1:(newDimY-1)]#
+#
+  Sdx = -diff(c(1, Sx[, 1])) %*% unitVecY#
+  Sdy = t(-diff(c(1, Sy[1, ])) %*% unitVecX)#
+  SxM = Sdx + Sx; SyM = Sdy + Sy#
+  SxM_y = rbind(Sy[1, ], Sxy[1:(newDimX-2), ])#
+  Sx_yM = cbind(Sx[, 1], Sxy[, 1:(newDimY-2)])#
+  Sdx_y = SxM_y - Sxy; Sx_dy = Sx_yM - Sxy #
+  Sdx_yM = SxMyM - Sx_yM; SxM_dy = SxMyM - SxM_y#
+  Sdxdy = Sdx_yM - Sdx_y#
+  res = list(Sxy = SurvCond, SxMyM = SxMyM,  Sx = Sx, Sy = Sy, Sdx = Sdx, Sdy = Sdy, SxM = SxM, SyM = SyM, SxM_y = SxM_y, Sx_yM = Sx_yM, Sdx_y = Sdx_y, Sx_dy = Sx_dy, Sdx_yM = Sdx_yM, SxM_dy = SxM_dy, Sdxdy = Sdxdy)#
+  for(n_i in setdiff(names(res), "Sxy")){#
+    rownames(res[[n_i]]) = NULL#
+    colnames(res[[n_i]]) = NULL#
+  }#
+  res#
+}#
+#
+####################################################################
+####### Overall and Restrcited Spearman's Rho#
+####################################################################
+HighestRankAndRestrictedSpearman = function(bivarSurf, tauX = Inf, tauY = Inf){#
+  ######## computes 1) Overall Spearmans correlation using highest rank approach#
+  ########          2) Restricted Spearmans correlation#
+  #########
+  ######## "bivarSurf" is a matrix representing a bivariate surface fit#
+  ########     with the following format:#
+  ########     1) the 1st row is the marginal survival function for Y#
+  ########     2) the 1nd column is the marginal survival function for X#
+  ########     3) bivarSurf[1,1] equals to 1#
+  ########     4) row names of "bivarSurf" are ordered X values including 0#
+  ########     5) column names of "bivarSurf" are ordered Y values including 0#
+  ######## Note: the covariance (the numerator of the correlation) of the #
+  ########     highest rank estimator can be also computed using formula:#
+  ########     Numerator = \sum_i \sum_j S(x_i,y_i)S_X(dx_i)S_Y(dy_i) - S(x_i,dy_i)S_X(dx_i)S_Y(y_i)  - S(dx_i,y_i)S_X(x_i)S_Y(dy_i)  + S(dx_i,dy_i)S_X(x_i)S_Y(y_i)#
+  ########     The above is equivalent to the highest rank estimator#
+  ########     Numerator = \sum _{i^*}\sum _{j^*}  \left\{1 - \widehat{S}^H_X(x_{i^*}) - \widehat{S}^H_X(x_{i^*}^-) \right\}   \left\{1 - \widehat{S}^H_Y(y_{j^*}) - \widehat{S}^H_Y(y_{j^*}^-) \right\} \widehat{S}^H(dx_{i^*}, dy_{j^*}) #
+#
+  ######## By setting the survival proability to zero outside of the data support#
+  ########     we effectively assume a left-over probability mass#
+  ########     which is what highest rank estimator is doing #
+  ######## This ensures that the above two estimators are the same#
+  oldrownames = rownames(bivarSurf)#
+  oldcolnames = colnames(bivarSurf)#
+  bivarSurfnew = bivarSurf#
+  bivarSurfnew = cbind(bivarSurfnew, rep(0, nrow(bivarSurfnew)))#
+  bivarSurfnew = rbind(bivarSurfnew, rep(0, ncol(bivarSurfnew)))#
+  rownames(bivarSurfnew) = c(oldrownames, "Inf")#
+  colnames(bivarSurfnew) = c(oldcolnames, "Inf")#
+  bivarSurf = bivarSurfnew#
+  ######## End of the part that ensures that the above two estimators are the same#
+  Xs = as.numeric(rownames(bivarSurf))#
+  Ys = as.numeric(colnames(bivarSurf))#
+  rP1 = rP2 = c(NA, NA)#
+  ######## Identify the resticted region for X:#
+  ####################################################################
+  maxX = max(Xs[Xs < tauX])#
+  maxY = max(Ys[Ys < tauY])#
+  if((tauX <= Inf) & (sum(Xs < tauX) <= nrow(bivarSurf))){#
+    rowsInRegion = Xs <= maxX#
+    rX1 = 1:(sum(rowsInRegion)-1)#
+  }else{#
+    rX1 = 1:(nrow(bivarSurf)-2)#
+  }#
+  rP1[1] = rX1[length(rX1)] + 1#
+  rP2[1] = rP1[1] + 1#
+  rX2 = rX1 + 1#
+  ######## Identify the resticted region for Y:#
+  ####################################################################
+  if((tauY <= Inf) & (sum(Ys < tauY) <= ncol(bivarSurf))){#
+    colsInRegion = Ys <= maxY#
+    rY1 = 1:(sum(colsInRegion)-1)#
+  }else{#
+    rY1 = 1:(ncol(bivarSurf)-2)#
+  }#
+  rP1[2] = rY1[length(rY1)] + 1#
+  rP2[2] = rP1[2] + 1#
+  rY2 = rY1 + 1#
+  nX = nrow(bivarSurf) - 1#
+  nY = ncol(bivarSurf) - 1#
+  rangeX = 1+(1:nX)#
+  rangeY = 1+(1:nY)#
+#
+  unitVecX = matrix(1, ncol = nX)#
+  unitVecY = matrix(1, ncol = nY)#
+  Sx = matrix(as.numeric(bivarSurf[(1:nX)+1,1]), nrow = nX) %*% unitVecY#
+  Sy = t(matrix(as.numeric(bivarSurf[1,(1:nY)+1]), nrow = nY) %*% unitVecX)#
+  SxM = matrix(as.numeric(bivarSurf[1:nX,1]), nrow = nX) %*% unitVecY#
+  SyM = t(matrix(as.numeric(bivarSurf[1,1:nY]), nrow = nY) %*% unitVecX)#
+  Sdx = SxM - Sx#
+  Sdy = SyM - Sy#
+  SxMyM = rbind(rep(NA, nY + 1), cbind(rep(NA, nX), bivarSurf[1:nX, 1:nY]))#
+  SxM_y = rbind(rep(NA, nY+1), bivarSurf[1:nX, ])#
+  Sx_yM = cbind(rep(NA, nX+1), bivarSurf[, 1:nY])#
+  Sdx_y = SxM_y - bivarSurf#
+  Sx_dy = Sx_yM - bivarSurf#
+  Sdx_yM = SxMyM - Sx_yM#
+  SxM_dy = SxMyM - SxM_y#
+  Sdxdy = SxM_dy - Sx_dy#
+  ### my favorite estimator#
+  numerator = sum(SxMyM[rangeX, rangeY] * Sdx * Sdy  -  SxM_dy[rangeX, rangeY] * Sdx * SyM  -  Sdx_yM[rangeX, rangeY] * SxM * Sdy  +  Sdxdy[rangeX, rangeY] * SxM * SyM)#
+  ### Highest rank estimator, which is equivalent to my favorite estimator#
+  ###   when compu#
+  numerator0 = sum(   (2*SxM - Sdx - 1) * (2*SyM - Sdy - 1) * Sdxdy[rangeX, rangeY], na.rm=TRUE )#
+#
+  Sx_Stuff_Tail = c(Sx[,1], 0); SxM_Stuff_Tail = c(1, Sx[,1]); Sdx_Stuff_Tail = SxM_Stuff_Tail - Sx_Stuff_Tail#
+  Sy_Stuff_Tail = c(Sy[1,], 0); SyM_Stuff_Tail = c(1, Sy[1,]); Sdy_Stuff_Tail = SyM_Stuff_Tail - Sy_Stuff_Tail#
+  PSR_X_like = (1 - Sx_Stuff_Tail - SxM_Stuff_Tail)#
+  PSR_Y_like = (1 - Sy_Stuff_Tail - SyM_Stuff_Tail)#
+  PSR_X_mean = sum(PSR_X_like * Sdx_Stuff_Tail)#
+  PSR_Y_mean = sum(PSR_Y_like * Sdy_Stuff_Tail)#
+  PSR_X_var = sum(Sdx_Stuff_Tail*(PSR_X_like - PSR_X_mean)^2)#
+  PSR_Y_var = sum(Sdy_Stuff_Tail*(PSR_Y_like - PSR_Y_mean)^2)#
+  rhoConst = 1/sqrt(PSR_X_var * PSR_Y_var)#
+  ####### Compute overall rho#
+  ####################################################################
+  localRhoRhoConst = rhoConst*numerator#
+  prsLikeNoTails = rhoConst*numerator0#
+  ####### Restricted Estimator#
+  ####################################################################
+  ProbOmegaRMatr = 1 - Sx[rX1, rY1] - Sy[rX1, rY1] + bivarSurf[rX2, rY2]#
+  if(length(rX1)==1 | length(rY1) == 1){#
+    ProbOmegaRMatr = matrix(ProbOmegaRMatr, nrow = length(rX1), ncol = length(rY1))#
+    ProbOmegaR = ProbOmegaRMatr[nrow(ProbOmegaRMatr), ncol(ProbOmegaRMatr)]#
+  }else{#
+    ProbOmegaR = ProbOmegaRMatr[nrow(ProbOmegaRMatr), ncol(ProbOmegaRMatr)]#
+  }#
+  SX_tauXM = Sx[rX1[length(rX1)], 1]#
+  SY_tauYM = Sy[1, rY1[length(rY1)]]#
+  ####### Compute S(x, tauY-), S(x-, tauY-), S(tauX-, y), S(tauX-, y) #
+  ################################################################### #
+  S_x_TauYM = matrix(bivarSurf[rX2, rY2[length(rY2)]], nrow = length(rX2), ncol = length(rY2))#
+  S_xM_TauYM = matrix(SxM_y[rX2, rY2[length(rY2)]], nrow = length(rX2), ncol = length(rY2))#
+  S_TauXM_y = matrix(bivarSurf[rX2[length(rX2)], rY2], nrow = length(rX2), ncol = length(rY2), byrow = TRUE)#
+  S_TauXM_yM = matrix(Sx_yM[rX2[length(rX2)], rY2], nrow = length(rX2), ncol = length(rY2), byrow = TRUE) #
+  g_X_No_OmegaR = (2 - Sx[rX1, rY1]  - SxM[rX1, rY1] - 2*SY_tauYM  + S_x_TauYM + S_xM_TauYM - ProbOmegaR)#
+  g_Y_No_OmegaR = (2 - Sy[rX1, rY1] - SyM[rX1, rY1] - 2*SX_tauXM + S_TauXM_y + S_TauXM_yM - ProbOmegaR)#
+  ####### Compute SX(dx|OmegaR), SY(dy|OmegaR) for covariance#
+  ####### According to our paper, it is: SX(dx) - S(dx, tauYM)#
+  ####################################################################
+  SX_dx_No_OmR = (Sdx[rX1, 1] - (S_xM_TauYM[,1] - S_x_TauYM[,1]))#
+  SY_dy_No_OmR = (Sdy[1, rY1] - (S_TauXM_yM[1,] - S_TauXM_y[1,]))#
+  SX_dx_OmR = SX_dx_No_OmR/ProbOmegaR#
+  SY_dy_OmR = SY_dy_No_OmR/ProbOmegaR#
+  ####### Compute SX(dx|OmegaR), SY(dy|OmegaR) for rho (the normalizing const)#
+  ####### take care of negative variance#
+  ####################################################################
+  SX_dx_No_OmR_const = pmax(SX_dx_No_OmR, 0)#
+  SY_dy_No_OmR_const = pmax(SY_dy_No_OmR, 0)#
+  SX_dx_No_OmR_const = ProbOmegaR*SX_dx_No_OmR_const/sum(SX_dx_No_OmR_const)#
+  SY_dy_No_OmR_const = ProbOmegaR*SY_dy_No_OmR_const/sum(SY_dy_No_OmR_const)#
+  ####### Compute terms related to variance#
+  ####################################################################
+  var_g_X_No_OmR = sum(((g_X_No_OmegaR[,1] - sum(g_X_No_OmegaR[,1]*SX_dx_No_OmR)/ProbOmegaR)^2) * SX_dx_No_OmR)#
+  var_g_Y_No_OmR = sum(((g_Y_No_OmegaR[1,] - sum(g_Y_No_OmegaR[1,]*SY_dy_No_OmR)/ProbOmegaR)^2) * SY_dy_No_OmR) #
+  ####### If the probability of being in the region is negative -> the #
+  ####### restricted correlation is not defined#
+  ####################################################################
+  if(ProbOmegaR <= 0){#
+    warning("Restricted Spearman's correlation is not defined because the probability of being in the restricted region is less or equal to zero.")#
+    rhoX0Y0_restr_No_OmR = NA#
+  }else{#
+    if(var_g_X_No_OmR < 0 | var_g_Y_No_OmR < 0){#
+      cat("Restricted Spearman's correlation was corrected.\n")#
+      warning("Restricted Spearman's correlation was corrected.")#
+    }#
+    if(var_g_X_No_OmR < 0){#
+      var_g_X_No_OmR = sum(((g_X_No_OmegaR[,1] - sum(g_X_No_OmegaR[,1]*SX_dx_No_OmR_const)/ProbOmegaR)^2) * SX_dx_No_OmR_const)#
+    }#
+    if(var_g_Y_No_OmR < 0){#
+      var_g_Y_No_OmR = sum(((g_Y_No_OmegaR[1,] - sum(g_Y_No_OmegaR[1,]*SY_dy_No_OmR_const)/ProbOmegaR)^2) * SY_dy_No_OmR_const)#
+    }#
+    ####### Compute the constant for restricted correlation:#
+    ####################################################################
+    inv_rhoCons_cond_form_No_OmR = sqrt(var_g_X_No_OmR * var_g_Y_No_OmR)#
+    ####### Compute restricted correlation:#
+    ####################################################################
+    rhoX0Y0_restr_No_OmR = sum(  g_X_No_OmegaR  *  g_Y_No_OmegaR  * Sdxdy[rX2, rY2], na.rm=TRUE )/inv_rhoCons_cond_form_No_OmR#
+  }#
+  # res = matrix(c(localRhoRhoConst, prsLikeNoTails, rhoX0Y0_restr_No_OmR), ncol = 1)#
+  # rownames(res) = c("HighestRank", "HighestRankNoTails", "Restricted")#
+  res = matrix(c(prsLikeNoTails, rhoX0Y0_restr_No_OmR), ncol = 1)#
+  rownames(res) = c("HighestRank", "Restricted")#
+  colnames(res) = "Spearman's Correlation"#
+  ####### Make sure that all values are in the proper range#
+  ####################################################################
+  for(n_i in rownames(res)){#
+    res[n_i, ] = min(abs(res[n_i, ]), 1)*sign(res[n_i, ])#
+  }#
+  res#
+}#
+#
+####################################################################
+####### Highest Rank and Restrcited Spearman's Rho in the Restricted Region#
+####################################################################
+survSpearman = function(bivarSurf = NULL, X = NULL, Y = NULL, deltaX = NULL, deltaY = NULL, tauX = Inf, tauY = Inf){#
+  ### The function returns three correlation values:#
+  ### 1) "HighestRankInRestrictedRegion" is computed#
+  ###         using Highest Rank approach in the restricted region#
+  ### 2) "RestrictedRegion" is computed in the restricted region#
+  ####################################################################
+  ### Indentify randomTauX, lastEventX#
+  if(is.null(bivarSurf) & is.null(X) & is.null(Y) & is.null(deltaX) & is.null(deltaY)){#
+    stop("Please supply either 'bivarSurf' or the following four arguments: 'X', 'Y', 'deltaX', 'deltaY'")#
+  }#
+  if(is.null(bivarSurf)){#
+    bivarSurf = survDabrowska(X, Y, deltaX, deltaY)#
+  }#
+  if(bivarSurf[nrow(bivarSurf),1] > 0){  ### last X event is censored#
+    randomTauX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+    lastEventX = Inf#
+  }else{                                 ### last X event is not censored#
+    randomTauX = Inf#
+    lastEventX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+  }#
+  ### Indentify randomTauY, lastEventY#
+  if(bivarSurf[1,ncol(bivarSurf)] > 0){#
+    randomTauY = as.numeric(colnames(bivarSurf)[ncol(bivarSurf)])#
+    lastEventY = Inf#
+  }else{#
+    randomTauY = Inf#
+    lastEventY = as.numeric(colnames(bivarSurf)[ncol(bivarSurf)])#
+  }#
+  if(randomTauX != Inf){#
+    tauX = min(tauX, c(randomTauX, lastEventX))#
+  }#
+  if(randomTauY != Inf){#
+    tauY = min(tauY, c(randomTauY, lastEventY))#
+  }#
+  # tauX = min(tauX, c(randomTauX))#
+  # tauY = min(tauY, c(randomTauY))#
+  if(tauX == lastEventX){#
+    tauX = paste(tauX, "+", sep = " ")#
+  }#
+  if(tauY == lastEventY){#
+    tauY = paste(tauY, "+", sep = " ")#
+  }#
+  res1 = HighestRankAndRestrictedSpearman(bivarSurf, tauX = tauX, tauY = tauY)#
+  bivarSurfForHR = bivarSurf#
+  bivarSurfForHR[as.numeric(rownames(bivarSurfForHR)) >= tauX, ] = 0#
+  bivarSurfForHR[, as.numeric(colnames(bivarSurfForHR)) >= tauY ] = 0#
+  res2 = HighestRankAndRestrictedSpearman(bivarSurfForHR, tauX = Inf, tauY = Inf)#
+  resCor = c("HighestRank" = res2["HighestRank", ], "Restricted" = res1["Restricted", ])#
+  resReg = c("tauX" = as.character(tauX), "tauY" = as.character(tauY))#
+  list(Region = resReg, Correlation = resCor)#
+}#
+#
+####################################################################
+######### figure 5#
+####################################################################
+plot2DDensityForCCASAnetData = function(folderName = "RESULTS/ADDITIONAL_SIMULATIONS",  fileName = "tmpNew.pdf",  maindata = NA, maxYearX = Inf, maxYearY = Inf, tails = T, gridDivWidth = c(.5,.5), dabrowskaSurf = NA, plotTitle = "", xLabel = "", yLabel = "", colors = NA, gradientSteps = 100)#
+{#
+  ## Ensure there is something to plot#
+  if ( is.na(maindata[1]) & is.na(dabrowskaSurf[1]) )#
+    stop("You must provide either data or a Dabrowska survival surface.")#
+  ### create or load Dabrowska's surface#
+  if( !is.na(maindata[1]) ){#
+    ## Only use patients over 18#
+    subdata = maindata[maindata$ageAtFirstHAART > 18,  ]#
+  }else{#
+    obj = load(file = "dabrSurfAdults.rda")#
+    dabrSurfAdults = get(obj)#
+    obj = load(file = "maindata.rda")#
+    maindata = get(obj)#
+  }#
+  ## Allows user to define Dabrowska surface#
+  if( !is.na(dabrowskaSurf[1]) )#
+    dabrSurfAdults = dabrowskaSurf#
+  else#
+  {#
+    ## Conform data to dabrowska format#
+    sdata = data.frame(X = subdata$timeToVirFailEvent,  deltaX = subdata$virFailEvent,  Y = subdata$timeToRegChangeEvent,  deltaY = subdata$regChangeEvent)#
+    ## Calculate survival surface for data#
+    dabrSurfAdults = SurvSurfaceOfDabrowska_Optimized(sdata)[["DabrowskaEst"]]#
+  }#
+  ## Save the set of data that was actually used for future reference#
+  save(dabrSurfAdults,  file = "dabrSurfAdults.rda",  compress = TRUE)#
+  # View(maindata)#
+  # #
+  # ## Should there be tails? Only if maxYear isn't defined#
+  # tailsX = tailsY = T#
+  # if( maxYearX != Inf )#
+  #   tailsX = F#
+  # if( maxYearY != Inf)#
+  #   tailsY = F#
+  # #
+  ### Get Dabrowska's surface with tails#
+  dabrSurfAdultsWithTails = rbind( cbind( dabrSurfAdults,  rep(0,  nrow(dabrSurfAdults)) ),  rep(0,  ncol(dabrSurfAdults)+1) )#
+  lastRowVal = as.numeric(rownames(dabrSurfAdults)[nrow(dabrSurfAdults)]) + 1#
+  lastColVal = as.numeric(colnames(dabrSurfAdults)[ncol(dabrSurfAdults)]) + 1#
+  rownames(dabrSurfAdultsWithTails) = c(rownames(dabrSurfAdults),  as.character(lastRowVal))#
+  colnames(dabrSurfAdultsWithTails) = c(colnames(dabrSurfAdults),  as.character(lastColVal))#
+#
+  dataForCond = maindata[maindata$ageAtFirstHAART > 18,  ]#
+  dataForCond = data.frame(Y = dataForCond$timeToRegChangeEvent,  deltaY = dataForCond$regChangeEvent,  X = dataForCond$timeToVirFailEvent,  deltaX = dataForCond$virFailEvent)#
+  # condSurfStuff15 = normalizeSurvSurfByCDF(data = dataForCond,  dabrSurfAdults,  XLimit = 15,  YLimit = 15)#
+  # condSurf15 = condSurfStuff15$SurvCond#
+#
+  ## Crops the dabrowska surface to include tails or not  #
+  if (tails)#
+    dabrSurf = dabrSurfAdultsWithTails#
+  else#
+    dabrSurf = dabrSurfAdults#
+  ## Grayscale variables#
+  method = 3;#
+  if (is.na(colors[1]))#
+    colors = c("white", "black")#
+  koef = 7 # Scale of axes bar graphs#
+  startX = -1.2#
+  startY = -1.2#
+#
+  ## Font sizes#
+  # mainCex = 1.6#
+  axisLabelCex = 1.4#
+#
+  ## Determines how white the whitest value gets (closer to 0 = whiter)#
+  # Y1Vec = c("withTails" = -10,  "condSurf15" = 0)#
+  Y1Vec = 0#
+  pdf(file.path(folderName,  fileName),  height = 7,  width = 7)#
+  par(mar = c(5,  5,  5,  5))#
+  KMX = unlist(dabrSurf[2:nrow(dabrSurf),  1])#
+  KMY = unlist(dabrSurf[1,  2:ncol(dabrSurf)])#
+  ##################################
+  tmpSurf = survPMF(dabrSurf)$pmfWithMarginalPMFs#
+  Sdxdy = tmpSurf[2:nrow(tmpSurf), 2:ncol(tmpSurf)]#
+  Sdx = tmpSurf[2:nrow(tmpSurf), 1]#
+  Sdy = tmpSurf[1, 2:ncol(tmpSurf)]#
+  ##################################
+  ### get rid of negative mass:#
+  # Sdxdy = Sdxdy - min(Sdxdy)#
+  # Sdxdy[Sdxdy < 0] = 0#
+#
+  # divPointsX = seq(0,  max(as.numeric(colnames(Sdxdy))) + 1,  gridDivWidth)#
+  divPointsX = seq(0, max(as.numeric(names(Sdx))) + 1,  gridDivWidth[1])#
+  divPointsX = divPointsX[order(divPointsX)]#
+  # divPointsY = seq(0,  max(as.numeric(rownames(Sdxdy))) + 1,  gridDivWidth)#
+  divPointsY = seq(0, max(as.numeric(names(Sdy))) + 1,  gridDivWidth[2])#
+  divPointsY = divPointsY[order(divPointsY)]#
+  if(names(Sdx)[1] == "0"){#
+    stop("BLA\n")#
+  }#
+  oneDimKMX = oneDimHistBreakCells(Sdx = Sdx,  divPointsX)#
+  oneDimKMY = oneDimHistBreakCells(Sdx = Sdy,  divPointsY)#
+  oneDimKMY$newVec = oneDimKMY$newVec/sum(oneDimKMY$newVec)#
+  oneDimKMX$newVec = oneDimKMX$newVec/sum(oneDimKMX$newVec)#
+#
+  twoDStuff = twoDimHistBreakCells(Sdxdy,  divPointsX,  divPointsY)#
+  newMatr = twoDStuff$newMatr; divPX = twoDStuff$divPX; divPY = twoDStuff$divPY#
+  newMatr[newMatr < 0] = 0#
+  newMatr = newMatr/sum(newMatr)#
+  ### plot framework#
+  ## Establish grayscale colorization values#
+  colMatr = grayScale(newMatr,  X0 = min(newMatr),  X1 = max(newMatr),  Y0 = 0.95,  Y1 = Y1Vec,  method = method,  lowerThreshold = 10^(-13),  YValueForLowerThreshold = 1)#
+  colMatr[colMatr < 0] = 0#
+  # View(colMatr)#
+  ## Ensure maxYearX and Y are defined#
+  if (maxYearX == Inf)#
+    maxYearX = length(colMatr[,1]) * gridDivWidth[1]#
+  if (maxYearY == Inf)#
+    maxYearY = length(colMatr[1,]) * gridDivWidth[2]#
+  ## maxYear ensures that the graph takes up the full space regardless of how much its been cropped#
+  plot(0,  0,  xlim = c(-4,  maxYearX),  ylim = c(-4,  maxYearY),  type = "n",  main = "",  xlab = "",  ylab = "",  axes = FALSE, asp = 1)#
+  ## Plot bars along y-axis#
+  plot1DHistWithRotation(startX = startX,  startY = 0,  rotationRadians = pi/2,  newVec = oneDimKMY$newVec * koef,  divPX = oneDimKMY$divPX,  method = method,  whitestCol = whitestCol,  grayMaxCol = grayMaxCol)#
+  ## Plot colored boxes#
+  plot2DHistColor(startX = 0,  startY = 0,  newMatr,  divPX,  divPY,  method = method,  colors = colors, gradientSteps = gradientSteps, colMatr = colMatr)#
+  ## Plot bars along x-axis#
+  plot1DHistWithRotation (startX = 0,  startY = startY,  rotationRadians = 0,  oneDimKMX$newVec * (-1) * koef,  oneDimKMX$divPX, method = method,  whitestCol = whitestCol,  grayMaxCol = grayMaxCol)#
+  ## Draw Titles and Axis Labels#
+  mtext(text = xLabel,  side = 1,  line = 2.5,  cex = axisLabelCex) ### -4#
+  mtext(text = yLabel,  side = 2,  line = 2.5,  cex = axisLabelCex)#
+  mtext(text = plotTitle,  side = 3,  line = 1,  cex = axisLabelCex,  font = 2)#
+  ## Draw year labels#
+  axis(1, seq(0,maxYearX,gridDivWidth[1]), line = 0) #
+  axis(2, seq(0,maxYearY,gridDivWidth[2]), line = 0)#
+  # text(x = rep(0,  length(yearRange)) + startX/2,  y = yearRange, labels = divPX,  srt = 90,  cex = axisNumCex) # y-axis#
+  # text(x = yearRange,  y = rep(0,  length(yearRange)) + startY/2, labels = c(1,2),  srt = 0,  cex = axisNumCex) # x-axis#
+  # text(x = startX/2,  y = startY/2,  label = 0,  srt = 135,  cex = axisNumCex,  font = 1) # Origin#
+  dev.off()#
+}
+res12 = rclayton(10, thetaPar=1.432, lambda1=1, lambda2=1, censoringProb1 = 0.3, censoringProb2 = 0, independentCensoring = TRUE, family = "frank")
+rclayton = function(nSim, thetaPar=0.1432, lambda1=1, lambda2=1, censoringProb1 = 0, censoringProb2 = 0, independentCensoring = TRUE, censProbForDependCens = 0, family = "clayton", reverse = TRUE){#
+  ### Generates Clayton family with marginal exponential distributions#
+  ### with rate 1 and two respectively. The resulting Kendall's tau is about 0.1#
+  ### according Shih and Loius#
+  ### Allows two types of censoring: independent (b/w C1 and C2) and dependent (C1 = C2)#
+  ### this was my attempt to generate Clayton's family using conditional distr.#
+  ### did not work out because for some reason the marginal of t1 was not exp with rate=1#
+  # if(thetaPar<=1) stop("Argument thetaPar should be greater than one")#
+  # t2 = rexp(n = nSim, rate = lambda2)#
+  # u = runif(n = nSim)#
+  # t1 = rep(NA, nSim)#
+  # condSurv = ( (1-pexp(t1, rate=lambda1))^(1-thetaPar) + (1-pexp(t2, rate=lambda2))^(1-thetaPar)  - 1)^(thetaPar/(1-thetaPar))*lambda2*exp(lambda2*t2*thetaPar)#
+  # logExpression  = 1 + ((1-u)/(exp(lambda2*t2*thetaPar)*lambda2))^((1-thetaPar)/thetaPar)  -  (1-pexp(t2, rate=lambda2))^(1-thetaPar)#
+  # t1 = - (1/((1-thetaPar)*lambda1)) *log(logExpression)#
+  ### we generate this family using the package of  Belzile, Genest, McNeil, Neslehova#
+  if(family == "clayton"){#
+    if(thetaPar == 0){  ###### trying to decide which one is better#
+      t1t2 = rarchi(n = nSim, "clayton", d = 2, theta = 0)#
+    }else{#
+      cop12 = archmCopula(family = "clayton", param = thetaPar)#
+      t1t2 <- rCopula(nSim, cop12)#
+    }#
+  }else{#
+    if(family != "frank") stop("Only Clayton's and Frank's families were implemented\n")#
+    if(thetaPar == 0){#
+      t1t2 = rarchi(n = nSim, "clayton", d = 2, theta = 0)#
+    }else{#
+      cop12 = archmCopula(family = "frank", param = thetaPar)#
+      t1t2 <- rCopula(nSim, cop12)#
+    }#
+  }#
+  if(reverse){ #
+    ### if reverse = TRUE then the increasing U will translate#
+    ###  into increasing X and therefore is the correct way of simulating#
+    t1 = -log(1 - t1t2[,1])/lambda1#
+    t2 = -log(1 - t1t2[,2])/lambda2#
+  }else{#
+    t1 = -log(t1t2[,1])/lambda1#
+    t2 = -log(t1t2[,2])/lambda2#
+  }#
+  delta1 = delta2 = rep(1, nSim)#
+  if(independentCensoring){#
+    if(censoringProb1 > 0 & censoringProb1 < 1){#
+      beta1 = lambda1/censoringProb1 - lambda1#
+      censoringTime1 = rexp(n = nSim, rate = 1/beta1)#
+      delta1 = as.numeric(t1 <= censoringTime1) #
+      t1[delta1==0] = censoringTime1[delta1==0]#
+    }#
+    if(censoringProb2 > 0 & censoringProb2 < 1){#
+      beta2 = lambda2/censoringProb2 - lambda2#
+      censoringTime2 = rexp(n = nSim, rate = 1/beta2)#
+      delta2 = as.numeric(t2 <= censoringTime2) #
+      t2[delta2==0] = censoringTime2[delta2==0]#
+    }#
+    ### below we assume fixed censoring: censoring all after a certain percentile:#
+    ### the percentile  is supplied as -(proportion of censoring):#
+    ### if it equals -0.3 then after 70th-% percentile we censore everyone:#
+    if(censoringProb1 < 0 & censoringProb1 > -1){#
+      censoringTime1 = rep(qexp(1 + censoringProb1, rate = lambda1), length(delta1))#
+      delta1 = as.numeric(t1 <= censoringTime1) #
+      t1[delta1==0] = censoringTime1[delta1==0]#
+    }#
+    if(censoringProb2 < 0 & censoringProb2 > -1){#
+      censoringTime2 = rep(qexp(1 + censoringProb2, rate = lambda2), length(delta2))#
+      delta2 = as.numeric(t2 <= censoringTime2) #
+      t2[delta2==0] = censoringTime2[delta2==0]#
+    }#
+  }else{#
+    if(censProbForDependCens > 0 & censProbForDependCens < 1){#
+      beta3 = 1/censProbForDependCens - 1#
+      censoringTime3 = rexp(n = nSim, rate = 1/beta3)#
+      delta1 = as.numeric(t1 <= censoringTime3) #
+      delta2 = as.numeric(t2 <= censoringTime3) #
+      t1[delta1==0] = censoringTime3[delta1==0]#
+      t2[delta2==0] = censoringTime3[delta2==0]  #
+    }#
+  }#
+  res = cbind(t1, delta1, t2, delta2)#
+  colnames(res) = c("t1", "delta1", "t2", "delta2")#
+  res#
+}
+res12 = rclayton(10, thetaPar=1.432, lambda1=1, lambda2=1, censoringProb1 = 0.3, censoringProb2 = 0, independentCensoring = TRUE, family = "frank")
+library(copula)
+res12 = rclayton(10, thetaPar=1.432, lambda1=1, lambda2=1, censoringProb1 = 0.3, censoringProb2 = 0, independentCensoring = TRUE, family = "frank")
+rse12
+res12
+survSpearman(X = res12[, "t1"], Y = res12[, "t2"], deltaX = res12[, "delta1"], deltaY = res12[, "delta2"])
+res12[, "t1"]
+survSpearman = function(bivarSurf = NULL, X = NULL, Y = NULL, deltaX = NULL, deltaY = NULL, tauX = Inf, tauY = Inf){#
+  ### The function returns three correlation values:#
+  ### 1) "HighestRankInRestrictedRegion" is computed#
+  ###         using Highest Rank approach in the restricted region#
+  ### 2) "RestrictedRegion" is computed in the restricted region#
+  ####################################################################
+  ### Indentify randomTauX, lastEventX#
+  if(is.null(bivarSurf) & is.null(X) & is.null(Y) & is.null(deltaX) & is.null(deltaY)){#
+    stop("Please supply either 'bivarSurf' or the following four arguments: 'X', 'Y', 'deltaX', 'deltaY'")#
+  }#
+  if(is.null(bivarSurf)){#
+    bivarSurf = survDabrowska(X, Y, deltaX, deltaY)#
+  }#
+  if(bivarSurf[nrow(bivarSurf),1] > 0){  ### last X event is censored#
+    randomTauX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+    lastEventX = Inf#
+  }else{                                 ### last X event is not censored#
+    randomTauX = Inf#
+    lastEventX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+  }#
+  ### Indentify randomTauY, lastEventY#
+  if(bivarSurf[1,ncol(bivarSurf)] > 0){#
+    randomTauY = as.numeric(colnames(bivarSurf)[ncol(bivarSurf)])#
+    lastEventY = Inf#
+  }else{#
+    randomTauY = Inf#
+    lastEventY = as.numeric(colnames(bivarSurf)[ncol(bivarSurf)])#
+  }#
+  if(randomTauX != Inf){#
+    tauX = min(tauX, c(randomTauX, lastEventX))#
+  }#
+  if(randomTauY != Inf){#
+    tauY = min(tauY, c(randomTauY, lastEventY))#
+  }#
+  # tauX = min(tauX, c(randomTauX))#
+  # tauY = min(tauY, c(randomTauY))#
+  if(tauX == lastEventX){#
+    tauX = paste(tauX, "+", sep = " ")#
+  }#
+  if(tauY == lastEventY){#
+    tauY = paste(tauY, "+", sep = " ")#
+  }#
+  res1 = HighestRankAndRestrictedSpearman(bivarSurf, tauX = tauX, tauY = tauY)#
+  bivarSurfForHR = bivarSurf#
+  bivarSurfForHR[as.numeric(rownames(bivarSurfForHR)) >= tauX, ] = 0#
+  bivarSurfForHR[, as.numeric(colnames(bivarSurfForHR)) >= tauY ] = 0#
+  res2 = HighestRankAndRestrictedSpearman(bivarSurfForHR, tauX = Inf, tauY = Inf)#
+  resCor = c("HighestRank" = res2["HighestRank", ], "Restricted" = res1["Restricted", ])#
+  resReg = c("tauX" = as.character(tauX), "tauY" = as.character(tauY))#
+  list(Region = resReg, Correlation = resCor)#
+}
+survSpearman(X = res12[, "t1"], Y = res12[, "t2"], deltaX = res12[, "delta1"], deltaY = res12[, "delta2"])
+survDabrowska(X, Y, deltaX, deltaY)
+survDabrowska = function(X, Y, deltaX, deltaY){#
+  ### Optimized by Joey Sherrill#
+  ###############################
+  ### data is the bivariate survival data.frame. It has to contain the following:#
+  ### data$X and data$deltaX - time to event and event indicator for subject 1#
+  ### data$Y and data$deltaY- time to event and event indicator for subject 2#
+  ### Example from Dabrowska's paper:#
+  ###     X = c(.51, .68, .11, .21); deltaX = c(1, 1, 1, 0); Y = c(.02, .68, .62, .24); deltaY = c(1, 1, 0, 0)#
+  ###     survDabrowska(X, Y, deltaX, deltaY)#
+  if(is.null(X) | is.null(Y) | is.null(deltaX) | is.null(deltaY)){#
+    stop("The following four arguments should not be NULL: 'X', 'Y', 'deltaX', 'deltaY'")#
+  }#
+  lengthOfX = length(X)#
+  if(length(Y) != lengthOfX | length(deltaX) != lengthOfX | length(deltaY) != lengthOfX){#
+    stop("The following four arguments should be the same length: 'X', 'Y', 'deltaX', and 'deltaY'")#
+  }#
+  if(!(all(unique(deltaX) %in% c(1, 0, NA)) & all(unique(deltaY) %in% c(1, 0, NA)))){#
+    stop("Arguments 'deltaX' and 'deltaY' can only have values 0, 1, or NA")#
+  }#
+  data = data.frame(X = X, Y = Y, deltaX = deltaX, deltaY = deltaY)#
+  ### find missing records:#
+  nonMissingRec = apply(data, 1, function(x){all(!is.na(x))})#
+  if(any(!nonMissingRec)){#
+    warning(sum(!nonMissingRec), " record/s will be excluded because of missing value/s resulting in a total of ", sum(nonMissingRec), " record/s.\n")#
+  }#
+#
+  if(nrow(data)<2) stop("Not enough data")#
+  ### first let's find two marginal KM curves:#
+  Sx = myOwnKM(time = X, delta = deltaX)#
+  Sy = myOwnKM(time = Y, delta = deltaY)#
+  SxUnique = unique(Sx[order(Sx$time), c("time", "KM")])#
+  SyUnique = unique(Sy[order(Sy$time), c("time", "KM")])#
+  uniqueKM1 = unique(Sx[, c("time", "nEvents", "atRisk")])#
+  uniqueKM2 = unique(Sy[, c("time", "nEvents", "atRisk")])#
+  uniqueKM1 = uniqueKM1[order(uniqueKM1$time),]#
+  uniqueKM2 = uniqueKM2[order(uniqueKM2$time),]  #
+  lambdaX = uniqueKM1$nEven/uniqueKM1$atRisk#
+  lambdaY = uniqueKM2$nEven/uniqueKM2$atRisk#
+  ### now let's find the bivariate hazard and univariate hazards:#
+  nX = nY = length(X)#
+  uniqueTimeX = unique(unlist(X))#
+  uniqueTimeY = unique(unlist(Y))#
+  numXTimes = length(uniqueTimeX)#
+  numYTimes = length(uniqueTimeY)#
+  Lam = matrix(NA, nrow=numXTimes, ncol=numYTimes)#
+  LamX = matrix(NA, nrow=numXTimes, ncol=numYTimes)#
+  LamY = matrix(NA, nrow=numXTimes, ncol=numYTimes)#
+  ### auxilary matrices:#
+  XEventMatr = matrix(NA, nrow=numXTimes, ncol=nX)#
+  YEventMatr = matrix(NA, nrow=numYTimes, ncol=nY)#
+  XAtRiskMatr =  matrix(NA, nrow=numXTimes, ncol=nX)#
+  YAtRiskMatr =  matrix(NA, nrow=numYTimes, ncol=nY)#
+  for(i in 1:nX){#
+    XAtRiskMatr[,i] = (X[i] >= uniqueTimeX)#
+    YAtRiskMatr[,i] = (Y[i] >= uniqueTimeY)#
+    XEventMatr[,i] = (X[i] == uniqueTimeX)*deltaX[i]#
+    YEventMatr[,i] = (Y[i] == uniqueTimeY)*deltaY[i]#
+  }#
+  atRiskMatr = XAtRiskMatr %*% t(YAtRiskMatr)#
+  M11 = XEventMatr %*% t(YEventMatr)#
+  M10 = XEventMatr %*% t(YAtRiskMatr)#
+  M01 = XAtRiskMatr %*% t(YEventMatr)#
+  ######## double hazard#
+  Lam = M11/atRiskMatr#
+  ######## single hazard for X conditional on Y#
+  LamX = M10 /atRiskMatr#
+  ######## single hazard for Y conditional on X#
+  LamY = M01 /atRiskMatr#
+  ######## here, we are just following the formula for Dabrowska estimator:#
+  bigL = (LamX*LamY - Lam)/((1 - LamX)*(1 - LamY))#
+  indicesX = data.frame(rowNames = uniqueTimeX, rowIndex = 1:length(uniqueTimeX))#
+  indicesY = data.frame(colNames = uniqueTimeY, colIndex = 1:length(uniqueTimeY))#
+  indicesX = indicesX[order(uniqueTimeX), ]#
+  indicesY = indicesY[order(uniqueTimeY), ]#
+  DabrowskaEstNew = matrix(NA, nrow=numXTimes+1, ncol=numYTimes+1)#
+  DabrowskaEstNew[1, 1] = 1#
+  DabrowskaEstNew[2:nrow(DabrowskaEstNew), 1] = SxUnique["KM"][,1]#
+  DabrowskaEstNew[1, 2:ncol(DabrowskaEstNew)] = SyUnique["KM"][,1]#
+  colnames(DabrowskaEstNew) = c("0", indicesY$colNames)#
+  rownames(DabrowskaEstNew) = c("0", indicesX$rowNames)#
+  DabrowskaCDF = 1 - DabrowskaEstNew#
+  subBigLNonMiss = 1 - bigL#
+  subBigLNonMiss[is.na(subBigLNonMiss)] = 1#
+  ### recursive way of computing the estimator#
+  rowInd = indicesX$rowIndex#
+  colInd = indicesY$colIndex#
+  ## The cfuncion is located outside this function and should be loaded along with the rest of the library functions#
+  recurseEstimator(numXTimes, rowInd, colInd, DabrowskaEstNew, subBigLNonMiss)#
+  # The cfunction returns the matrix flipped, make sure it's transposed before continuing#
+  # DabrowskaEstNew = t(DabrowskaEstNew)#
+  ### some values will be NaN because of division by zero (because we DabrowskaEstNew[i, j] = 0 at some point), so we will assign NA's to 0 #
+  DabrowskaEstNew[is.na(DabrowskaEstNew)] = 0#
+  DabrowskaCDF = 1 + DabrowskaEstNew - matrix(DabrowskaEstNew[1, ], nrow = nrow(DabrowskaEstNew), ncol = ncol(DabrowskaEstNew), byrow = TRUE) -  matrix(DabrowskaEstNew[, 1], nrow = nrow(DabrowskaEstNew), ncol = ncol(DabrowskaEstNew))#
+  list(DabrowskaEst = DabrowskaEstNew, DabrowskaCDF = DabrowskaCDF)#
+}
+survDabrowska(X, Y, deltaX, deltaY)
+if(is.null(X) | is.null(Y) | is.null(deltaX) | is.null(deltaY)){#
+    stop("The following four arguments should not be NULL: 'X', 'Y', 'deltaX', 'deltaY'")#
+  }#
+  lengthOfX = length(X)#
+  if(length(Y) != lengthOfX | length(deltaX) != lengthOfX | length(deltaY) != lengthOfX){#
+    stop("The following four arguments should be the same length: 'X', 'Y', 'deltaX', and 'deltaY'")#
+  }#
+  if(!(all(unique(deltaX) %in% c(1, 0, NA)) & all(unique(deltaY) %in% c(1, 0, NA)))){#
+    stop("Arguments 'deltaX' and 'deltaY' can only have values 0, 1, or NA")#
+  }
+X
+X = res12[, "t1"]#
+Y = res12[, "t2"]#
+deltaX = res12[, "delta1"]#
+deltaY = res12[, "delta2"]
+survDabrowska(X, Y, deltaX, deltaY)
+survSpearman(X, Y, deltaX, deltaY)
+bivarSurf = NULL
+if(is.null(bivarSurf) & is.null(X) & is.null(Y) & is.null(deltaX) & is.null(deltaY)){#
+    stop("Please supply either 'bivarSurf' or the following four arguments: 'X', 'Y', 'deltaX', 'deltaY'")#
+  }#
+  if(is.null(bivarSurf)){#
+    bivarSurf = survDabrowska(X, Y, deltaX, deltaY)#
+  }
+bivarSurf
+if(bivarSurf[nrow(bivarSurf),1] > 0){  ### last X event is censored#
+    randomTauX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+    lastEventX = Inf#
+  }else{                                 ### last X event is not censored#
+    randomTauX = Inf#
+    lastEventX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+  }
+nrow(bivarSurf),1]
+dim(bivarSurf)
+survSpearman = function(bivarSurf = NULL, X = NULL, Y = NULL, deltaX = NULL, deltaY = NULL, tauX = Inf, tauY = Inf){#
+  ### The function returns three correlation values:#
+  ### 1) "HighestRankInRestrictedRegion" is computed#
+  ###         using Highest Rank approach in the restricted region#
+  ### 2) "RestrictedRegion" is computed in the restricted region#
+  ####################################################################
+  ### Indentify randomTauX, lastEventX#
+  if(is.null(bivarSurf) & is.null(X) & is.null(Y) & is.null(deltaX) & is.null(deltaY)){#
+    stop("Please supply either 'bivarSurf' or the following four arguments: 'X', 'Y', 'deltaX', 'deltaY'")#
+  }#
+  if(is.null(bivarSurf)){#
+    bivarSurf = survDabrowska(X, Y, deltaX, deltaY)$DabrowskaEst#
+  }#
+  if(bivarSurf[nrow(bivarSurf),1] > 0){  ### last X event is censored#
+    randomTauX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+    lastEventX = Inf#
+  }else{                                 ### last X event is not censored#
+    randomTauX = Inf#
+    lastEventX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+  }#
+  ### Indentify randomTauY, lastEventY#
+  if(bivarSurf[1,ncol(bivarSurf)] > 0){#
+    randomTauY = as.numeric(colnames(bivarSurf)[ncol(bivarSurf)])#
+    lastEventY = Inf#
+  }else{#
+    randomTauY = Inf#
+    lastEventY = as.numeric(colnames(bivarSurf)[ncol(bivarSurf)])#
+  }#
+  if(randomTauX != Inf){#
+    tauX = min(tauX, c(randomTauX, lastEventX))#
+  }#
+  if(randomTauY != Inf){#
+    tauY = min(tauY, c(randomTauY, lastEventY))#
+  }#
+  # tauX = min(tauX, c(randomTauX))#
+  # tauY = min(tauY, c(randomTauY))#
+  if(tauX == lastEventX){#
+    tauX = paste(tauX, "+", sep = " ")#
+  }#
+  if(tauY == lastEventY){#
+    tauY = paste(tauY, "+", sep = " ")#
+  }#
+  res1 = HighestRankAndRestrictedSpearman(bivarSurf, tauX = tauX, tauY = tauY)#
+  bivarSurfForHR = bivarSurf#
+  bivarSurfForHR[as.numeric(rownames(bivarSurfForHR)) >= tauX, ] = 0#
+  bivarSurfForHR[, as.numeric(colnames(bivarSurfForHR)) >= tauY ] = 0#
+  res2 = HighestRankAndRestrictedSpearman(bivarSurfForHR, tauX = Inf, tauY = Inf)#
+  resCor = c("HighestRank" = res2["HighestRank", ], "Restricted" = res1["Restricted", ])#
+  resReg = c("tauX" = as.character(tauX), "tauY" = as.character(tauY))#
+  list(Region = resReg, Correlation = resCor)#
+}
+survSpearman(X, Y, deltaX, deltaY)
+bivarSurf = survDabrowska(X, Y, deltaX, deltaY)$DabrowskaEst
+if(bivarSurf[nrow(bivarSurf),1] > 0){  ### last X event is censored#
+    randomTauX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+    lastEventX = Inf#
+  }else{                                 ### last X event is not censored#
+    randomTauX = Inf#
+    lastEventX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+  }
+### Indentify randomTauY, lastEventY#
+  if(bivarSurf[1,ncol(bivarSurf)] > 0){#
+    randomTauY = as.numeric(colnames(bivarSurf)[ncol(bivarSurf)])#
+    lastEventY = Inf#
+  }else{#
+    randomTauY = Inf#
+    lastEventY = as.numeric(colnames(bivarSurf)[ncol(bivarSurf)])#
+  }#
+  if(randomTauX != Inf){#
+    tauX = min(tauX, c(randomTauX, lastEventX))#
+  }#
+  if(randomTauY != Inf){#
+    tauY = min(tauY, c(randomTauY, lastEventY))#
+  }
+if(tauX == lastEventX){#
+    tauX = paste(tauX, "+", sep = " ")#
+  }#
+  if(tauY == lastEventY){#
+    tauY = paste(tauY, "+", sep = " ")#
+  }#
+  res1 = HighestRankAndRestrictedSpearman(bivarSurf, tauX = tauX, tauY = tauY)#
+  bivarSurfForHR = bivarSurf#
+  bivarSurfForHR[as.numeric(rownames(bivarSurfForHR)) >= tauX, ] = 0#
+  bivarSurfForHR[, as.numeric(colnames(bivarSurfForHR)) >= tauY ] = 0#
+  res2 = HighestRankAndRestrictedSpearman(bivarSurfForHR, tauX = Inf, tauY = Inf)#
+  resCor = c("HighestRank" = res2["HighestRank", ], "Restricted" = res1["Restricted", ])#
+  resReg = c("tauX" = as.character(tauX), "tauY" = as.character(tauY))#
+  list(Region = resReg, Correlation = resCor)
+survSpearman = function(bivarSurf = NULL, X = NULL, Y = NULL, deltaX = NULL, deltaY = NULL, tauX = Inf, tauY = Inf){#
+  ### The function returns three correlation values:#
+  ### 1) "HighestRankInRestrictedRegion" is computed#
+  ###         using Highest Rank approach in the restricted region#
+  ### 2) "RestrictedRegion" is computed in the restricted region#
+  ####################################################################
+  ### Indentify randomTauX, lastEventX#
+  if(is.null(bivarSurf) & is.null(X) & is.null(Y) & is.null(deltaX) & is.null(deltaY)){#
+    stop("Please supply either 'bivarSurf' or the following four arguments: 'X', 'Y', 'deltaX', 'deltaY'")#
+  }#
+  if(is.null(bivarSurf)){#
+    bivarSurf = survDabrowska(X, Y, deltaX, deltaY)$DabrowskaEst#
+  }#
+  if(bivarSurf[nrow(bivarSurf),1] > 0){  ### last X event is censored#
+    randomTauX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+    lastEventX = Inf#
+  }else{                                 ### last X event is not censored#
+    randomTauX = Inf#
+    lastEventX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+  }#
+  ### Indentify randomTauY, lastEventY#
+  if(bivarSurf[1,ncol(bivarSurf)] > 0){#
+    randomTauY = as.numeric(colnames(bivarSurf)[ncol(bivarSurf)])#
+    lastEventY = Inf#
+  }else{#
+    randomTauY = Inf#
+    lastEventY = as.numeric(colnames(bivarSurf)[ncol(bivarSurf)])#
+  }#
+  if(randomTauX != Inf){#
+    tauX = min(tauX, c(randomTauX, lastEventX))#
+  }#
+  if(randomTauY != Inf){#
+    tauY = min(tauY, c(randomTauY, lastEventY))#
+  }#
+  # tauX = min(tauX, c(randomTauX))#
+  # tauY = min(tauY, c(randomTauY))#
+  if(tauX == lastEventX){#
+    tauX = paste(tauX, "+", sep = " ")#
+  }#
+  if(tauY == lastEventY){#
+    tauY = paste(tauY, "+", sep = " ")#
+  }#
+  res1 = HighestRankAndRestrictedSpearman(bivarSurf, tauX = tauX, tauY = tauY)#
+  bivarSurfForHR = bivarSurf#
+  bivarSurfForHR[as.numeric(rownames(bivarSurfForHR)) >= tauX, ] = 0#
+  bivarSurfForHR[, as.numeric(colnames(bivarSurfForHR)) >= tauY ] = 0#
+  res2 = HighestRankAndRestrictedSpearman(bivarSurfForHR, tauX = Inf, tauY = Inf)#
+  resCor = c("HighestRank" = res2["HighestRank", ], "Restricted" = res1["Restricted", ])#
+  resReg = c("tauX" = as.character(tauX), "tauY" = as.character(tauY))#
+  list(Region = resReg, Correlation = resCor)#
+}
+survSpearman(X, Y, deltaX, deltaY)
+tauX = tayY = Inf
+tauX = tauY = Inf
+### Indentify randomTauX, lastEventX#
+  if(is.null(bivarSurf) & is.null(X) & is.null(Y) & is.null(deltaX) & is.null(deltaY)){#
+    stop("Please supply either 'bivarSurf' or the following four arguments: 'X', 'Y', 'deltaX', 'deltaY'")#
+  }#
+  if(is.null(bivarSurf)){#
+    bivarSurf = survDabrowska(X, Y, deltaX, deltaY)$DabrowskaEst#
+  }#
+  if(bivarSurf[nrow(bivarSurf),1] > 0){  ### last X event is censored#
+    randomTauX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+    lastEventX = Inf#
+  }else{                                 ### last X event is not censored#
+    randomTauX = Inf#
+    lastEventX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+  }
+if(bivarSurf[1,ncol(bivarSurf)] > 0){#
+    randomTauY = as.numeric(colnames(bivarSurf)[ncol(bivarSurf)])#
+    lastEventY = Inf#
+  }else{#
+    randomTauY = Inf#
+    lastEventY = as.numeric(colnames(bivarSurf)[ncol(bivarSurf)])#
+  }#
+  if(randomTauX != Inf){#
+    tauX = min(tauX, c(randomTauX, lastEventX))#
+  }#
+  if(randomTauY != Inf){#
+    tauY = min(tauY, c(randomTauY, lastEventY))#
+  }
+if(tauX == lastEventX){#
+    tauX = paste(tauX, "+", sep = " ")#
+  }#
+  if(tauY == lastEventY){#
+    tauY = paste(tauY, "+", sep = " ")#
+  }#
+  res1 = HighestRankAndRestrictedSpearman(bivarSurf, tauX = tauX, tauY = tauY)#
+  bivarSurfForHR = bivarSurf#
+  bivarSurfForHR[as.numeric(rownames(bivarSurfForHR)) >= tauX, ] = 0#
+  bivarSurfForHR[, as.numeric(colnames(bivarSurfForHR)) >= tauY ] = 0#
+  res2 = HighestRankAndRestrictedSpearman(bivarSurfForHR, tauX = Inf, tauY = Inf)
+resCor = c("HighestRank" = res2["HighestRank", ], "Restricted" = res1["Restricted", ])#
+  resReg = c("tauX" = as.character(tauX), "tauY" = as.character(tauY))#
+  list(Region = resReg, Correlation = resCor)
+bivarSurf = NULL
+if(is.null(bivarSurf) & is.null(X) & is.null(Y) & is.null(deltaX) & is.null(deltaY)){#
+    stop("Please supply either 'bivarSurf' or the following four arguments: 'X', 'Y', 'deltaX', 'deltaY'")#
+  }#
+  if(is.null(bivarSurf)){#
+    bivarSurf = survDabrowska(X, Y, deltaX, deltaY)$DabrowskaEst#
+  }#
+  if(bivarSurf[nrow(bivarSurf),1] > 0){  ### last X event is censored#
+    randomTauX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+    lastEventX = Inf#
+  }else{                                 ### last X event is not censored#
+    randomTauX = Inf#
+    lastEventX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+  }
+if(bivarSurf[1,ncol(bivarSurf)] > 0){#
+    randomTauY = as.numeric(colnames(bivarSurf)[ncol(bivarSurf)])#
+    lastEventY = Inf#
+  }else{#
+    randomTauY = Inf#
+    lastEventY = as.numeric(colnames(bivarSurf)[ncol(bivarSurf)])#
+  }
+if(randomTauX != Inf){#
+    tauX = min(tauX, c(randomTauX, lastEventX))#
+  }#
+  if(randomTauY != Inf){#
+    tauY = min(tauY, c(randomTauY, lastEventY))#
+  }#
+  # tauX = min(tauX, c(randomTauX))#
+  # tauY = min(tauY, c(randomTauY))#
+  if(tauX == lastEventX){#
+    tauX = paste(tauX, "+", sep = " ")#
+  }#
+  if(tauY == lastEventY){#
+    tauY = paste(tauY, "+", sep = " ")#
+  }
+survSpearman = function(bivarSurf = NULL, X = NULL, Y = NULL, deltaX = NULL, deltaY = NULL, tauX = Inf, tauY = Inf){#
+  ### The function returns three correlation values:#
+  ### 1) "HighestRankInRestrictedRegion" is computed#
+  ###         using Highest Rank approach in the restricted region#
+  ### 2) "RestrictedRegion" is computed in the restricted region#
+  ####################################################################
+  ### Indentify randomTauX, lastEventX#
+  if(is.null(bivarSurf) & is.null(X) & is.null(Y) & is.null(deltaX) & is.null(deltaY)){#
+    stop("Please supply either 'bivarSurf' or the following four arguments: 'X', 'Y', 'deltaX', 'deltaY'")#
+  }#
+  if(is.null(bivarSurf)){#
+    bivarSurf = survDabrowska(X, Y, deltaX, deltaY)$DabrowskaEst#
+  }#
+  if(bivarSurf[nrow(bivarSurf),1] > 0){  ### last X event is censored#
+    randomTauX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+    lastEventX = Inf#
+  }else{                                 ### last X event is not censored#
+    randomTauX = Inf#
+    lastEventX = as.numeric(rownames(bivarSurf)[nrow(bivarSurf)])#
+  }#
+  ### Indentify randomTauY, lastEventY#
+  if(bivarSurf[1,ncol(bivarSurf)] > 0){#
+    randomTauY = as.numeric(colnames(bivarSurf)[ncol(bivarSurf)])#
+    lastEventY = Inf#
+  }else{#
+    randomTauY = Inf#
+    lastEventY = as.numeric(colnames(bivarSurf)[ncol(bivarSurf)])#
+  }#
+  if(randomTauX != Inf){#
+    tauX = min(tauX, c(randomTauX, lastEventX))#
+  }#
+  if(randomTauY != Inf){#
+    tauY = min(tauY, c(randomTauY, lastEventY))#
+  }#
+  # tauX = min(tauX, c(randomTauX))#
+  # tauY = min(tauY, c(randomTauY))#
+  if(tauX == lastEventX){#
+    tauX = paste(tauX, "+", sep = " ")#
+  }#
+  if(tauY == lastEventY){#
+    tauY = paste(tauY, "+", sep = " ")#
+  }#
+  res1 = HighestRankAndRestrictedSpearman(bivarSurf, tauX = tauX, tauY = tauY)#
+  bivarSurfForHR = bivarSurf#
+  bivarSurfForHR[as.numeric(rownames(bivarSurfForHR)) >= tauX, ] = 0#
+  bivarSurfForHR[, as.numeric(colnames(bivarSurfForHR)) >= tauY ] = 0#
+  res2 = HighestRankAndRestrictedSpearman(bivarSurfForHR, tauX = Inf, tauY = Inf)#
+  resCor = c("HighestRank" = res2["HighestRank", ], "Restricted" = res1["Restricted", ])#
+  resReg = c("tauX" = as.character(tauX), "tauY" = as.character(tauY))#
+  list(Region = resReg, Correlation = resCor)#
+}
+survSpearman(X, Y, deltaX, deltaY)
+traceback()
+q()
+10^(-0.2)
+150 + 38*2
+library(snowflakes)
+install.packages(snowflakes)
+install.packages("snowflakes")
+library(snowflakes)
+par(mar = c(0, 0, 0, 0))#
+plot(x=0, y = 0, type="n", axes = FALSE, ylab="", xlab="", ylim = c(-2, 2), xlim = c(-2, 2), col=gray(.9))#
+#
+for(i in 1:3){#
+  plotCristals(centers = matrix(0, nrow = 1, ncol = 2), radius = 1, angle = (i - 1)*pi/3, delta = .1, aspectRatio=1, color = "#44444444")#
+}
+xCoor = seq(0, 2, .25)#
+yCoor = (xCoor-1)^2#
+radius = 0.1#
+#
+set.seed(1)#
+#
+par(mar = c(0, 0, 0, 0))#
+plot(xCoor, yCoor, type="l", axes = FALSE, ylab="", xlab="", ylim = range(yCoor) + radius*c(-1, 1)*0.7, xlim = range(xCoor) + radius*c(-1, 1)*0.7, col=gray(.9))#
+#
+snowflakes(xCoor = xCoor, yCoor = yCoor, radius = radius, color = "#22222222")
+xCoor = seq(0, 1, .25)#
+yCoor = xCoor#
+radius = 0.15#
+#
+#### diagonal#
+#### diagonal#
+#### diagonal#
+par(mar = c(0, 0, 0, 0))#
+plot(xCoor, yCoor, type="l", axes = FALSE, ylab="", xlab="", ylim = range(yCoor) + radius*c(-1, 1)*0.7, xlim = range(xCoor) + radius*c(-1, 1)*0.7, col=gray(.9))#
+#
+returnedSeeds = snowflakes(xCoor = xCoor, yCoor = yCoor, radius = radius, seeds = c(9492), deltaCoef = 15 - (0:(length(xCoor)-1))*3, color = "#22222222")
+t = seq(0, 5*pi, .5)#
+xCoor = t*cos(t)#
+yCoor = t*sin(t)#
+radius = seq(.6, 1.8, 1.2/(length(t)-1))#
+orientation = -(pi + t)#
+#
+par(mar = c(0, 0, 0, 0))#
+plot(xCoor, yCoor, type="l", axes = FALSE, ylab="", xlab="", ylim = range(yCoor) + max(radius)*c(-1, 1)*0.5, xlim = range(xCoor) + max(radius)*c(-1, 1)*0.5, col=gray(.9), asp = 2/3)#
+#
+segments(x0 = rep(0, length(xCoor)), y0 = rep(0, length(xCoor)), x1 = xCoor, y1 = yCoor, col = gray((1:length(xCoor))/(length(xCoor)+1)), lty = 3)#
+#
+returnedSeeds = snowflakes(xCoor = xCoor, yCoor = yCoor, radius = radius, orientation = orientation, seeds = 1:3, color = gray((1:length(xCoor))/(length(xCoor)+1)), anotherColor = "gray")
+fancySnowflakes = function(xCoor, yCoor, radius, seeds, orientation = pi/6){#
+  colorCoord = as.hexmode(col2rgb("blue"))#
+  transpBlue =paste("#", paste(colorCoord, collapse=""), "44", sep="")#
+  colorCoord = as.hexmode(col2rgb("white"))#
+  transpWhite =paste("#", paste(colorCoord, collapse=""), "66", sep="")#
+  for (i in 1:length(xCoor)){#
+    snowflakes(xCoor = xCoor[i], yCoor = yCoor[i], radius = radius, color = transpBlue, anotherColor = "#33333333", seeds = seeds[i])#
+    snowflakes(xCoor = xCoor[i], yCoor = yCoor[i], radius = radius, color = transpWhite, anotherColor = transpWhite, seeds = seeds[i])#
+  }#
+}#
+#
+numSnowflPerRow = 5#
+set.seed(2018)#
+selectSeeds = sample(1:100000, numSnowflPerRow^2)#
+xCoor = rep(1:numSnowflPerRow, numSnowflPerRow)#
+yCoor = rep(1:numSnowflPerRow, each = numSnowflPerRow)#
+radius = .4#
+par(mar = c(0, 0, 0, 0))#
+plot(range(xCoor)+c(-1, 1)*.5, range(yCoor)+c(-1, 1)*.5, type="n", axes = FALSE, ylab="", xlab="")#
+selectSeeds = c(90068, 46258, 41165, 66142, 4636, 37906, 17295, 9250, 30595, 74555, 12669, 62970, 96997, 43447, 81975, 23841, 73197, 8419, 14318, 83885, 29343, 47445, 66721, 29854, 77912)#
+#
+fancySnowflakes(xCoor = xCoor, yCoor = yCoor, radius = radius, seeds = selectSeeds)#
+text(xCoor, yCoor, selectSeeds, cex=.5, pos = 3)
+xCoor = seq(0, 2, .25)#
+yCoor = (xCoor-1)^2#
+radius = 0.1#
+#
+set.seed(1)#
+#
+par(mar = c(0, 0, 0, 0))#
+plot(xCoor, yCoor, type="l", axes = FALSE, ylab="", xlab="", ylim = range(yCoor) + radius*c(-1, 1)*0.7, xlim = range(xCoor) + radius*c(-1, 1)*0.7, col=gray(.9))#
+#
+snowflakes(xCoor = xCoor, yCoor = yCoor, radius = radius, color = "#22222222")
+xCoor = seq(0, 1, .25)#
+yCoor = xCoor#
+radius = 0.15#
+#
+#### diagonal#
+#### diagonal#
+#### diagonal#
+par(mar = c(0, 0, 0, 0))#
+plot(xCoor, yCoor, type="l", axes = FALSE, ylab="", xlab="", ylim = range(yCoor) + radius*c(-1, 1)*0.7, xlim = range(xCoor) + radius*c(-1, 1)*0.7, col=gray(.9))
+returnedSeeds = snowflakes(xCoor = xCoor, yCoor = yCoor, radius = radius, seeds = c(9492), deltaCoef = 15 - (0:(length(xCoor)-1))*3, color = "#22222222")
+t = seq(0, 5*pi, .5)#
+xCoor = t*cos(t)#
+yCoor = t*sin(t)#
+radius = seq(.6, 1.8, 1.2/(length(t)-1))#
+orientation = -(pi + t)#
+#
+par(mar = c(0, 0, 0, 0))#
+plot(xCoor, yCoor, type="l", axes = FALSE, ylab="", xlab="", ylim = range(yCoor) + max(radius)*c(-1, 1)*0.5, xlim = range(xCoor) + max(radius)*c(-1, 1)*0.5, col=gray(.9), asp = 2/3)#
+segments(x0 = rep(0, length(xCoor)), y0 = rep(0, length(xCoor)), x1 = xCoor, y1 = yCoor, col = gray((1:length(xCoor))/(length(xCoor)+1)), lty = 3)#
+returnedSeeds = snowflakes(xCoor = xCoor, yCoor = yCoor, radius = radius, orientation = orientation, seeds = 1:3, color = gray((1:length(xCoor))/(length(xCoor)+1)), anotherColor = "gray")
+### install the packages:#
+install.packages("survSpearman_1.0.0.tar.gz", repos = NULL, type="source")#
+library(survSpearman)#
+#
+### example 1#
+### example 1#
+### example 1#
+set.seed(1)#
+data = simulateRealisticData(nSubj = 100, thetaPar = 4.426265, family = "frank",#
+   censoringProb1 = 0.3, censoringProb2 = 0.3,#
+   independentCensoring = TRUE, restrictedTimeX = 2, restrictedTimeY = 2)
+getwd()
+getwd("/Users/svetlanaeden/stuff/RStuff")
+setwd("/Users/svetlanaeden/stuff/RStuff")
+### install the packages:#
+install.packages("survSpearman_1.0.0.tar.gz", repos = NULL, type="source")#
+library(survSpearman)#
+#
+### example 1#
+### example 1#
+### example 1#
+set.seed(1)#
+data = simulateRealisticData(nSubj = 100, thetaPar = 4.426265, family = "frank",#
+   censoringProb1 = 0.3, censoringProb2 = 0.3,#
+   independentCensoring = TRUE, restrictedTimeX = 2, restrictedTimeY = 2)
+library(devtools)#
+    library(roxygen2)#
+    setwd("/Users/svetlanaeden/stuff/RStuff/SurvSpearman")#
+    devtools::build()#
+    devtools::check()
+q()
